@@ -1,0 +1,491 @@
+       This translation is brought to you courtesy of KWEST,
+           (Kitchener-Waterloo Eight Sixteen Thirty-two)
+	            the Atari users' group of
+                Kitchener-Waterloo, Ontario, Canada
+
+
+All the hard work was done by Pat FitzGerald.  She deserves all the 
+kudos for the effort. 
+
+I have attempted to verify the accuracy of the typing as much as 
+possible.  I will gladly accept comments and/or corrections.
+
+Someone on USENET mentioned that ALTERNATE-S could put you into 
+solo mode and allow one to play against the computer.  There is no 
+mention of this in the German txt file.  In our experiments, we 
+have found that a single player can do some "target practice", but 
+that is about all.  We'll try some more!
+
+Please do not delete these notes when you pass along the file.
+
+Brian Bentley, KWEST ST Librarian.
+email: econadm5@watserv1.uwaterloo.ca
+snail: 102 Glen Park Cr., Kitchener, Ontario, Canada  N2N 1G2.
+
+               ________________________________
+
+                    WELCOME TO MIDI-MAZE II!
+
+MIDI-MAZE II is a game for up to 16 players who connect their
+computers with one another through the MIDI port.  More than one
+computer is definitely necessary!   MIDI-MAZE II can only be played
+with more than one player.  Each player directs a spherical Smiley
+through a maze; whoever sees a friend, helps him and if he sees an
+enemy, he shoots him down (or the other way around).  A new player
+starting out can be killed by 3 hits.  So far, the play is identical
+with MIDI-MAZE.  But in MIDI-MAZE II there are also extras, which can
+be purchased in exchange for points.  Details are given later on,
+below.  The main point is then very simple; we have noticed that a lot
+of the fun of a game comes from playing with others - this has been
+true through the ages.
+
+     WHAT MUST I BRING WITH ME TO A MIDI-MAZE II TOURNAMENT?
+
+MIDI-MAZE II runs on all Atari STs (naturally also TTs) in low and
+high resolution.  Each player naturally neeeds a computer -- that is
+not such a big deal as it sounds at first -- each person simply brings
+his own.  For each computer a MIDI cable is needed (a normal 5 pin DIN
+cable, not an RCA cable).  In addition we recommend a joystick, but it 
+is possible to play with a mouse.  Moreover, make sure there are enough
+power outlets.  For clothing, one should obviously wear a MIDI-MAZE 
+T-shirt [but we'll overlook this in the winter... ].
+
+                         THE SET-UP
+
+First, one should connect all the computers with MIDI cables.  For
+this, it has proven useful to label the 2 ends "IN" and "OUT" - this
+helps prevent confusion.  Then you stick one connector into the
+midi-out port of the first computer and the other end into the midi-in
+port of the second computer.  From the second computer, run a cable to
+the third, and so forth.  The last computer is connected back to the
+first.
+
+Now, all players load MIDI-MAZE II.  First of all, you'll hear the
+Digi-sound music by Jurgen Piscol.  If you touch a key right after
+loading, the sound can be suppressed.  MIDI transmission does not
+occur while the music is playing, because the transmission requires
+all the CPU time.
+
+After a key is pressed, a ring test is carried out.  The last player
+will automatically be put into Master-Mode -- if the ring is closed,
+that is, if no cables are missing or mixed up.
+
+If no player comes into the Master-Mode, the ring is incomplete.
+Press ALTERNATE-R to repeat the ring test once more.  If the ring is
+complete, this player will become Master, if not, he will remain a
+slave.  If this doesn't help, then one player should force Master-Mode
+activation by pressing ALTERNATE-~.
+
+The Master should then send a message through the ring by pressing F1.
+If the ring is working, each slave and master should get a copyright
+message.  If a cable is missing or incorrectly plugged in, from this
+computer on, no message will be displayed and the Master will receive
+a "boo-boo".  Then one should check the cable between the last
+computer with the message and the next one.  If the connection seems
+OK, try exchanging it for another cable.
+
+
+                    SELECTIONS BEFORE THE GAME
+
+                   SELECTIONS FOR ALL COMPUTERS
+
+As long as you are on the title screen, each player (Master or Slave)
+can press the following keys:
+   
+To play with the mouse, press ALTERNATE-M.  To return to joystick,
+press ALTERNATE-J.  The default is joystick.
+    
+Last but not least, it is possible to quit the game.  If the
+others in the ring still want to play, you would make yourself
+unpopular, since the MIDI-DATA wouldn't get past your computer.
+
+                         THE SCREEN LAYOUT
+
+After loading, a screen appears which looks a little different in
+colour than in monochrome.  The fields displayed, however, are in the
+same place in both.  [The illustration shows high resolution.]:
+
+                     (INSERT MIDIPIC.IMG HERE)
+
+In the middle, one sees the window to the maze.  During play, here you
+see a 3-D view.  Upper left is the status display (HOW AM I).  Here at
+the beginning of the game, you see a beaming Smiley, who looks more
+and more unhappy each time he is hit.  To the right of this is the
+score display.  Here each player has a 3-digit counter, which shows
+the present point-standing.  Here is the most important difference
+between colour and monochrome:
+    
+-  In colour, the first 8 players are shown in 8 different colours.
+The Eyes, mouth and the outline are black.  If there are more than 8
+players wandering in the maze, the colours are repeated, but the eyes,
+mouth and outline are in dark red.  Your own colour is shown in the
+status display on the left.  Under the score display, look for the
+coloured border which corresponds to your colour.  If you have a black
+border, yours is the upper number, otherwise it is the lower one.
+    
+-  In monochrome unfortunately there are technical problems
+displaying colours.  Therefore, each player has a different pattern;
+beside each score number the pattern of the player to whom it belongs
+is displayed.  Again, you see your own pattern in the status display.
+
+To the right of the window is a compass and a shot-warning (to be
+explained later).  On the right, beside the window, you can see four
+numbers:
+
+-  The first three are statistical only -- they are not important
+for the game-play.  The HITS number shows the number of your shots
+which hit their target.
+
+-  The KILLS number - the Smileys you have killed.
+ 
+-  SCORE gives all the points, which you have already managed to
+add up in this game.  It should be = HITS + 2 times KILLS, since a
+kill counts 3 points and a hit counts one.
+    
+-  MONEY is more important.  It corresponds to the SCORE figure
+minus any points given up.  It shows then, how many points one can
+still invest in extras as well as how many points you have towards
+victory.  You win when your money count reaches the WIN-score.  MONEY
+is the number which is displayed on the large scoreboard at the top if
+you are playing singles.
+
+If you are playing in teams, the large scoreboard shows the sum of
+all the MONEY scores for  all of the players on a team.  The team
+whose total is equal to the WIN-Score has won.  For buying extras, you
+can only use your own money; you can't buy things with other people's
+money.
+
+Below the window is the Pop-Chart.  The  faces of the players you
+have killed are displayed here.
+
+Below that is the message line.  This line handles all text input
+and output.  During the game the names of those you have hit appear
+here as well as the names of enemy players who have shot you.  If
+nothing else is going on, it will give information about extras you
+have available (when you press the appropriate key).
+
+                    STARTING THE GAME, THE KEYS
+
+With F1 you can, as already mentioned, send a copyright notice around
+the ring.
+
+The Master must load a maze in which the game will take place.
+MIDI-MAZE  II automatically loads "MIDIMAZE.MZE"; if you want to have
+a different one, press F2.  Then a File-Selector appears (this is why
+the Master should not load from an auto-folder); after loading the
+Master sees the maze in an overview map.
+    
+The scores of all players can be deleted with F3 (all key-commands
+work only for the Master, slaves naturally cannot input anything).
+    
+F4 starts the entering of names.  Each player enters his own name.
+All symbols are ignored, RETURN ends the input, ESC erases the input
+field and the cursor keys, backspace and delete work normally.  The
+master can only proceed when all the players are finished.  A message
+"Names completed" appears for each player.
+    
+The Master presses RETURN to start the actual play.  Then he
+receives the Masterpage for the first time (if the ring is in order).
+
+ 
+                        THE MASTERPAGE
+
+                    (INSERT MASTERP.IMG HERE)
+
+Admittedly, this screen appears very chaotic at first glance; that
+cannot be avoided when there are so many options.  At the top is the
+number of computers in the ring.
+    
+Below that is a line for each player.  On the left is identifying
+letter for each player, followed by the name.  After that a line with
+installation details for the current players.  At  the top is a key
+for  the present meaning.  (Note: pay attention to upper/lower case!)
+
+-  Win:  is the score that is required to win.  A hit is worth one point
+and a kill is worth three.  If a person shoots an enemy three times in
+a row (to kill, without any transmission in between) that gives a
+total of five points.  10 kills would make you the winner, as long as
+Win is set as 50 and you have not changed the score by buying extras.
+
+-  T:  shows the team to which that player belongs.  Possibilities are
+the letters A-H.  If all players are on the same team, "singles" are
+being played, that is, each player is playing for himself.
+
+-  L:  Reload time -- the time which a player needs after a shot before
+the next shot can be fired.  The fact that you can shoot is shown by a
+very small crosshair in the middle of the screen which disappears
+after a shot until the gun is reloaded.  "A" stands for 0, the larger
+the letter, the longer it will be until you can shoot again.  "A" is
+then a kind of machine gun, with only one shot, which is absolutely
+fatal.  In spite of that, as in all of MIDI Maze II, it is only
+possible to have one shot on the screen at a time.  If you fire a
+second shot, the first one disappears.
+
+-  F:  Refresh time -- the time one takes to recover when one has been
+hit.  The letter works like the Reload time:  the bigger the letter,
+the longer the time.
+
+-  G:  Regenerate time -- the time after which one returns to life after
+being killed.  It is not a good idea to select this time as too long,
+otherwise a player who is not active will get bored before he can join
+in again.
+
+-  V:  Revive lives -- the number of lives you get at the beginning of
+the game or after you have lost all your lives.  Normally, you get
+three lives; after you are killed this is refreshed to three.  You can
+however get more lives (0-9).  The status display however shows a
+maximum of three lives, that is, three beaming Smileys.  This is the
+way a player can arrange a break: set this value to 0 and the player
+is always dead and does not disturb the game.
+
+-  Z:  Zig-Zag -- if one has a greater value than "A" (don't overdo it!)
+the shot begins to wander.  Its best to try this out!
+
+-  i:  Invisibility (250 points) -- to be sure, the hardest feature to
+earn in MIDI-Maze II.  The player simply cannot be seen, and therefore
+he cannot be wounded.  Other Smileys can simply run through him,
+without noticing him (but not vice versa)
+
+-  w:  Walls (40 points) -- the player can shoot through walls.  The shot
+is only stopped when it hits the outer walls of the maze.  "Walls" is
+not compatible with "Reflective Shot" -- the last chosen is ignored.
+
+-  h:  Hide on Map (15 points) -- the player cannot be seen by other
+players on the overview map -- not even if they have pressed F7.
+
+-  f:  Fast shot (20 points) -- the shot of the player in question is
+twice as fast as normal.  One shouldn't undervalue this.  A duel is
+almost always won, since one's own 3 shots reach the opponent faster
+than his reach you.
+
+-  a:  Auto answer (25 points) -- if the player, who has the benefit of
+this extra is shot from behind, he is avenged with a shot which flies
+exactly in the opposite direction and therefore has a better
+probability of hitting the rascal.  It only takes a little getting
+used to, that one's own previous shot suddenly disappears when one is
+shot.  Then normal MIDI-Maze rule applies here, that each player can
+only fire one shot at a time.  It you start a second shot, the first
+one automatically disappears.
+
+-  s:  Shot radius (25 points) -- When this is active, the shot is twice
+as big.  It looks normal, but it hits the target in situations where it 
+would normally have flown past.
+
+-  q:  Quick (20 points) -- The player goes twice as fast.  This requires
+some practice.  As first you'll have some difficulty making it around
+the corners.
+
+-  r:  Reflective Shot (25 points) -- the shot is not absorbed by the
+walls -- rather, it is reflected!  This does not always function
+exactly mathematically (the calculation would have been too tedious).
+However, it is good enough the purposes of the game.  Note here too,
+that only one shot at a time is possible.  It is neat to be able to
+shoot someone when you are not on a line of fire with them, but the
+shot was already on its way.
+
+-  d:  Deadly Fire (35 points) -- this shot is absolutely lethal; one hit
+kills a player, regardless of how many lives he has left.  However,
+you get a few points less compared to normal play, because you only
+get the 3 points for the kill.
+
+-  n:  No Deadly Fire (10 points) -- counteracts Deadly Fire.  If you have
+this extra and are hit by someone who has deadly fire, the shot counts
+as a normal shot.
+
+-  g:  Got You (25 points) -- someone who shoots the possessor commits
+suicide.  He immediately loses a life.  Anyone who hits the possessor
+of "got you" 3 times is dead.  The person shot at receives the points
+for it.
+
+-  b:  No Got You (10 points) -- the anti-feature for the above.  Only
+possessors of "No Got You" can harm people with "Got You".  Since the
+anti-feature is relatively cheap, a person should perhaps buy this one
+first.  If everyone has "Got You" and you don't have "No Got You"
+yourself, then the game becomes very frustrating.
+
+-  k:  Key (1 point) -- The key allows a person to run through doors.
+Tip: Go through a door and press F10 -- your pursuers will be totally
+confused.
+
+-  <:  (Cursor left) (0 points) -- allows the player to turn slowly.  The
+key for this is cursor left.  With this, you can nicely navigate an
+opponent between two corners.
+
+-  >:  (Cursor right) (0 points) -- allows faster turns -- for the
+situation where you have to get around the corner fast.
+
+-  SPACE:  Map (0 points) -- Turns the map on and off.  Should normally be
+available to every player.  For space to function, F2 must also be
+turned on.
+
+-  ~:  Walk Through Walls (250 points) -- the player can tranquilly run
+through any wall, as long as he doesn't leave the maze.  When he comes
+to the edge, he can lodge himself IN the wall and half look out (can
+only see wall though).
+
+-  #:  No Shot -- prevents the player from shooting.  That is naturally not
+very fair; it is mainly intended for a MIDICAM (?) This extra cannot
+be bought, even if it appears to be "k" (buyable) or "m" (possible --
+see below).
+
+-  c:  Colourlessness (75 points)  -- whoever buys this feature, becomes
+a little pale in the face.  He becomes transparent, with only the
+outline and the features visible.  A player at some distance will
+barely be able to see him.  In opposition to invisibility, one remains
+woundable.  This extra is particularly effective with F8.  It also
+goes well with Reflective Shot, since the shot can also only be seen
+as an outline.  It does make it  hard to recognize team members (one
+is inclined then to shoot just in case).
+
+-  SPACE -- all the way to the right is another Space, which cannot be
+normally be accessed.  It designates a MIDICAM (see below).
+
+-  1:  (0 points)  With F1, you can turn around 180 degrees.  That is
+especially significant if you are suddenly shot from behind.  In order
+to call up this  function faster, during play it can be activated by
+the zero on the numeric keypad.
+
+-  2:  (2 points)  With F2 selects the overhead map.  That is not to be
+confused with the Space.  F2 allows the display of the map (a one-time
+purchase).  Without F2 being activated, the space bar doesn't do
+anything.  Space turns the map on and off once F2 has been used.
+
+-  3:  (2 points)  F3 prevents you from being KILLED by a team-mate.  You
+can still be shot the first or second time by a partner.  All further
+shots (which would be fatal)  have no effect.  The immunity is only
+for the player who possesses this feature.  He could still kill
+someone from his own team.  If you are playing "singles" not teams, F3
+has no use.
+
+-  4:  (5 points)  F4 additionally prevents you from being shot by a
+team-mate.  F3 is then unnecessary.
+
+-  5:  (6 points)  F5 gives you a compass.  It is shown to the left of the
+window.  It is useful for example, if you are surrounded in a corner
+by three walls, in order to turn in  the direction of the exit.
+
+-  7:  (10 points)  F7 makes all the other players appear on the map.  This
+is the same effect as if you look at the map when you are dead.  In
+either case, players who have turned on "Hide on Map" are not visible
+on the map.
+
+-  8:  (15 points)  F8 switches your face off.  Your opponents are at a
+disadvantage because they can't tell if you are looking at them.
+
+-  9:  (5 points)  F9 enables a shot warning.  If an opponent's shot is
+coming at you, an "s" lights up in the "Alert" field.  That is useful
+if one is being chased without being aware of it.
+
+-  0:  (5 points)  F10 "beams" you to another part of  the maze.  As a last
+way out, after you have been shot twice, this is useful.  Also during
+play to get to ENTER.
+
+
+                    HOW DO YOU INSTALL THINGS?
+
+On the left edge is an identifying letter for each player.  A player
+can edit his letter, which will then appear inverted.  The most common
+extra combinations can be accessed through the function-keys:
+
+-  F1:  for MIDI Maze I installation.  That is, you have no extras and can
+only see the map.
+
+-  F2:  for normal installation.  That is, the function and cursor keys are
+engaged; with k you can buy a key and with R a reflective shot.
+Deadly and Gotcha are provided with anti-features.
+
+-  F3:  for "Superman" installation.  You can simply activate everything --
+the extras are free.
+
+-  F4:  for the large Extra Set.  All features can be bought, except
+invisibility, walls, ~ and #.
+
+-  F5:  for a MIDICAM.  Such a player is invisible, cannot shoot, and
+cannot be hit.  For all practical purposes, he is not taking part in
+the game, but he can observe everything.
+
+These keys serve for a rough installation.  One can then turn the
+individual extras on and off.  For that you press the letters of the
+desired extra so that it appears at the top of the screen.    
+
+Warning: here you must press 1-9 (not the function keys), the < and > 
+keys (not the cursor keys) and so forth.
+
+For each feature there is a separate status: 
+
+-  _:  this feature is turned off.  During play it can't be activated.
+
+-  m:  this feature is possible.  During play one can get it by pressing
+the corresponding key (function, cursor or other keys).  Pressing the
+same key again turns it on and off.  Turning on and off is free.
+
+-  M:  this feature is possible and available.  Pressing on the
+corresponding key turns it on and off.  Similar to the above, but
+already active at the start of the game.
+
+-  k:  this feature may be bought.  You can turn it on and off the same way
+as the features marked with "m" but it costs points each time you turn
+it on
+
+-  K:  this extra may be bought but it is already available at the start of
+the game.  If you sell it and buy it again, it will cost money.
+
+After installation for the active player is finished, press cursor up
+or down.  Then you can activate the next player.  Shift-A copies the
+installation of the active player to all the other players.  With
+Shift-C and the following player's identifier, you can copy it to just
+one player.  For example, install everything for player A and then
+press SHIFT-C B.  This will give player B the same installation.  If
+you wish to copy onto another player, you must press SHIFT-C again.
+End the copying by pressing any key other than an identifier letter.
+
+Press return again to start the game.  Use UNDO after a game to
+restore the installations to the state they had before the game.  For
+example, the master has enabled Reflective Shot (with "k"); a player
+has eagerly bought it for himself.  After the game, this installation
+is retained and the large "K" is displayed beside that player.  If the
+Master simply starts the game again, this player would start out with
+reflective shot.  Therefore he would use UNDO to set it back.
+
+At the beginning of play, the ring functionality is tested again.  The
+maze is handed over to the slaves by the Master.  This is not repeated
+for additional games.  If the maze is too small to place all the
+Smileys, play is stopped with a corresponding error message.
+
+
+ Overview of Features
+
+Map switch      SPACE   0
+Turn 180%          F1   0 points
+Enable map         F2   2
+Deadly Fire        F3   2
+Friendly Fire      F4   5
+
+Compass            F5   6
+Opponent on map    F7   10
+No face            F8   15
+Shot Warning       F9   5
+Hyperjump          F10  5
+
+Reflective shot    r    25
+Quick              q    20
+Invisibility       i    250
+Shoot thru walls   w    40
+Hide player        h    15
+
+Fast Shot          f    20
+Auto Answer        a    25
+Big Shot           s    25
+Deadly             d    35
+No deadly          n    10
+
+Got you            g    25
+No Got You         b    10
+Go through walls   ~    250
+Turn slowly        <    0
+Turn fast          >    0
+
+Colourlessness     c    75
+Key                k    1
+
+               ________________________________

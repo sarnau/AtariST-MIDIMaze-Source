@@ -1,0 +1,132 @@
+
+
+
+GENLAB(6)                Games and Demos                GENLAB(6)
+
+
+
+NAME
+     genlab - an iMaze labyrinth generator
+
+SYNOPSIS
+     genlab   [ -Sv ]   [ -w _w_i_d_t_h ]   [ -h _h_e_i_g_h_t ]   [ -d _w_a_l_l-
+            _d_e_n_s_i_t_y ]    [ -D _d_o_o_r-_d_e_n_s_i_t_y ]   [ -r _r_a_n_d_o_m-_s_e_e_d ]
+            _l_a_b-_f_i_l_e
+
+DESCRIPTION
+     genlab generates a file with  a  random  labyrinth  for  the
+     multi-player network action game imaze(6).
+
+OPTIONS
+     -d _w_a_l_l-_d_e_n_s_i_t_y
+          Specify density of walls in labyrinth; default is 38.
+
+     -D _d_o_o_r-_d_e_n_s_i_t_y
+          Specify probability of each wall being a door;  default
+          is 5.
+
+     -h _h_e_i_g_h_t
+          Specify height of labyrinth; default is 16.
+
+     -r _r_a_n_d_o_m-_s_e_e_d
+          Seed value for the random number generator; default  is
+          derived from the current time of day.
+
+     -S   Don't search for a labyrinth without "traps".
+
+     -v   Verbose mode: tell the user which seed is tried.
+
+     -w _w_i_d_t_h
+          Specify width of labyrinth; default is 16.
+
+EXAMPLES
+     A simple example for a random labyrinth:
+
+          genlab test.lab
+
+     creates a labyrinth test.lab with size 16x16.
+
+     An example how to create a empty labyrinth for xlabed(6):
+
+          genlab -w 12 -h 12 -d 0 empty.lab
+
+     creates a labyrinth empty.lab with size 12x12
+
+SEE ALSO
+     imaze(6), imazesrv(6), imazestat(6), ninja(6), xlabed(6)
+
+BUGS
+
+
+
+
+SunOS 5.5.1       Last change: 10 December 2001                 1
+
+
+
+
+
+
+GENLAB(6)                Games and Demos                GENLAB(6)
+
+
+
+     genlab is slower than necessary.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SunOS 5.5.1       Last change: 10 December 2001                 2
+
+
+

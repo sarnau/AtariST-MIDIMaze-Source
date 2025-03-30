@@ -1,0 +1,65 @@
+.TH GENLAB 6 "10 December 2001"
+.SH NAME
+genlab \- an iMaze labyrinth generator
+.SH SYNOPSIS
+.in +\w'\fBgenlab \fR'u
+.ti -\w'\fBgenlab \fR'u
+.B genlab
+[\ \fB\-Sv\fR\ ]
+[\ \fB\-w\fR\ \fIwidth\fR\ ]
+[\ \fB\-h\fR\ \fIheight\fR\ ]
+[\ \fB\-d\fR\ \fIwall-density\fR\ ]
+[\ \fB\-D\fR\ \fIdoor-density\fR\ ]
+[\ \fB\-r\fR\ \fIrandom-seed\fR\ ]
+.I lab-file
+.SH DESCRIPTION
+.LP
+.B genlab
+generates a file with a random labyrinth for the multi-player network action game
+.BR imaze (6).
+.SH OPTIONS
+.TP
+.BI \-d " wall-density"
+Specify density of walls in labyrinth; default is 38.
+.TP
+.BI \-D " door-density"
+Specify probability of each wall being a door; default is 5.
+.TP
+.BI \-h " height"
+Specify height of labyrinth; default is 16.
+.TP
+.BI \-r " random-seed"
+Seed value for the random number generator; default
+is derived from the current time of day.
+.TP
+.B \-S
+Don't search for a labyrinth without "traps".
+.TP
+.B \-v
+Verbose mode: tell the user which seed is tried.
+.TP
+.BI \-w " width"
+Specify width of labyrinth; default is 16.
+.SH EXAMPLES
+A simple example for a random labyrinth:
+.IP
+.B "genlab test.lab"
+.LP
+creates a labyrinth test.lab with size 16x16.
+.LP
+An example how to create a empty labyrinth for
+.BR xlabed (6):
+.IP
+.B "genlab -w 12 -h 12 -d 0 empty.lab"
+.LP
+creates a labyrinth empty.lab with size 12x12
+.SH SEE ALSO
+.BR imaze (6),
+.BR imazesrv (6),
+.BR imazestat (6),
+.BR ninja (6),
+.BR xlabed (6)
+.SH BUGS
+.LP
+.B genlab
+is slower than necessary.

@@ -1,0 +1,118 @@
+return always has a branch at the end of the function
+
+        BRA     return
+
+for(var=0; var<val_max; val += val_inc)
+    ...
+
+    	CLR.W	var
+    	BRA	    L0027
+L0026   ...
+	    ADD.W	#val_inc,var
+L0027	CMP.W	#val_max,var
+	    BLE	    L0026
+
+for(var=val_max; var>=0; val -= val_dec)
+    ...
+
+    	MOVE.W	#val_max,var
+    	BRA	    L0029
+L0028	...
+    	SUB.W	#val_dec,var
+L0029	TST.W	var
+    	BGE	    L0028
+
+
+do {
+    
+} while(cond);
+
+L0058 = continue
+
+L004C:...
+
+L0058:CMPI.W    cond
+      BNE       L004C
+
+// large switch (>4 cases)
+switch(var)
+{
+case a:
+case b:
+case c:
+}
+
+      MOVE.W    -2(A6),D0
+      BRA       L0057
+
+L0057:SUB.W     #$FFFF,D0       ; optional, if the value range starts at 0
+      CMP.W     #5,D0
+      BHI       L0058
+      ASL.W     #2,D0
+      MOVEA.W   D0,A0
+      ADDA.L    #L0A5E,A0
+      MOVEA.L   (A0),A0
+      JMP       (A0)
+L0058:
+
+// small switch (<=4 cases)
+switch(var)
+{
+case a:
+case b:
+case c:
+}
+
+L006C:MOVE.W    -8(A6),D0
+      BRA       L0070
+...
+
+L0070:TST.W     D0
+      BEQ.S     L006D
+      CMP.W     #1,D0
+      BEQ.S     L006E
+      CMP.W     #2,D0
+      BEQ.S     L006F
+      BRA       L0071
+
+// large switch with many choices (>4)
+switch(var)
+{
+case a:
+case b:
+case c:
+}
+
+      MOVE.W    D0,-2(A6)
+      BRA       L0158
+...
+
+L0158:EXT.L     D0
+      MOVEA.L   #L0A63,A0
+      MOVEQ     #$12,D1
+L0159:CMP.L     (A0)+,D0
+      DBEQ      D1,L0159
+      MOVEA.L   72(A0),A0
+      JMP       (A0)
+
+
+var = cont ? termA : termB
+
+      MOVE.W    L0BA9,D0
+      CMP.W     L0BBA,D0
+      BGT       L0060
+      CLR.W     D0
+      BRA       L0061
+L0060:MOVEQ     #1,D0
+L0061:MOVE.W    D0,L0B72
+
+
+...
+
+a = b = c = d = 0
+
+      CLR.W     D0
+      MOVE.W    D0,-56(A6)
+      MOVE.W    D0,-54(A6)
+      MOVE.W    D0,-52(A6)
+      MOVE.W    D0,-50(A6)

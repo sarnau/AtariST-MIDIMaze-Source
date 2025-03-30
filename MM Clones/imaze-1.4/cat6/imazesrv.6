@@ -1,0 +1,66 @@
+
+
+
+IMAZESRV(6)              Games and Demos              IMAZESRV(6)
+
+
+
+NAME
+     imazesrv - the server for iMaze
+
+SYNOPSIS
+     imazesrv [ -hACFIQR ] [ -c _c_y_c_l_e-_t_i_m_e ]  [ -l {_l_o_g-_f_i_l_e|-} ]
+              [ -p _p_o_r_t ] _l_a_b-_f_i_l_e
+
+DESCRIPTION
+     imazesrv is a TCP/IP server  for  the  multi-player  network
+     action game imaze(6).
+
+OPTIONS
+     -h   Print command line option help.
+
+     -c _c_y_c_l_e-_t_i_m_e
+          Use a _c_y_c_l_e-_t_i_m_e ms step for the game  clock.   Allowed
+          is  15-150ms.   The  default  value is 60ms.  Use lower
+          values for faster game and  higher  values  for  slower
+          games, e.g. bad network connections.
+
+     -l _l_o_g-_f_i_l_e
+          Enable logging of connections to _l_o_g-_f_i_l_e.
+
+     -l - Enable logging of connections to standard output.
+
+     -p _p_o_r_t
+          Use _p_o_r_t instead of the default TCP port.
+
+     -A   Enable auto-answer shot for all players.
+
+     -C   Make all players colorless.
+
+     -F   Make all players faceless.
+
+     -I   Make all players invisible.
+
+     -Q   Allow quickturn for all players.
+
+     -R   Enable reflective shot for all players.
+
+SEE ALSO
+     genlab(6), imaze(6), imazestat(6), ninja(6), xlabed(6)
+
+
+
+
+
+
+
+
+
+
+
+
+
+SunOS 5.5.1       Last change: 10 December 2001                 1
+
+
+

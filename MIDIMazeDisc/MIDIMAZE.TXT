@@ -1,0 +1,37 @@
+Karstadt AG
+Hauptverwaltung
+Qualitätssicherung
+
+
+Sehr geehrte(r) Benutzer(in),
+
+das Ihnen vorliegende Midi-Maze-Programm wurde bis Mitte 1989 von der Hybird Arts Inc. vermarktet.
+
+Aufgrund einer unserer Verbindungen ist es uns gelungen, dieses hervorragende multiuserfäghiges Spielprogramm Exklusive für die Public Domain Serie zu gewinnen.
+
+
+Die nun folgende Kurzbeschreibung über dieses Programm werden Sie in die Benutzung einführen und Sie auf Ihren ersten Schritten begleiten.
+
+Die Karstadt Qualitätssicherung wünscht Ihnen viel Vergnügen.
+
+
+Der nun folgende Bericht wurde mit freundlicher Genemigung der Zeitschrift PUBLIC DOMAIN SOFTWARE vom TRONIK VERLAG Ausgabe 9/89 Seite 110 bis 111 übernommen.
+
+
+
+
+
+3 D-Pacman für bis zu sechzehn Spielern
+
+
+Eines der ersten Spielgenre für alle gängigen Homecomputer-Typen -nebst Spielhallenautomaten - war das lustigste wie auch faszinierende Pacman-Geschehen, welches "einst" Jung und Alt an die Bildschirme zu fesseln wußte. Grund genug für viele Hersteller, sich dieser beliebten Spielthematik anzunehmen und -mehr oder minder gute- Kopien zu erstellen. Mittlerweile kann der Softwaremarkt nun schon mit Pacman-Varianten dreidimensionaler Art aufwarten, was zusätzlichen Spielspaß aufkommen läßt. All diese "Plagiate" können jedoch einem Public-Domain-Schmankerl namens MIDI-MAZE aus dem U.S.-Hause HYBIRD ARTS nicht standhalten, denn in keiner Version aus der mit bekannten Spielepalette sind so viele Optionen, so viele Feinheiten und Features enthalten wie in jedem Game, von dem hier die Rede sein wird. Das ehemals kommerziell vertriebene Spiel bietet "Spielspaß nonstop".
+
+Vor nicht allzu langer Zeit, als die musischen Fähigkeiten des Atari ST noch mitten in ihren Kinderschuhen steckten, schwirrte lediglich eine Unzahl einzelner Noten im Inneren des Atari ST umher, ständig im Kampf ums nackte Überleben, in einem heißen Fight, Note gegen Note. Bis dato bot der ST weder polyphone Klänge noch Akkorde. Die Story von MIDI-MAZE mag mit Sicherheit etwas extravagant, wenn nicht komisch klingen, tatsächlich erweist sich dieses Programm jedoch als klassischer Vertreter actiongeladener Labyrinthspiele a la Pacman und Konsorten. Über die vielen anvertrauten Elemente im Spielablauf hinaus kann das Game weiterhin mit zahlreichen neuen Features aufwarten, welche selbigem einen völlig neuen "Touch" verleihen. Der Clou liegt vor allem in der "Netzfähigkeit" von MIDI-MAZE, denn auf diese Weise können bis zu 16 Spieler gleichzeitig mit ihrer eigenen Hardware agieren. Als Datenbus müssen die beiden MIDI-Ausgänge des Atari ST herhalten, wobei die maximal 16 Computer in einer Art Ringstruktur verbunden werden. Clubmeisterschaften, Independent-Turniere... Die Möglichkeiten, die sich so mit MIDI-MAZE ergeben, scheinen unbegrenzt. Eines wird man jedoch sehr schnell feststellen: Der Spielspaß steigt proportional mit der Anzahl menschlicher Spieler, beziehungsweise vernetzter Computer. Zur Vereinheitlichung der Steuerung wird der Computer, in den MIDI-MAZE zuletzt eingeladen wurde, kurzerhand zum "Game-Master" ernannt, wogegen die restlichen Systeme ein eher trauriges Dasein als "Slave-Machine" fristen. Der erstgenannte Spieler kann nun gewissermaßen als höchste Instanz vor Spielbeginn die notwendigen Parameter treffen und dann das Spiel starten. Das Spielfeld läßt sich in vier Sektoren (Teams) einteilen. Die vier Teams können nun ihrerseits gegeneinander antreten. Kleinere Optionen sind beispielsweise "Anzahl der Leben" oder "Regenerationsfähigkeiten".
+Für den -wohl nicht seltenen- Fall, daß sich mal keine 16 STs auftreiben lassen, stehen drei verschiedene Gattungen unterschiedlich starker und mehr oder weniger intelligenter Compu-Dronen zur Verfügung, die sich als synthetische Gegner oder Kollegen auf unbesetzten Sektoren einsetzen lassen. Daneben besteht selbstverständlich die Möglichkeit, einen "Solo-Mode" zu aktivieren (ALT-S), in welchem man allein gegen die vom Computer gesteuerten Gegner antreten kann. Ein erneutes Betätigen dieser Tastenkombination (bzw. ALT-R für den Game- Master") versetzt den Computer wieder in den ursprünglichen Zustand. Des weiteren kann auch ein Spieler (lediglich "Slave- Machine") eine interessante Kamerafunktion anschalten (ALT-C, zurück mit ALT-S), um so dem aufregenden Geschehen während des Kampfes gemütlich beizuwohnen. Das einzige Ziel während des Spiels besteht nur darin, zum einen kräftig auszuteilen, sprich: die gegnerischen Smilies unter Beschuß zu nehmen, zum anderen aber selbst nicht getroffen zu werden. Neben dem eigentlichen Actionscreen sollte man immer einen Blick auf drei weitere Anzeigen werfen. Ein am oberen Bildschirmrand befindliches "Notenblatt" mit bis zu 16 Noten, die die agierenden Spieler symbolisieren sollen, gibt Auskunft über den momentanen Spielstand. Bei Erfolgserlebnissen in Form von Treffern springt die jeweilige Note eine Notenlinie höher, bis der erste die oberste Linie erreicht und sich gerechterweise als Sieger bezeichnen darf. Daneben findet sich ein kleiner Smily, der das eigene "Seelenleben" widerspiegelt - insofern wichtig, weil die Gemütsverfassung symbolisiert, wieviel Treffer man noch einstecken kann.Zu guter Letzt wird man noch auf ein unscheinbares Window stoßen, indem die während des Spiels selbst "eliminierten" Smilies angezeigt werden. Die Grafik wußte hier sehr gut zu gefallen, schon wegen der Tatsache, daß MIDI-MAZE sowohl in hoher als auch in niedriger Auflösung läuft. In beiden Auflösungsstufen wartet auf den Spieler eine exzellente Grafik, gepaart mit einem sehr sauberen Scrolling. Das 3D-Labyrinth als solches fällt ein wenig eintönig aus, der eigentliche grafische Reiz geht hier von den "Smilies" aus, die gerade aufgrund ihrer verschiedenen Farben und Muster auffallen. Zudem wurden sie besonders schön gezeichnet und animiert. Zusätzliche Würze verleihen den schon genannten Leckerbissen die hervorragenden Randgrafiken. Meines Erachtens handelt es sich bei der Grafik von MIDI-MAZE um eine der besten, die der Atari ST in Sachen Public Domain je hervorgebracht hat. Die Steuerung -alle Optionen lassen sich komfortabel über Windows etc. ansteuern- eröffnet ebenfalls keine Probleme. Während des Spielens können Sie mit Maus (Alt-M) oder per Joystick (Alt-J) Jagd auf ihre Gegner machen. Im Grunde genommen, läßt sich nur Positives über MIDI-MAZE berichten. HYBIRD ARTS tut gut daran, dieses Supergame dem Public-Domain-Pool zuzuführen. Nachträglich bin ich sogar der Meinung, daß dieser überdimensionale Pacmanverschnitt mit seinen unzähligen Möglichkeiten auch im kommerziellen Bereich keine Konkurrenz zu fürchten braucht, denn er ist einfach besser. Auch gerade deswegen sollte man nach Erwerb dieses Spieles den Autoren eine kleine Anerkennungsgebühr zukommen lassen. Die MIDI-MAZE-Diskette enthält übrigens knapp 40 verschiedene Labyrinthsysteme, die sich auch auf einfache Weise per Texteditor selbst erstellen lassen.
+
+Konfiguration: Atari ST
+Programmhinweise: Midi-Maze
+Art: Action-, Geschicklichkeitsspiel
+Quelle: KARSTADT-Public-Domain-Service
+Urteil: MIDI-MAZE ist ein Programm der absoluten Spitzenklasse, welches auch kommerzielle Spiele mit Pacman-Thematik übertrifft. Vor allem die hervorragende Grafik, ein brillantes Scrolling sowie zahlreiche Optionen zeichnen dieses Spiel aus. Zudem können bis zu 16 Computer vernetzt werden, so daß mehrere Spieler gleichzeitig gegeneinander in den zahlreichen Labyrinthen antreten können. Kurzum: Ein absoluter Tophit, der Spielspaß non-stop garantiert.
+Test: Torsten Blum

@@ -1,0 +1,53 @@
+.TH XLABED 6 "10 December 2001"
+.SH NAME
+xlabed \- labyrinth editor for the game of iMaze
+.SH SYNOPSIS
+.in +\w'\fBxlabed \fR'u
+.ti -\w'\fBxlabed \fR'u
+.B xlabed
+[\ \fIlab-file\fR\ ]
+.SH DESCRIPTION
+.LP
+.B xlabed
+is an editor to generate and modify labyrinth files for
+the multi-player network action game
+.BR imaze (6).
+.SH EDITOR CONTROL
+Press and hold the left mouse button to draw a line of walls.
+.LP
+Press and hold the right mouse button to remove a line of walls/doors.
+.LP
+Click the middle mouse button to toggle wall, bidirectional door,
+unidirectional door.
+.LP
+To save the labyrinth, enter the name in the
+.B File
+field, an optional comment in the
+.B Comment
+field, and press the
+.B Save
+button.
+.LP
+To load a new labyrinth, enter the name in the
+.B File
+field, and press the
+.B Load
+button.
+.LP
+.B Quit
+terminates
+.BR xlabed ,
+.B Clear
+clears the drawing area.
+.SH SEE ALSO
+.BR genlab (6),
+.BR imaze (6),
+.BR imazesrv (6),
+.BR imazestat (6),
+.BR ninja (6)
+.SH BUGS
+There is no way to resize the drawing area.
+You can create a dummy labyrinth of the intended size with
+.BR genlab (6),
+then edit it with
+.BR xlabed .

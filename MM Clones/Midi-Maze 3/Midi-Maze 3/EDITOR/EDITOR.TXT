@@ -1,0 +1,303 @@
+
+
+
+
+             Der  MIDI-MAZE  II-Editor
+
+
+
+             Markus Fritze           Christoph Pagalies
+
+
+
+                           6. Januar 1991
+
+
+
+1    Copyright
+
+
+Dieser Editor geh”rt zum MIDI-MAZE II von ä-soft.  Obwohl die Grund-
+
+version von MIDI-MAZE II ein Shareware-Programm ist, darf der Editor
+
+nicht weitergegeben werden.  Die mit ihm erstellten Mazes drfen Sie an
+
+andere registrierte Benutzer von MIDI-MAZE II, jedoch nicht an Besitzer
+
+der Shareware-Version, weitergeben. Zum Tausch von Mazes bietet sich der
+
+Maze-Pool an (siehe unten).
+
+
+
+2    Zur Bedienung
+
+
+Der Editor kann in den gleichen Aufl”sungen wie MIDI-MAZE II, i. e. gering
+
+oder hoch, gestartet werden. Links sieht man ein Raster, in dem das Maze
+
+erstellt wird, rechts sind die Bedienelemente und Infos angeordnet.
+
+   Zu allen Menpunkten ist eine Hilfestellung erh„ltlich: Man drckt die
+
+Help-Taste, der Mauszeiger wird zum Fragezeichen. Wenn man mit dessen
+
+Punkt auf ein Teil des Bildschirms klickt, erh„lt man eine Kurzinfo in einer
+
+Alert-Box.
+
+
+
+2.1    Manuelles Zeichnen
+
+
+Mit der linken Maustaste kann eine Wand gesetzt, mit der rechten gel”scht
+
+werden. Damit MIDI-MAZE noch erkennen kann, wie denn nun eine Wand
+
+l„uft, gibt es eine Regel:  Eine Wand darf nicht auf Felder mit gerader X-
+
+und Y-Koordinate gesetzt werden.
+
+
+
+                                   1
+
+
+
+
+   Welche Wand nun gesetzt wird, ist rechts neben der Koordinatenanzeige
+
+zu sehen. Es gibt drei Wandtypen: Normale W„nde, Tren und unsichtbare
+
+W„nde. Diese werden auf einem Farbmonitor durch unterschiedliche Farben,
+
+auf einem Monochrommonitor durch verschiedene Schraffuren dargestellt.
+
+Der Wandtyp kann ge„ndert werden, indem man auf besagte Anzeige klickt
+
+oder die Tasten (, ) / und * drckt.
+
+
+
+2.2    Die Blockoperationen
+
+
+Drckt man Shift, so kann man mit der linken Maustaste einen Rahmen
+
+aufziehen; mit der rechten einen Rahmen l”schen.
+
+   Control bewirkt das gleiche fr ausgefllte Fl„chen.
+
+   Alternate mit linker Taste schneidet einen Block aus (genauer: er wird
+
+kopiert).  Mit der rechten Taste kann ein solcher Block wieder eingefgt
+
+werden.
+
+
+
+2.3    Andere Tastenkombinationen
+
+
+Mit Insert wird das ganze Maze in einen Buffer kopiert. Es kann dann mit
+
+Home zurckgeholt werden.
+
+   Mit 1-0 kann die Gr”sse des Mazes festgelegt werden. 1 stellt auf 11x11;
+
+0 auf 63x63. Die Gr”sse wird einzeln mit Cursor up und down ver„ndert.
+
+Achtung:  Diese Tasten „ndern nur das Raster auf dem Bildschirm.  Die
+
+endgltige Mazegr”sse wird dadurch definiert, dass Sie einen Rahmen um das
+
+Maze ziehen.  Dieses wird aber vom Editor nicht abgefragt, da dieses beim
+
+alten MIDI-MAZE nicht sein musste.
+
+   Mit Undo k”nnen wichtige nderungen rckg„ngig gemacht werden. Das
+
+Maze wird vor Block- und Diskettenoperationen und dem Erstellen und
+
+L”schen eines Mazes gerettet.  Diese Version kann mit Undo zurckkopiert
+
+werden.  Das retten kann forciert werden, indem Sie die Maus nach oben
+
+rechts (in das Feld "Midimaze Editor") schieben (kein Klick erforderlich).
+
+
+
+
+2.4    Die Icons
+
+
+Die Icons unten rechts bedeuten folgendes:
+
+
+
+                                   2
+
+
+
+
+       __________________________________________________________
+       | Erstellen | Wand l”schen    |    Info   |  Raster      |
+       |___________|_________________|___________|______________|
+       |  L”schen  |    Laden        | Speichern |Datei l”schen |
+       |___________|_________________|___________|______________|
+       |  Drucken  |Mehrfach drucken |Druckskala |     Ende     |
+       |___________|_________________|___________|______________|
+
+
+Erstellen erzeugt ein zuf„lliges Maze (fr den Fall, dass einem die Ideen
+
+          ausgehen...) Bei einem Linksklick wird man nach der Wunsch-
+
+          gr”sse gefragt; drckt man beide Maustasten (erst rechts, dann
+
+          links), so wird ein Maze in der aktuellen Gr”sse erstellt.
+
+
+Wand l”schen   l”scht einzelne W„nde aus dem Maze, um gr”ssere  "Kampf-
+
+          pl„tze" zu erzeugen. Man kann eingeben, wieviele W„nde gel”scht
+
+          werden sollen, und wieviel Teile pro Wand h”chstens entfernt wer-
+
+          den.  Dieses ist wichtig, da ein Maze aus sehr wenigen, langen
+
+          W„nden bestehen kann. Dann h„tte man ohne die Maximalteil-
+
+          zahl mit einem Durchlauf sein ganzes Maze gel”scht.
+
+          Wandstcke am Rand des Mazes werden nicht gel”scht.  Nach
+
+          dem L”schen erfolgt in jedem Fall nochmal ein Durchlauf, bei dem
+
+          eventuell zurckgebliebene Einzeilteile (Wandstcke ohne "Nach-
+
+          barn") entfernt werden.
+
+
+Info      zeigt Informationen ber alles m”gliche an.
+
+
+Raster    schaltet das Hintergrundraster ein und aus. Das ist insbesondere
+
+          bei einem 63x63 Maze wichtig.
+
+
+L”schen  entfernt das aktuelle Maze aus dem Speicher.
+
+
+Laden     l„dt ein Maze von Diskette (oder was auch immer).  Es k”nnen
+
+          sowohl Mazes von MIDI-MAZE als auch MIDI-MAZE II gelesen
+
+          werden.
+
+
+Speichern  schreibt das Maze wieder auf Disk.  Dabei wird standardm„ssig
+
+          das MIDI-MAZE II-Format verwendet. Drckt man beide Tasten
+
+          (wieder rechts zuerst), so kann man die Einstellungen fr den Edi-
+
+          tor ver„ndern: Es wird nach dem Benutzernamen gefragt (der in
+
+          jedem Maze bei MIDI-MAZE II mit abgelegt wird) und welches
+
+          Maze-Format verwendet werden soll.  Normalerweise wird hier
+
+          wohl das ä-soft-MIDI-MAZE II-Format gew„hlt.  Zum Schluss
+
+
+
+                                   3
+
+
+
+
+          kann man die Einstellungen in dem Editor abspeichern; hierbei
+
+          werden auch die Einstellungen fr den Drucker etc. mit geschrie-
+
+          ben.
+
+
+Datei l”schen fr den Fall, dass die Diskette mal wieder zu voll ist.
+
+
+Drucken   bringt das aktuelle Maze zu Papier. Klickt man mit beiden Ta-
+
+          sten, kann man den Drucker ausw„hlen.
+
+
+Mehrfach drucken     fragt nach einem Startpfad und druckt eine šbersicht
+
+          ber alle Mazes aus.  Es werden entweder alle .MAZ- oder alle
+
+          .MZE-Dateien aus, je nachdem, welcher Modus bei "Speichern"
+
+          gew„hlt wurde.
+
+
+Skala     definiert, ob gross (das heisst im Textmodus mit X und .)  oder
+
+          klein (im Graphikmodus) gedruckt werden soll.  Klickt man auf
+
+          dieses Icon, springt der Haken entsprechend um.
+
+
+
+3    Tips zum Erstellen von Mazes
+
+
+MIDI-MAZE II setzt keinen Spieler in ein Feld, dass von vier Mauern umran-
+
+det ist. Solch ein Feld ist also tabu (solange kein Spieler durch W„nde gehen
+
+kann).
+
+
+
+4    Die Pools
+
+
+Fr registrierte MIDI-MAZE II-Anwender verwalten wir einen Maze- und
+
+Adress-Pool.  Der Adress-Pool ist fr Sie schon erledigt:  Wenn Sie auf dem
+
+Registrationsformular sich fr den Pool entschieden haben, finden Sie auf
+
+Ihrer Diskette eine Datei POOL.TXT, die die Adressen anderer MIDI-MAZE II-
+
+Fans enth„lt.
+
+   Der Maze-Pool ist fr fleissige Maze-Ersteller gedacht:  Sie schicken uns
+
+eine Diskette mit Ihren Kreationen und einem Freiumschlag; wir sammeln
+
+solche Mazes und schicken Ihnen die Diskette mit der Mazesammlung zurck.
+
+Wir bitten, insbesondere am Anfang, um etwas Geduld; es w„re wohl kaum
+
+
+
+                                   4
+
+
+
+
+sinnvoll, wenn wir dem ersten Einsender nur seine Mazes (und unsere) zurck-
+
+schicken wrden.  Deshalb behalten wir uns vor, ein wenig zu warten und
+
+Mazes zu horten.
+
+
+
+                                   5

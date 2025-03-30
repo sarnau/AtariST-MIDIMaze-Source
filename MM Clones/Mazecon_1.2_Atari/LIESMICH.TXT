@@ -1,0 +1,105 @@
+Hi Target!
+
+Dies ist die Kurzdoku zu Version 1.2.
+
+Das Programm ist Freeware und darf in unver„nderter Form gerne weiterkopiert
+werden. Ausgenommen ist die KOMMERZIELLE Verbreitung. Darunter fallen auch
+PD-Serien, Coverdisks/-cds von Zeitschriften und „hnliches!!!
+Dies ist OHNE mein schriftliches Einverst„ndnis VERBOTEN!!!
+
+Rckmeldungen jeglicher (freundlicher) Art sind willkommen.
+Meine Emailadresse ist bjoern.spruck@physik.uni-giessen.de
+
+ Features
+----------
+
+- alle MAZ, MZE und DMZ-Files laden, ansehen und speichern
+- Linien malen, Fl„chen fllen
+- Blockfunktionen
+- Random Mazes (mit einstellbaren Werten)
+- Directories browsen
+- aus DMZ Files Autor und Mazeinfo einlesen
+- Mazeinfo und Autor „ndern.
+- Menushortcuts
+- AV Protokoll, Drag&Drop, Kommandozeile
+
+
+Die abgespeicherten MZE Files k”nnen von allen
+Midimaze 2 Versionen geladen werden.
+Das neuste (gepatchte) Midimaze 2 liest auch MAZ und DMZ Files.
+
+
+Die Win Version des Editors kann in einigen Teilen mehr als die
+Atari Version. Das liegt daran, da ich auf dem Atari alles selbst
+programmieren mu, w„hrend ich auf dem PC auf fertige Funktionalit„t
+zurckgreifen kann. Unter anderem beherrscht die Win Version den
+Massenausdruck von Mazes und das Browsen funktioniert besser.
+Dafr kann die Atari Version Drag&Drop ;-)
+
+
+ ToDo
+------
+
+- Mausbedienung des Browsers
+- Browser kann nur kurze Dateinamen (Fsfirst/Fsnext)
+- Undo
+- Sicherheitsabfragen
+
+
+ Bedienung
+-----------
+
+Die Bedienung ist leider zum Teil etwas umst„ndlich oder ungewohnt.
+Auch unterscheidet sie sich von der Win Version in einigen Punkten.
+
+Um etwas zu zeichnen oder zu l”schen mu zuerst im Tool Fenster
+das entsprechende Icon fr Leer, Wand, Glass oder Door aktiviert
+werden. Danach kann man Linien und Fl„chen damit zeichnen. Das
+Zeichnen geschieht mit gedrckter Maustaste. Drcken der rechten
+Maustaste bricht das Zeichnen ab.
+Das Selektieren einen Blockes funktioniert „hnlich:
+Copy anklicken, den Block selektieren, Maus loslassen.
+Wird w„hrend des Loslassens Shift gedrckt, wir der Block
+ausgeschnitten. Jetzt wird automatisch Paste selektiert.
+In das Maze klicken zeigt den Block, mit gedrckter Maustaste
+verschieben, beim Loslassen der Maustaste wird der Block einkopiert.
+Abbruch immer mit rechter Maustaste.
+
+Doppelklick in das Mazefenster zeichnet das Maze neu.
+
+Zus„tzliche Shortcuts:
+Toolselect mit Ctrl 1-6 (Leer,Wand,Glass,Door,Copy,Paste)
+bzw Ctrl-C Copy und Ctrl-V Paste
+
+Das Toolfenster l„t sich auch im Hintergrund bedienen, wenn
+die rechte Maustaste gedrckt und gehalten wird, bevor mit
+der linken ein Icon selektiert wird. Damit erspart man sich
+das anschlieende Toppen des Mazefensters.
+
+Zum Browser:
+CursorUp/CursorDown vorheriges/naechstes Maze laden.
+ScrollPfeilUp/ScrollpfeilDown einen Eintrag hoch/runter scrollen.
+Wer ein multitaskingf„higes AES benutzt, sollte lieber Drag&Drop
+vom Desktop benutzen, hier gibt es zumindest keine Probleme mit
+langen Dateinamen.
+
+
+ Dank an...
+------------
+
+- Christian Felsch, den QED Autor. Die QED Sourcen haben mir bei
+  der Implementaion von AV-Protokoll und Drag&Drop sehr geholfen.
+- Thomas Binder, den Autor von Thing, welcher mir Tipps zu
+  Drag&Drop und den "neuen" AES Funktionen gegeben hat.
+
+
+
+Mazes, die Win9x/NT Version des Editors und neue Releases der
+gepatchten Midimaze 2 Version gibt es unter
+
+
+http://midimaze.atari.org
+
+
+      Ninja 1 says:
+   "Have a nice day!"

@@ -1,0 +1,54 @@
+Hi Target!
+
+Dies ist die Kurzdoku zu Version 1.1.
+
+Das Programm ist Freeware und darf in unveränderter Form gerne weiterkopiert
+werden. Ausgenommen ist die KOMMERZIELLE Verbreitung. Darunter fallen auch
+PD-Serien, Coverdisks/-cds von Zeitschriften und ähnliches!!!
+Dies ist OHNE mein schriftliches Einverständnis VERBOTEN!!!
+
+Rückmeldungen jeglicher (freundlicher) Art sind willkommen.
+Meine Emailadresse ist bjoern.spruck@physik.uni-giessen.de
+
+Was geht:
+- alle MAZ, MZE und DMZ-Files laden, ansehen und speichern
+- Directories browsen
+- Mazegröße, Mazeinfo und Autor ändern
+- Linien & Boxen zeichnen (linke Maustaste) oder löschen (rechte Maustaste)
+- einfache Blockoperationen
+- ÄÖÜäöüß Umwandlung PC-Atari und zurück
+- Erzeugen von Random Mazes
+- Drucken von ganzen Verzeichnissen mit Mazeinfo, Autor, Groesse, ...
+- Die abgespeicherten MZE Files können von allen Midimaze 2 Versionen
+  geladen werden. Die von mir gepatchte Version liest zusätzlich zu
+  allen MZE Files jetzt auch alle MAZ und DMZ Files.
+- Browser und Editor benutzen getrennte Puffer, d.h. beim Browsen wird das
+  editierte Maze nicht mehr zerstört.
+
+Was noch nicht geht:
+- Alle Sonderzeichen außer ÄÖÜäöüß werden NICHT umgewandelt und damit falsch angezeigt!
+- keine Sicherheitsabfrage beim Beenden oder Laden von Mazes ("Maze wurde geändert...")
+- Mazetest beim Laden und Speichern (Umrandung, Größe)
+
+Doppelklick in das Mazefenster führt ein Redraw aus.
+
+Noch ein Wort zu den Blockoperationen:
+1) Copy Block anklicken
+2) mit der gedrückter Maustaste ein Rechteck selektieren
+3) Maustaste loslassen. Wird dabei Shift gedrückt wird der Block ausgeschnitten,
+   sonst wird er nur kopiert.
+4) Nach dem Loslassen schaltet das Programm automatisch in den PasteBlock
+   Modus. Der Block "hängt" dann an der Maus und wird durch Klick mit der
+   linken Maustaste in das Maze kopiert.
+5) Mit Klick der rechten Maustaste kann wieder in den CopyBlock Mode geschaltet werden
+
+
+Mazes, die Atari Version des Editors und neue Releases der gepatchten
+Midimaze 2 Version gibt es unter
+
+
+http://midimaze.atari.org
+
+
+      Ninja 1 says:
+   "Have a nice day!"

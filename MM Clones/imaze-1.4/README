@@ -1,0 +1,312 @@
+
+
+                          iMaze - version 1.4
+                             December 2001
+
+                          by Hans-Ulrich Kiel
+                          and Joerg Czeranski
+
+
+                       join the iMaze community
+                             and have fun!
+
+
+
+Copyright
+=========
+
+Copyright (c) 1993-2001 by Hans-Ulrich Kiel and Joerg Czeranski
+
+See the file "Copyright" for licence conditions.
+
+
+What is iMaze?
+==============
+
+iMaze is a multi-player network action game for TCP/IP with 3D graphics
+under X11.
+
+It has successfully broken down the local FORTRAN lessons.
+
+Other features include:
+- sophisticated, reliable network protocol, works even with SLIP connections
+  via modem
+- windows can be freely scaled to avoid speed drawbacks due to poor display
+  performance
+- modular, portable source code
+- scores
+- extensive documentation (german)
+
+After hours of testing, dueling and enjoying MidiMaze 2 on the Atari ST we
+decided that it wouldn't be such a bad idea to write something similar for
+Unix. "iMaze" means "Internet Maze" and by a strange coincidence it is also
+a substring of "MidiMaze".
+
+For those whom fate has denied the pleasures of MidiMaze we should add the
+following:
+
+You run through a labyrinth and shoot everything that is round without being
+hit by other round anythings.
+Of course anything round is one of the following:
+- other players playing over the net
+- computer controlled ninjas
+- deadly shots (except your own)
+
+We even managed to have this work be accepted as our "Softwarepraktikum"
+(some kind of term project every computer science student in Clausthal has
+to do).
+
+If you wonder what Clausthal is: it is that little town just between Berlin
+and Bonn with no girls, bad weather, slow Internet connectivity and weird
+people willing to devote their time to stupid computer games.
+
+
+Supported systems
+=================
+
+iMaze was tested successfully on the following systems:
+Solaris, SuSE Linux, FreeBSD, Tru64 Unix, AIX, HP-UX.
+
+You may be also able to compile it with another OS.
+
+It should run with any graphics hardware including black and white and
+grayscale X displays.
+
+Sound is implemented for Linux, FreeBSD, Solaris and Tru64 Unix
+and (analog) joystick support only for Linux and FreeBSD.
+The Linux joystick support was written for the joystick kernel module 0.7.3.
+
+
+What do you get?
+================
+
+If you don't have "imaze-1.4.tar.gz" yet, get it now from
+http://home.tu-clausthal.de/student/iMaze/ (while this README waits for you).
+
+Unzip it and un-tar it, it will create the directory "imaze-1.4".
+
+The directory "imaze-1.4" contains this README and the Copyright.
+The directory "imaze-1.4/source" contains the sources.
+The directory "imaze-1.4/man6" contains the man pages.
+The directory "imaze-1.4/cat6" contains the cat-man pages.
+The directory "imaze-1.4/labs" contains some demo labyrinths.
+The directory "imaze-1.4/sounds" contains sound files.
+
+More sound files and german documentation for version 1.0 are also
+available on the web site.
+
+
+How to compile?
+===============
+
+Make sure you have a C compiler and the X11 development headers.
+Then type "cd imaze-1.4/source" and run "./configure" there.
+
+For configure options see "./configure -h".
+
+After running configure you may want to define the default server host as:
+DEFINES=-DDEFAULT_SERVER=\"host.name\" in the Makefile. Otherwise the
+default is to connect to the iMaze server in Clausthal.
+
+If you use the sound, you may set the sound directory as:
+DEFINES=-DDEFAULT_SOUND_DIR=\"/sound/dir\" in the Makefile.
+
+Then type "make".
+
+
+How to start?
+=============
+
+First start the server "imazesrv", then the clients "imaze"/"ninja".
+See the man pages for options and game controls.
+
+
+The rules of the game
+=====================
+
+Aim:
+Run through the labyrinth and shoot the other players without being shot
+yourself.
+
+Doors:
+Colored walls are doors. Some doors can be passed through in one direction
+only.
+
+Shots:
+You can only shoot forward. If you shoot again, your previous shot dies.
+The shot dies also if it hits a player, a wall or a door.
+
+Death:
+After being shot, you are suspended from the game for 3 seconds and then
+join in again at a random place.
+
+Score:
+You get 1 point for every shot enemy.
+
+
+How to use the user client?
+===========================
+
+The XView client has four buttons:
+"Open" opens a front view, a rear view, a map, a compass or a scores list.
+"Properties" opens a properties window. You may activate scrollbars for
+  the map there.
+"Connect/Disconnect" connects/disconnects your client to/from the server.
+"Pause/Resume" pauses/resumes the player.
+
+The Motif/Athena client has four menus:
+"File" only contains an "Exit" item.
+"Window" is the same as the "Open" menu of the XView client.
+"Server" contains "Connect" and "Disconnect".
+"Game" allows pausing and resuming the player with the "Pause" and "Resume"
+  items.
+
+All clients have a check box "Camera mode" that switches the
+client into a watch-only mode.
+
+After connecting to the server, the front view and scores windows
+open automatically.
+
+For playing click on any of the client windows, so that it receives
+keyboard input.
+
+The cursor keys move the player, the spacebar and the shift
+and alt keys are for shooting (remember: you have one shot only).
+With ^S you pause your player, with ^Q you resume, Tab turns
+the player by 180 degrees if allowed by the server.
+
+The main window will display a 3D view. If you are not in the game, the
+main window is simply grey, if you have been shot, the lucky enemy and
+his message is displayed.
+
+
+How to create new labyrinths?
+=============================
+
+You can create your own labyrinths with "genlab".
+
+Typing "./genlab" gives you the possible arguments.
+
+Just play around with it. But you should at least specify "-v" for verbose
+and "-s" for searching for a labyrinth without traps.
+
+The values for -d and -D shouldn't be too high.
+
+
+How to create new sounds?
+=========================
+
+The sound files use the Sun audio u-law 8000hz format. If you
+have a microphone, you can record new sounds with the SunOS
+audiotool.
+
+
+Known bugs
+==========
+
+Often the ninjas just don't have an idea where to move. Just give them a
+break, they're still kind of dumb. :-)
+
+It is no bug that you can't leave a one way door in the other direction,
+even if you have just touched it.
+
+
+Prior versions
+==============
+
+The version 1.0 was released in May 1994.
+
+Solved bugs since 1.0:
+- the server produced zombie processes
+- the XView client complained about "embedding seal incorrect"
+- the XView client sometimes omitted walls in the 3D display
+- unused bits in the labyrinth files weren't set to zero by genlab
+
+New features since 1.0:
+- compatibility with HP-UX, Ultrix and maybe AIX
+- logging of connections to the server
+- sound for the XView client on SunOS and Linux
+- joystick for the XView client on Linux
+- man pages
+
+The version 1.1 was released in July 1994.
+
+Solved bugs since 1.1:
+- problems with Solaris 2.x
+- some of the 3D bugs were fixed
+
+New features since 1.1:
+- score
+- X resources
+- client doesn't terminate after disconnect,
+  you can reconnect to same or other server
+- 2 hours timeout for the ninja
+- a message is sent to players that you kill
+
+The version 1.2 was released in December 1994.
+
+Solved bugs since 1.2:
+- the server name was not configurable in the Makefile
+- sometimes the client kill message was scrambled in the 3D display
+- Linux sound didn't work properly
+
+New features since 1.2:
+- Motif support
+- support for several new platforms
+- pause button
+
+The version 1.3 was released in February 1996.
+
+New features since 1.3:
+
+- Athena Widgets support
+- sound for Motif and Athena Widgets
+- new command line options
+- server options for game speed, reflective shots, autoanswer shots,
+  quickturns and faceless, colorless or invisible players
+- labyrinth editor xlabed
+- camera mode
+
+
+Where to get iMaze from?
+========================
+
+The newest version is always available on
+http://home.tu-clausthal.de/student/iMaze/
+
+
+Credits
+=======
+
+Axel Buttchereit at the Institute for Computer Science of the TU Clausthal
+  for guiding the project until version 1.0
+Christian Perle at the TU Clausthal
+  for designing the title picture of the documentation with POVray
+Oliver Teuber at the FH Hannover
+  for implementing sound on Linux and arranging MidiMaze sessions
+Andreas Piefke at the TU Clausthal
+  for allowing us to test sound and joystick support on his Linux machine
+Gordon Berkley at Motorola Communications Israel Ltd., Tel Aviv
+  for HP patches
+Stefan Schwoon and Andre at the University of Hildesheim
+  for working on enhancements
+Ronald Kuehn at the TU Clausthal
+  for the FreeBSD support
+Ingo Macherius at the TU Clausthal
+  for the Sinix support
+Thomas Klaube in Stuttgart
+  for special support of the release of version 1.4
+
+and all beta testers and people who sent us bug reports.
+
+
+How to contact us?
+==================
+
+The iMaze developers, Hans-Ulrich Kiel and Joerg Czeranski, can be reached
+via email as (but please don't):
+
+imaze@tu-clausthal.de
+
+There is also a WWW page available at
+http://home.tu-clausthal.de/student/iMaze/

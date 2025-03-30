@@ -1,0 +1,18 @@
+Achtung, einige Neuerungen:
+
+- das alte Midi-Maze ist im MIDIMAZE.PD\MIDIMAZE.OLD\ Verzeichnis zu
+  finden. Da es von Karstadt in ihrer PD-Sammlung verbreitet wird, und
+  in der Kurzanleitung auch steht, daû Midi-Maze (eins!) PD ist, sehen
+  wird keinen Grund mehr, Midi-Maze (eins!) nicht auch beizulegen.
+  Dies ermîglicht es nun auch mal alleine eine Runde zu spielen (wenn
+  auch ohne die Extras von Midi-Maze II).
+- Der Editor wurde Åberarbeitet. Die alte Version konnte ja nur fehler-
+  haft bzw. gar nicht richtig drucken. Nun sollte es keine Probleme mehr
+  geben, da die Ausgabe Åber das GDOS vorgenommen wird. Dazu muû (natÅrlich)
+  ein entsprechender Druckertreiber installiert sein. Somit kann man
+  jetzt nicht nur auf 9-Nadlern und 24-Nadlern ausdrucken, sondern auch
+  auf einem HP-Deskjet (Achtung: es gibt mindestens einen fehlerhaften
+  Treiber, der eine zu groûe Seitengrîûe zurÅckgibt! Somit wird nicht
+  richtig ausgedruckt. Dies liegt NICHT am Editor, sondern am Drucker-
+  treiber!)
+

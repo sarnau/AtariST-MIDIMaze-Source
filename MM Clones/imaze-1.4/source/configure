@@ -1,0 +1,362 @@
+#!/bin/sh
+
+#
+# - - -  iMaze  - - -
+#
+# Copyright (c) 1993-2001 by Hans-Ulrich Kiel & Joerg Czeranski
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are
+# met:
+#
+# 1. Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+# 3. The name of the authors may not be used to endorse or promote
+#    products derived from this software without specific prior written
+#    permission.
+# 4. The name ``iMaze'' may not be used for products derived from this
+#    software unless a prefix or a suffix is added to the name.
+#
+# THIS SOFTWARE IS PROVIDED BY THE AUTHORS ``AS IS'' AND ANY EXPRESS OR
+# IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+# WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+# DISCLAIMED.  IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY DIRECT,
+# INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+# (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+# SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+# STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
+# IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+# POSSIBILITY OF SUCH DAMAGE.
+#
+#
+# File: configure
+#
+# SccsID:
+#  @(#)configure	3.4 12/07/01
+#
+# Comment:
+#  Used to build Makefile from Makefile.in
+#
+
+#----------
+#
+#	Set basic defaults
+#
+
+Graphics=Athena
+LibpathTmpl=-L@
+
+MakefileIn=Makefile.in
+MakefileOut=Makefile
+
+SedQuote="s/[^=]*\$/'&'/"
+
+#----------
+#
+#	Determine the OS
+#
+
+OS="`uname -s`-`uname -r`"
+
+# override from the command line
+case $1 in
+OS=*-*)	eval `echo "$1" | sed "$SedQuote"`; shift;;
+OS=*)	eval `echo "${1}-unknown" | sed "$SedQuote"`; shift;;
+esac
+
+
+#----------
+#
+#	Add OS specific values
+#
+
+case $OS in
+
+AIX-*)
+	CFlags='-DADDRLEN_T=size_t -DNEED_ERRLIST'
+
+	Graphics=Motif
+	;;
+
+FreeBSD-*)
+	Graphics='XView'
+	X11Dir='/usr/X11R6'
+
+	Audio=voxware
+
+	Joystick=fbsd
+	;;
+
+HPUX-*)
+	CFlags='-DNEED_ERRLIST -Ae'
+
+	Graphics=Motif
+	X11IncDir='/usr/include/X11R5'
+	X11LibDir='/usr/lib/X11R5'
+	MotifIncDir='/usr/include/Motif1.2'
+	MotifLibDir='/usr/lib/Motif1.2'
+	;;
+
+Linux-*)
+	Graphics=Motif
+	X11Dir='/usr/X11R6'
+	XViewDir='/usr/openwin'
+
+	Audio=voxware
+
+	JoystickIf=linux
+	;;
+
+OSF1-*)
+	CFlags='-std1'
+
+	Graphics=Motif
+
+	AudioIf=mme
+	AudioLibsIf='-lmme'
+	;;
+
+SunOS-4.*)
+	CFlags='-DNEED_ERRLIST'
+
+	Graphics=XView
+	X11Dir='/usr/openwin'
+
+	Audio=sun
+	AudioCFlags='-DSUN_AUDIOIO_H'
+	;;
+
+SunOS-5.*)
+	CFlags='-DNEED_ERRLIST'
+	LibpathTmpl='-L@ -R@'
+	Libs='-lsocket -lnsl'
+
+	Graphics=Motif
+	X11Dir='/usr/openwin'
+	MotifDir='/usr/dt'
+
+	Audio=sun
+	;;
+
+ULTRIX-*)
+	CFlags='-std1 -DNEED_ERRLIST'
+
+	Graphics=Motif
+	;;
+
+*)
+	OS=unknown
+	;;
+
+esac
+
+
+#----------
+#
+#	Fetch variables from the command line to override
+#
+
+while [ $# -ge 1 ]; do
+	case $1 in
+	?*=*)
+		eval `echo "$1" | sed "$SedQuote"`
+		;;
+
+	[Aa]thena)
+		Graphics=Athena
+		;;
+	
+	[Mm]otif)
+		Graphics=Motif
+		;;
+	
+	[Xx][Vv]iew)
+		Graphics=XView
+		;;
+	
+	[Aa]udio)
+		[ -z "$Audio" -a ! -z "$AudioIf" ] && Audio=$AudioIf
+		[ -z "$AudioCFlags" -a ! -z "$AudioCFlagsIf" ] && \
+			AudioCFlags=$AudioCFlagsIf
+		[ -z "$AudioLFlags" -a ! -z "$AudioLFlagsIf" ] && \
+			AudioLFlags=$AudioLFlagsIf
+		[ -z "$AudioLibs" -a ! -z "$AudioLibsIf" ] && \
+			AudioLibs=$AudioLibsIf
+		;;
+
+	[Jj]oystick)
+		[ -z "$Joystick" -a ! -z "$JoystickIf" ] && Joystick=$JoystickIf
+		[ -z "$JoystickCFlags" -a ! -z "$JoystickCFlagsIf" ] && \
+			JoystickCFlags=$JoystickCFlagsIf
+		[ -z "$JoystickLFlags" -a ! -z "$JoystickLFlagsIf" ] && \
+			JoystickLFlags=$JoystickLFlagsIf
+		[ -z "$JoystickLibs" -a ! -z "$JoystickLibsIf" ] && \
+			JoystickLibs=$JoystickLibsIf
+		;;
+
+	[Nn]o[Aa]udio)
+		Audio=
+		AudioCFlags=
+		AudioLFlags=
+		AudioLibs=
+		;;
+
+	[Nn]o[Jj]oystick)
+		Joystick=
+		JoystickCFlags=
+		JoystickLFlags=
+		JoystickLibs=
+		;;
+
+	*)
+		cat << EOF
+
+Valid parameters for configure:
+
+   Var=Value    set a configure or Makefile variable
+
+   athena       use Athena Widgets
+   motif        use Motif
+   xview        use OpenWindows/XView
+
+   audio        compile with audio support (if implemented)
+   joystick     compile with joystick support (if implemented)
+
+   noaudio      compile without audio support (even if implemented)
+   nojoystick   compile without joystick support (even if implemented)
+
+   help         print this message
+
+The OS was detected as: $OS
+
+EOF
+		exit 1
+		;;
+	esac
+
+	shift
+done
+
+
+#----------
+#
+#	Calculate dependent variables
+#
+
+[ -z "$X11IncDir" -a ! -z "$X11Dir" ] && X11IncDir=$X11Dir/include
+[ -z "$X11LibDir" -a ! -z "$X11Dir" ] && X11LibDir=$X11Dir/lib
+
+[ -z "$AthenaIncDir" -a ! -z "$AthenaDir" ] && AthenaIncDir=$AthenaDir/include
+[ -z "$AthenaLibDir" -a ! -z "$AthenaDir" ] && AthenaLibDir=$AthenaDir/lib
+
+[ -z "$MotifIncDir" -a ! -z "$MotifDir" ] && MotifIncDir=$MotifDir/include
+[ -z "$MotifLibDir" -a ! -z "$MotifDir" ] && MotifLibDir=$MotifDir/lib
+
+[ -z "$XViewIncDir" -a ! -z "$XViewDir" ] && XViewIncDir=$XViewDir/include
+[ -z "$XViewLibDir" -a ! -z "$XViewDir" ] && XViewLibDir=$XViewDir/lib
+
+[ -z "$X11CFlags" -a ! -z "$X11IncDir" ] && X11CFlags=-I$X11IncDir
+[ -z "$X11LFlags" -a ! -z "$X11LibDir" ] && \
+	X11LFlags=`echo "$LibpathTmpl" | sed "s!@!$X11LibDir!g"`
+
+[ -z "$AthenaCFlags" -a ! -z "$AthenaIncDir" ] && AthenaCFlags=-I$AthenaIncDir
+[ -z "$AthenaLFlags" -a ! -z "$AthenaLibDir" ] && \
+	AthenaLFlags=`echo "$LibpathTmpl" | sed "s!@!$AthenaLibDir!g"`
+
+[ -z "$MotifCFlags" -a ! -z "$MotifIncDir" ] && MotifCFlags=-I$MotifIncDir
+[ -z "$MotifLFlags" -a ! -z "$MotifLibDir" ] && \
+	MotifLFlags=`echo "$LibpathTmpl" | sed "s!@!$MotifLibDir!g"`
+
+[ -z "$XViewCFlags" -a ! -z "$XViewIncDir" ] && XViewCFlags=-I$XViewIncDir
+[ -z "$XViewLFlags" -a ! -z "$XViewLibDir" ] && \
+	XViewLFlags=`echo "$LibpathTmpl" | sed "s!@!$XViewLibDir!g"`
+
+[ -z "$Audio" ] && Audio=no
+[ -z "$AudioObj" -a ! -z "$Audio" ] && AudioObj=${Audio}_audio.o
+
+[ -z "$Joystick" ] && Joystick=no
+[ -z "$JoystickObj" -a ! -z "$Joystick" ] && JoystickObj=${Joystick}_joystick.o
+
+Summary="OS: $OS, Graphics: $Graphics, Audio: $Audio, Joystick: $Joystick"
+
+
+#----------
+#
+#	Create the Makefile
+#
+
+[ -f $MakefileOut ] && mv -f $MakefileOut ${MakefileOut}.backup
+
+(
+sed '/^#BEGIN configure/,$d' $MakefileIn
+
+sed '/= *$/d' << EOF
+#BEGIN configure output
+
+#
+# configure summary:
+#
+# $Summary
+#
+
+# common
+CFlags=$CFlags
+Libs=$Libs
+
+# graphics
+X11CFlags=$X11CFlags
+X11LFlags=$X11LFlags
+AthenaCFlags=$AthenaCFlags
+AthenaLFlags=$AthenaLFlags
+MotifCFlags=$MotifCFlags
+MotifLFlags=$MotifLFlags
+XViewCFlags=$XViewCFlags
+XViewLFlags=$XViewLFlags
+
+# audio
+AudioCFlags=$AudioCFlags
+AudioLFlags=$AudioLFlags
+AudioObj=$AudioObj
+AudioLibs=$AudioLibs
+
+# joystick
+JoystickCFlags=$JoystickCFlags
+JoystickLFlags=$JoystickLFlags
+JoystickObj=$JoystickObj
+JoystickLibs=$JoystickLibs
+
+# aggregate variables
+ClientCFlags=\$(CFlags) \$(DEFINES) \$(X11CFlags) \$(${Graphics}CFlags) \\
+	\$(AudioCFlags) \$(JoystickCFlags)
+ClientLFlags=\$(LFlags) \$(X11LFlags) \$(${Graphics}LFlags) \\
+	\$(AudioLFlags) \$(JoystickLFlags)
+ClientObjs=\$(X11Objs) \$(${Graphics}Objs) \$(AudioObj) \$(JoystickObj)
+ClientLibs=\$(${Graphics}Libs) \$(X11Libs) \$(AudioLibs) \$(JoystickLibs) \$(Libs)
+BasicCFlags=\$(CFlags) \$(DEFINES)
+BasicLFlags=\$(LFlags)
+BasicLibs=\$(Libs)
+
+#END configure output
+EOF
+
+sed '1,/^#END configure/d' $MakefileIn
+) > $MakefileOut
+
+
+#----------
+#
+#	Print a summary
+#
+
+echo $Summary
+
+
+#----------
+#
+#	Done
+#

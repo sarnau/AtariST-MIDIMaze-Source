@@ -1,0 +1,66 @@
+
+
+
+NINJA(6)                 Games and Demos                 NINJA(6)
+
+
+
+NAME
+     ninja - a simple automated iMaze client
+
+SYNOPSIS
+     ninja     [ -hiQ ]     [ -H      _s_e_r_v_e_r-_h_o_s_t[:_s_e_r_v_e_r-_p_o_r_t] ]
+           [ -m _m_e_s_s_a_g_e ]   [ -s  _s_h_o_t-_p_e_r_c_e_n_t_a_g_e ]  [ -t  _c_o_l_o_r-
+           _i_n_d_e_x ]
+
+DESCRIPTION
+     ninja is an automated non-interactive TCP/IP client for  the
+     multi-player network action game iMaze.
+
+OPTIONS
+     -h   Print command line option help.
+
+     -H _s_e_r_v_e_r-_h_o_s_t[:_s_e_r_v_e_r-_p_o_r_t]
+          The host and port _i_m_a_z_e_s_r_v(6) is using.
+
+     -i   Use an inverse  strategy:  ninja  runs  away  from  the
+          nearest player (backwards).
+
+     -m _m_e_s_s_a_g_e
+          Message that is sent to other  players  when  they  are
+          killed.
+
+     -Q   Use quickturn if available.
+
+     -s _s_h_o_t-_p_e_r_c_e_n_t_a_g_e
+          Probability that _n_i_n_j_a will shoot when no shot  of  his
+          is there. Default is 100.
+
+     -t _c_o_l_o_r-_i_n_d_e_x
+          Run towards player with color _c_o_l_o_r-_i_n_d_e_x  as  reported
+          by _i_m_a_z_e_s_t_a_t(6).
+
+SEE ALSO
+     genlab(6), imaze(6), imazesrv(6), imazestat(6), xlabed(6)
+
+BUGS
+     The _n_i_n_j_a is really dumb.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SunOS 5.5.1       Last change: 10 December 2001                 1
+
+
+

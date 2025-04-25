@@ -68,7 +68,7 @@ void init_joystick(void) {
     savedKbdVectors.kb_mousevec = KBDVECS_ptr->kb_mousevec;
     savedKbdVectors.kb_clockvec = KBDVECS_ptr->kb_clockvec;
     savedKbdVectors.kb_joyvec = KBDVECS_ptr->kb_joyvec;
-    savedKbdVectors.kb_ikbdsys = KBDVECS_ptr->kb_kbdsys;
+    savedKbdVectors.kb_kbdsys = KBDVECS_ptr->kb_kbdsys;
     KBDVECS_ptr->kb_joyvec = (void*)own_joyvec; /* install a new joystick vector */
 
     Bconout(IKBD, 21); /* SET JOYSTICK INTERROGATION MODE (no automatic reporting, the host has to ask) */
@@ -136,7 +136,7 @@ void init_mouse(void) {
     savedKbdVectors.kb_mousevec = KBDVECS_ptr->kb_mousevec;
     savedKbdVectors.kb_clockvec = KBDVECS_ptr->kb_clockvec;
     savedKbdVectors.kb_joyvec = KBDVECS_ptr->kb_joyvec;
-    savedKbdVectors.kb_ikbdsys = KBDVECS_ptr->kb_kbdsys;
+    savedKbdVectors.kb_kbdsys = KBDVECS_ptr->kb_kbdsys;
     KBDVECS_ptr->kb_mousevec = (void *)own_mousevec; /* setup our own mouse vector */
 
     mouse_record[1] = mouse_record[2] = 0; /* reset the variables (BUG: should be done before, because _theoretically_ the interrupt could hit before) */

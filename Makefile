@@ -1,0 +1,102 @@
+CC = m68k-atari-mint-gcc
+#CC = ../bin/linux/cc68
+
+LD = $(CC)
+CPU_CFLAGS =
+OPT = -O2 -fomit-frame-pointer
+WARN = -Werror
+INCLUDES = -I. -I../MIDIMaze/Helper\ Sources/
+CFLAGS = $(CPU_CFLAGS) $(OPT) $(WARN) $(INCLUDES)
+
+
+OBJS = \
+	DRAW_COL.O \
+	DRAW_BW.O \
+	BLIT_DRAW_SHAPE_COL.O \
+	BLIT_DRAW_SHAPE_BW.O \
+	RND.O \
+	MAZE_SET_OBJ.O \
+	MAKE_DRAWLIST.O \
+	SETUP_PLAYERS.O \
+	MAKE_RENDERLIST.O \
+	MAZE_OBJECT.O \
+	LOAD_MAZE.O \
+	PREFDIALOG.O \
+	AESINIT.O \
+	SAVESCREEN.O \
+	RSCMISC.O \
+	JOYSTICKMOUSE.O \
+	DISPATCH.O \
+	DECOMPRESSTITLE.O \
+	CALC_TAB.O \
+	MULS_DIVS.O \
+	CHECK_COPY_PROT.O \
+	DRAWWALLS.O \
+	NOTEBOARD.O \
+	MASTER.O \
+	DRAW2D.O \
+	SCREEN.O \
+	ENDSHAPES.O \
+	STRING.O \
+	CONTERM.O \
+	MORESHAPES.O \
+	MISCOUTPUT.O \
+	DRAW3D.O \
+	POPCHART.O \
+	RUNGAME.O \
+	MIDICOMM.O \
+	DRAWSHAPE.O \
+	SLAVE.O \
+	MIDICAM.O \
+	MAINGAME.O \
+	GAMELOGIC.O \
+	DRONE.O \
+	FASTMATH.O \
+	HAPPYINDICATOR.O \
+	SOUND.O \
+	READMIDI.O \
+	LOWMEM.O \
+	MAIN.O \
+	gccstub.o \
+	$(empty)
+
+#	mac.o
+
+all:: midimaze.prg
+
+.SUFFIXES: .C .O
+
+.C.O:
+	$(CC) $(CFLAGS) -x c -c -o $@ $<
+
+DRAW_COL.O: ../ASOURCES/DRAW_COL.C
+	$(CC) $(CFLAGS) -x c -c -o $@ $<
+
+DRAW_BW.O: ../ASOURCES/DRAW_BW.C
+	$(CC) $(CFLAGS) -x c -c -o $@ $<
+
+BLIT_DRAW_SHAPE_BW.O: ../ASOURCES/BLIT_DRAW_SHAPE_BW.C
+	$(CC) $(CFLAGS) -x c -c -o $@ $<
+
+BLIT_DRAW_SHAPE_COL.O: ../ASOURCES/BLIT_DRAW_SHAPE_COL.C
+	$(CC) $(CFLAGS) -x c -c -o $@ $<
+
+CALC_TAB.O: ../ASOURCES/CALC_TAB.C
+	$(CC) $(CFLAGS) -x c -c -o $@ $<
+
+DECOMPRESSTITLE.O: ../ASOURCES/DECOMPRESSTITLE.C
+	$(CC) $(CFLAGS) -x c -c -o $@ $<
+
+MULS_DIVS.O: ../ASOURCES/MULS_DIVS.C
+	$(CC) $(CFLAGS) -x c -c -o $@ $<
+
+CHECK_COPY_PROT.O: ../ASOURCES/CHECK_COPY_PROT.C
+	$(CC) $(CFLAGS) -x c -c -o $@ $<
+
+midimaze.prg: $(OBJS)
+	$(LD) -o $@ $(OBJS) -lgem
+
+$(OBJS): GLOBALS.H ../MIDIMaze/Helper\ Sources/PORTAB.H
+
+clean::
+	$(RM) *.o *.prg

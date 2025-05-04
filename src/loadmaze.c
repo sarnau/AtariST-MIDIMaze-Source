@@ -11,7 +11,7 @@ short maze_size;
 int LoadMaze(const char *pathname,const char *filename) {
 char alertBuf[64];
 char tmp;
-char lineBuf[66];
+char lineBuf[MAZE_MAX_SIZE + 2];
 int error;
 int fhandle;
 int fieldX;
@@ -52,13 +52,18 @@ int fieldY;
 
     /* read over the CR/LF (because a MAZ-File is an Atari ST text file) */
     Fread(fhandle, 1, &tmp);
-    Fread(fhandle, 1, &tmp);
+    if (tmp == '\r')
+        Fread(fhandle, 1, &tmp);
 
     for(fieldY = 0; fieldY <= MAZE_MAX_SIZE-1; fieldY++) {
         /* read a line of the MAZ (+ 3, because the final 'X' and CR/LF at the end) */
-        if(fieldY <= maze_size && Fread(fhandle, maze_size+3, &lineBuf) != maze_size+3) {
-            form_alert(1, "[3][ |Error reading|maze file][OK]");
-            return -2;
+        if(fieldY <= maze_size){
+            if (Fread(fhandle, maze_size+2, lineBuf) != maze_size+2) {
+                form_alert(1, "[3][ |Error reading|maze file][OK]");
+                return -2;
+            }
+            if (lineBuf[maze_size + 1] == '\r')
+                Fread(fhandle, 1, &tmp);
         }
         for(fieldX = 0; fieldX <= MAZE_MAX_SIZE-1; fieldX++) {
             if(fieldY <= maze_size && fieldX <= maze_size) {

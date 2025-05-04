@@ -6,7 +6,7 @@
  *
  */
 
-#include "GLOBALS.H"
+#include "globals.h"
 #include <sys/time.h>
 
 // We do not have low-memory variables, so we implement VBL Clock as a 60Hz counter

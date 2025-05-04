@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "GLOBALS.H"
+#import "globals.h"
 
 int gBIOSKeyCode = 0;
 int gAltKeyCode = 0;

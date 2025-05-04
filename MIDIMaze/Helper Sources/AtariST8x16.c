@@ -1,4 +1,4 @@
-#include "BITMACRO.H"
+#include "bitmacro.h"
 
 // Original Atari ST 8x16 font, used for b/w
 static const unsigned char     atariST8x16[16 * (16 * 16)] = {

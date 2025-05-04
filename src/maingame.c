@@ -241,20 +241,20 @@ int currentScore;
             /* flash the background color */
             if(screen_rez) {
                 Vsync();
-                Setcolor(0, 1); /* invert color */
+                (void)Setcolor(0, 1); /* invert color */
                 bwColorFlag = TRUE;
             } else {
                 /* flash in the color of the game who hit the player */
-                Setcolor(0, colortable[color_cnv_back[player_data[own_number].ply_gunman]]);
+                (void)Setcolor(0, colortable[color_cnv_back[player_data[own_number].ply_gunman]]);
             }
         } else {
             if(screen_rez) {
                 if(bwColorFlag) {
                     bwColorFlag = FALSE;
-                    Setcolor(0, 0); /* do not invert the background color */
+                    (void)Setcolor(0, 0); /* do not invert the background color */
                 }
             } else {
-                Setcolor(0, 0); /* reset background color to black */
+                (void)Setcolor(0, 0); /* reset background color to black */
             }
         }
 
@@ -436,7 +436,7 @@ int currentScore;
             player_data[i].ply_hitflag = FALSE;
 
         if(player_joy_table[0] == MIDI_TERMINATE_GAME) {
-            Setcolor(0, 0); /* reset background color */
+            (void)Setcolor(0, 0); /* reset background color */
             if(!user_is_midicam && !own_number) { /* the master/solo player wants to quit the game */
                 switch_logbase();
                 if(isJoystick)
@@ -497,7 +497,7 @@ int currentScore;
             display_2d_map_flag = savedDisplay_2d_map_flag;
     } while(1);
 
-    Setcolor(0, 0); /* reset background color */
+    (void)Setcolor(0, 0); /* reset background color */
     /* 0.15s delay */
     for(i = 0; i < 10; i++)
         Vsync();

@@ -57,8 +57,6 @@ int speedY;
 int objectID;
 int distanceX;
 int distanceY;
-int fieldX;
-int fieldY;
 int bumpOfWalls;
 int xOffset;
 int yOffset;
@@ -116,8 +114,6 @@ int cellYfract;
     playerY = player_data[player].ply_y;
     playerX = player_data[player].ply_x;
     direction = player_data[player].ply_dir;
-    fieldY = (playerY >> MAZE_FIELD_SHIFT)|1;
-    fieldX = (playerX >> MAZE_FIELD_SHIFT)|1;
     if(joystickData & JOYSTICK_LEFT)
         direction -= PLAYER_MOTION_ROTATE;
     else if(joystickData & JOYSTICK_RIGHT)

@@ -64,15 +64,11 @@ int i;
 void set_object(int newObjectIndex,int y,int x) {
 int nextObject;
 int mazaFieldData;
-int fieldXReminder;
-int fieldYReminder;
 int fieldX;
 int fieldY;
 
     fieldY = (y >> MAZE_FIELD_SHIFT)|1;
     fieldX = (x >> MAZE_FIELD_SHIFT)|1;
-    fieldYReminder = y & (MAZE_CELL_SIZE-1); /* unused */
-    fieldXReminder = x & (MAZE_CELL_SIZE-1); /* unused */
     mazaFieldData = get_maze_data(fieldY, fieldX, 0);
     if(mazaFieldData == MAZE_FIELD_EMPTY) { /* field is empty? */
         /* we can just put it into that field */

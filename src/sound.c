@@ -155,5 +155,5 @@ void exit_sound(void) {
 int i;
 
     for(i = 0; i < GI_REGS; i++)
-        Giaccess(saved_sound_regs[i], i|128);
+        (void)Giaccess(saved_sound_regs[i], i|128);
 }

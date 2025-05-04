@@ -3,15 +3,23 @@
  ************************************************************/
 #include "globals.h"
 
+#ifdef __GNUC__
+/* avoid references to __main */
+void __main(void);
+void __main(void)
+{
+}
+#endif
+
 /************************************************************
  *** This code only does some AES/VDI/XBIOS init and then calls setup_game()
  ************************************************************/
-void main(void) {
-static int vdi_handle;
+int main(void) {
+static short vdi_handle;
 int i;
-int savedColors[16];
-int intout[57];
-int intin[11];
+short savedColors[16];
+short intout[57];
+short intin[11];
 
     /* Set the system up to do GEM calls */
     appl_init();
@@ -40,4 +48,5 @@ int intin[11];
     /* close the workstation */
     v_clsvwk(vdi_handle);
     appl_exit();
+    return 0;
 }

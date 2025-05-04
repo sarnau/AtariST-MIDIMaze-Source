@@ -126,7 +126,7 @@ int i;
             /* reset VT52 colors */
             BCON_DEFAULT_TEXT_COLOR();
             Vsync();
-            Setcolor(0, 0); /* reset background color to black */
+            (void)Setcolor(0, 0); /* reset background color to black */
             copy_screen();
 
             if(joystickActive)

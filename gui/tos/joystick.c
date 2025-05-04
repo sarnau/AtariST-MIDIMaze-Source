@@ -83,7 +83,7 @@ void init_joystick(void) {
 void exit_joystick(void) {
     Bconout(IKBD, 26); /* DISABLE JOYSTICKS (do not send any joystick events)  */
     KBDVECS_ptr->kb_joyvec = savedKbdVectors.kb_joyvec; /* restore old joystick vector */
-    Initmouse(1, mouse_defaults, (void (*)())KBDVECS_ptr->kb_mousevec); /* Enable mouse in relative mode */
+    Initmouse(1, mouse_defaults, (void (*)(void))KBDVECS_ptr->kb_mousevec); /* Enable mouse in relative mode */
 }
 
 /************************************************************
@@ -147,7 +147,7 @@ void init_mouse(void) {
  ************************************************************/
 void exit_mouse(void) {
     KBDVECS_ptr->kb_mousevec = savedKbdVectors.kb_mousevec; /* restore old mouse vector */
-    Initmouse(1, mouse_defaults, (void (*)())KBDVECS_ptr->kb_mousevec); /* Enable mouse in relative mode */
+    Initmouse(1, mouse_defaults, (void (*)(void))KBDVECS_ptr->kb_mousevec); /* Enable mouse in relative mode */
 }
 
 /************************************************************

@@ -1,102 +1,75 @@
+include ../silent.mk
+
+srcdir = ../../src
+
 CC = m68k-atari-mint-gcc
-#CC = ../bin/linux/cc68
+STARTUP = crt0.o gemlib/ctrlcnts.o
+LDFLAGS = -nostartfiles -nostdlib
+LIBS = -lgcc
 
 LD = $(CC)
 CPU_CFLAGS =
 OPT = -O2 -fomit-frame-pointer
-WARN = -Werror
-INCLUDES = -I. -I../MIDIMaze/Helper\ Sources/
+WARN = -Wall -Wundef -Wstrict-prototypes -Wmissing-prototypes -Werror
+INCLUDES = -I$(srcdir) -I../common
 CFLAGS = $(CPU_CFLAGS) $(OPT) $(WARN) $(INCLUDES)
+LDFLAGS += -s
 
-
-OBJS = \
-	DRAW_COL.O \
-	DRAW_BW.O \
-	BLIT_DRAW_SHAPE_COL.O \
-	BLIT_DRAW_SHAPE_BW.O \
-	RND.O \
-	MAZE_SET_OBJ.O \
-	MAKE_DRAWLIST.O \
-	SETUP_PLAYERS.O \
-	MAKE_RENDERLIST.O \
-	MAZE_OBJECT.O \
-	LOAD_MAZE.O \
-	PREFDIALOG.O \
-	AESINIT.O \
-	SAVESCREEN.O \
-	RSCMISC.O \
-	JOYSTICKMOUSE.O \
-	DISPATCH.O \
-	DECOMPRESSTITLE.O \
-	CALC_TAB.O \
-	MULS_DIVS.O \
-	CHECK_COPY_PROT.O \
-	DRAWWALLS.O \
-	NOTEBOARD.O \
-	MASTER.O \
-	DRAW2D.O \
-	SCREEN.O \
-	ENDSHAPES.O \
-	STRING.O \
-	CONTERM.O \
-	MORESHAPES.O \
-	MISCOUTPUT.O \
-	DRAW3D.O \
-	POPCHART.O \
-	RUNGAME.O \
-	MIDICOMM.O \
-	DRAWSHAPE.O \
-	SLAVE.O \
-	MIDICAM.O \
-	MAINGAME.O \
-	GAMELOGIC.O \
-	DRONE.O \
-	FASTMATH.O \
-	HAPPYINDICATOR.O \
-	SOUND.O \
-	READMIDI.O \
-	LOWMEM.O \
-	MAIN.O \
-	gccstub.o \
+GEMLIB_OBJS = \
+	gemlib/crysif.o \
+	gemlib/ap_init.o \
+	gemlib/crystal.o \
+	gemlib/ap_exit.o \
+	gemlib/ev_multi.o \
+	gemlib/fm_do.o \
+	gemlib/fm_dial.o \
+	gemlib/fm_alert.o \
+	gemlib/fm_cente.o \
+	gemlib/fs_input.o \
+	gemlib/gr_handl.o \
+	gemlib/gr_mouse.o \
+	gemlib/mn_bar.o \
+	gemlib/mn_tnorm.o \
+	gemlib/ob_draw.o \
+	gemlib/rs_obfix.o \
+	gemlib/wm_creat.o \
+	gemlib/wm_open.o \
+	gemlib/wm_close.o \
+	gemlib/wm_delet.o \
+	gemlib/wm_get.o \
+	gemlib/wm_updat.o \
+	gemlib/vclrwk.o \
+	gemlib/vclsvwk.o \
+	gemlib/vopnvwk.o \
+	gemlib/vrocpyfm.o \
+	gemlib/vdi.o \
 	$(empty)
-
-#	mac.o
 
 all:: midimaze.prg
 
-.SUFFIXES: .C .O
+OUT = -c -o 
+include ../SRCFILES
+include ../RULES
 
-.C.O:
-	$(CC) $(CFLAGS) -x c -c -o $@ $<
+OBJS += \
+	joystick.o \
+	$(GEMLIB_OBJS) \
+	$(empty)
 
-DRAW_COL.O: ../ASOURCES/DRAW_COL.C
-	$(CC) $(CFLAGS) -x c -c -o $@ $<
+.c.o:
+	$(AM_V_CC)$(CC) $(CFLAGS) -c -o $@ $<
 
-DRAW_BW.O: ../ASOURCES/DRAW_BW.C
-	$(CC) $(CFLAGS) -x c -c -o $@ $<
-
-BLIT_DRAW_SHAPE_BW.O: ../ASOURCES/BLIT_DRAW_SHAPE_BW.C
-	$(CC) $(CFLAGS) -x c -c -o $@ $<
-
-BLIT_DRAW_SHAPE_COL.O: ../ASOURCES/BLIT_DRAW_SHAPE_COL.C
-	$(CC) $(CFLAGS) -x c -c -o $@ $<
-
-CALC_TAB.O: ../ASOURCES/CALC_TAB.C
-	$(CC) $(CFLAGS) -x c -c -o $@ $<
-
-DECOMPRESSTITLE.O: ../ASOURCES/DECOMPRESSTITLE.C
-	$(CC) $(CFLAGS) -x c -c -o $@ $<
-
-MULS_DIVS.O: ../ASOURCES/MULS_DIVS.C
-	$(CC) $(CFLAGS) -x c -c -o $@ $<
-
-CHECK_COPY_PROT.O: ../ASOURCES/CHECK_COPY_PROT.C
-	$(CC) $(CFLAGS) -x c -c -o $@ $<
 
 midimaze.prg: $(OBJS)
-	$(LD) -o $@ $(OBJS) -lgem
+	$(AM_V_LD)$(LD) -o $@ $(LDFLAGS) $(OBJS) $(LIBS)
 
-$(OBJS): GLOBALS.H ../MIDIMaze/Helper\ Sources/PORTAB.H
+$(GEMLIB_OBJS): gemlib/crysbind.h gemlib/vdilib.h
+
+gemlib/apstart.o: gemlib/apstart.S
+	$(AM_V_CC)$(CC) -c -o $@ $<
+
+crt0.o: crt0.S
+	$(AM_V_CC)$(CC) -c -o $@ $<
 
 clean::
-	$(RM) *.o *.prg
+	$(RM) *.o gemlib/*.o $(srcdir)/*.o *.prg

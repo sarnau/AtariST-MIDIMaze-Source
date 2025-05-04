@@ -93,7 +93,7 @@ int load_color_titlescreen(void) {
 int load_bw_titlescreen(void) {
     /* no idea why this is here */
     Vsync();
-    Setcolor(0, 0); /* do not invert the background color */
+    (void)Setcolor(0, 0); /* do not invert the background color */
     /* read the color title image first (but ignore it) */
     /* This should have been an Fseek(), which would be much better performance */
     Fread(midimaze_d8a_filehandle, 20598, &load_buffer);

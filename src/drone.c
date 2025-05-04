@@ -957,6 +957,7 @@ int deltaY;
                     drone_needs2GoWest = TRUE;
                 }
             } else { /* BUG: this block is identical to the one above, which is a problem, because fieldIndex-1 == -1 here. */
+#if 0
                 if(player_data[player].dr_dir[fieldIndex-1] == (PLAYER_DIR_NORTH+256)) {
                     drone_needs2GoNorth = TRUE;
                 } else if(player_data[player].dr_dir[fieldIndex-1] == PLAYER_DIR_EAST) {
@@ -966,6 +967,7 @@ int deltaY;
                 } else if(player_data[player].dr_dir[fieldIndex-1] == PLAYER_DIR_WEST) {
                     drone_needs2GoWest = TRUE;
                 }
+#endif
             }
         } else if(player_data[player].dr_dir[fieldIndex] == (PLAYER_DIR_NORTH+256) && drone_can_north) { /* plan: going north (and player can go north) */
             if(fieldIndex == 0 && player_data[player].ply_dir) { /* if player is not aligned north, do so */
@@ -1215,19 +1217,8 @@ int drone_aim2target(int player) {
 int target_player;
 int deltaX;
 int deltaY;
-int unused;
-int playerFieldX;
-int playerFieldY;
-int targetFieldX;
-int targetFieldY;
 
-    unused = 0; /* maybe that was a return value at some point? */
     target_player = player_data[player].dr_currentTarget;
-    targetFieldY = (player_data[target_player].ply_y >> MAZE_FIELD_SHIFT)|1;
-    targetFieldX = (player_data[target_player].ply_x >> MAZE_FIELD_SHIFT)|1;
-
-    playerFieldY = (player_data[player].ply_y >> MAZE_FIELD_SHIFT)|1;
-    playerFieldX = (player_data[player].ply_x >> MAZE_FIELD_SHIFT)|1;
 
     deltaY = player_data[target_player].ply_y-player_data[player].ply_y;
     deltaX = player_data[target_player].ply_x-player_data[player].ply_x;
@@ -3047,13 +3038,8 @@ int canNorth;
  *** int drone_sub_ninja_north(int player,int viewCompassDirChar)
  ************************************************************/
 int drone_sub_ninja_north(int player,int wantedDirChar) {
-int unused_26 __attribute__((unused));
-int unused_24 __attribute__((unused));
-int unused_22 __attribute__((unused));
 int target_player;
-int unused_18 __attribute__((unused));
 int targetPlayerFieldX;
-int targetPlayerFieldY;
 int playerFieldX;
 int playerFieldY;
 int canWest;
@@ -3069,7 +3055,6 @@ int canNorth;
     target_player = player_data[player].dr_currentTarget;
     playerFieldY = (player_data[player].ply_y >> MAZE_FIELD_SHIFT)|1;
     playerFieldX = (player_data[player].ply_x >> MAZE_FIELD_SHIFT)|1;
-    targetPlayerFieldY = (player_data[target_player].ply_y >> MAZE_FIELD_SHIFT)|1;
     targetPlayerFieldX = (player_data[target_player].ply_x >> MAZE_FIELD_SHIFT)|1;
     drone_check_directions(player, &canNorth, &canSouth, &canEast, &canWest, 0, 0, 0);
     if(wantedDirChar == 'e' && !canEast && !canNorth && canWest) {
@@ -3499,13 +3484,8 @@ int canNorth;
  *** int drone_sub_ninja_south(int player,int viewCompassDirChar)
  ************************************************************/
 int drone_sub_ninja_south(int player,int wantedDirChar) {
-int unused_26 __attribute__((unused));
-int unused_24 __attribute__((unused));
-int unused_22 __attribute__((unused));
 int target_player;
-int unused_18 __attribute__((unused));
 int targetPlayerFieldX;
-int targetPlayerFieldY;
 int playerFieldX;
 int playerFieldY;
 int canWest;
@@ -3521,7 +3501,6 @@ int canNorth;
     target_player = player_data[player].dr_currentTarget;
     playerFieldY = (player_data[player].ply_y >> MAZE_FIELD_SHIFT)|1;
     playerFieldX = (player_data[player].ply_x >> MAZE_FIELD_SHIFT)|1;
-    targetPlayerFieldY = (player_data[target_player].ply_y >> MAZE_FIELD_SHIFT)|1;
     targetPlayerFieldX = (player_data[target_player].ply_x >> MAZE_FIELD_SHIFT)|1;
     drone_check_directions(player, &canNorth, &canSouth, &canEast, &canWest, 0, 0, 0);
     if(wantedDirChar == 'e' && !canEast && !canSouth && canWest) {
@@ -3899,12 +3878,7 @@ int canNorth;
  *** int drone_sub_ninja_east(int player,int viewCompassDirChar)
  ************************************************************/
 int drone_sub_ninja_east(int player,int wantedDirChar) {
-int unused_26 __attribute__((unused));
-int unused_24 __attribute__((unused));
-int unused_22 __attribute__((unused));
 int target_player;
-int unused_18 __attribute__((unused));
-int targetPlayerFieldX;
 int targetPlayerFieldY;
 int playerFieldX;
 int playerFieldY;
@@ -3922,7 +3896,6 @@ int canNorth;
     playerFieldY = (player_data[player].ply_y >> MAZE_FIELD_SHIFT)|1;
     playerFieldX = (player_data[player].ply_x >> MAZE_FIELD_SHIFT)|1;
     targetPlayerFieldY = (player_data[target_player].ply_y >> MAZE_FIELD_SHIFT)|1;
-    targetPlayerFieldX = (player_data[target_player].ply_x >> MAZE_FIELD_SHIFT)|1;
     drone_check_directions(player, &canNorth, &canSouth, &canEast, &canWest, 0, 0, 0);
     if(wantedDirChar == 'n' && !canNorth && !canEast && canSouth) {
         do {
@@ -4347,12 +4320,7 @@ int canNorth;
  *** int drone_sub_ninja_west(int player,int viewCompassDirChar)
  ************************************************************/
 int drone_sub_ninja_west(int player,int wantedDirChar) {
-int unused_26 __attribute__((unused));
-int unused_24 __attribute__((unused));
-int unused_22 __attribute__((unused));
 int target_player;
-int unused_18 __attribute__((unused));
-int targetPlayerFieldX;
 int targetPlayerFieldY;
 int playerFieldX;
 int playerFieldY;
@@ -4370,7 +4338,6 @@ int canNorth;
     playerFieldY = (player_data[player].ply_y >> MAZE_FIELD_SHIFT)|1;
     playerFieldX = (player_data[player].ply_x >> MAZE_FIELD_SHIFT)|1;
     targetPlayerFieldY = (player_data[target_player].ply_y >> MAZE_FIELD_SHIFT)|1;
-    targetPlayerFieldX = (player_data[target_player].ply_x >> MAZE_FIELD_SHIFT)|1;
     drone_check_directions(player, &canNorth, &canSouth, &canEast, &canWest, 0, 0, 0);
     if(wantedDirChar == 'n' && !canNorth && !canWest && canSouth) {
         do {

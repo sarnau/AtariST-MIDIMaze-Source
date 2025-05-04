@@ -4,7 +4,7 @@
 #include "globals.h"
 
 short maze_loaded_flag = FALSE;
-int dummy;
+short dummy;
 
 /************************************************************
  *** int master_solo_loop(int isSolo)
@@ -14,17 +14,17 @@ char mazePathAndName[100]; /* path + filename */
 char filename[20]; /* DOS format: 12345678.012 + NUL - so, technically 13 bytes should be fine */
 char filepath[64]; /* max 5 folders deep. That was the limit for the original TOS anyway. */
 int returnCode = DISPATCH_QUIT;
-int which_events;
-int keyboard_state;
-int key_code;
-int joystickActive;
-int midiByte = 0;
-int prefReturnCode;
-int buffer[8];
-int pbutton;
-int menuItemId;
-int menuTitleId;
-int dontExitLoop;
+short which_events;
+short keyboard_state;
+short key_code;
+short joystickActive;
+short midiByte = 0;
+short prefReturnCode;
+short buffer[8];
+short pbutton;
+short menuItemId;
+short menuTitleId;
+short dontExitLoop;
 int j;
 int i;
 

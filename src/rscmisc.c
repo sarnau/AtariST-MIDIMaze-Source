@@ -8,10 +8,10 @@
  *** Show a dialog without any button (used for Slaves)
  ************************************************************/
 void rsc_draw_buttonless_dialog(int objectIndex) {
-int fo_ch;
-int fo_cw;
-int fo_cy;
-int fo_cx;
+short fo_ch;
+short fo_cw;
+short fo_cy;
+short fo_cx;
 
     form_center(rsrc_object_array[objectIndex], &fo_cx, &fo_cy, &fo_cw, &fo_ch);
     form_dial(FMD_START, fo_cx, fo_cy, fo_cw, fo_ch, fo_cx, fo_cy, fo_cw, fo_ch);
@@ -23,10 +23,10 @@ int fo_cx;
  *** Show a dialog with a button (only used for the About box)
  ************************************************************/
 void do_about_dialog(int objectIndex) {
-int fo_ch;
-int fo_cw;
-int fo_cy;
-int fo_cx;
+short fo_ch;
+short fo_cw;
+short fo_cy;
+short fo_cx;
 
     form_center(rsrc_object_array[objectIndex], &fo_cx, &fo_cy, &fo_cw, &fo_ch);
     form_dial(FMD_START, fo_cx, fo_cy, fo_cw, fo_ch, fo_cx, fo_cy, fo_cw, fo_ch);

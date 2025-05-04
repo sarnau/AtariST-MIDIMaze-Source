@@ -287,7 +287,7 @@ static void blit_draw_shape_color_15(unsigned short *scrPtr, int xoffs, int orMa
     scrPtr[xoffs+0] |= orMask;
 }
 
-void (*col_setcolor_jumptable[16])(unsigned short *scrPtr, int xoffs, int orMask, int andMask) = { blit_draw_shape_color_0,blit_draw_shape_color_1,blit_draw_shape_color_2,blit_draw_shape_color_3,blit_draw_shape_color_4,blit_draw_shape_color_5,blit_draw_shape_color_6,blit_draw_shape_color_7,blit_draw_shape_color_8,blit_draw_shape_color_9,blit_draw_shape_color_10,blit_draw_shape_color_11,blit_draw_shape_color_12,blit_draw_shape_color_13,blit_draw_shape_color_14,blit_draw_shape_color_15 };
+SETCOLOR col_setcolor_jumptable[16] = { blit_draw_shape_color_0,blit_draw_shape_color_1,blit_draw_shape_color_2,blit_draw_shape_color_3,blit_draw_shape_color_4,blit_draw_shape_color_5,blit_draw_shape_color_6,blit_draw_shape_color_7,blit_draw_shape_color_8,blit_draw_shape_color_9,blit_draw_shape_color_10,blit_draw_shape_color_11,blit_draw_shape_color_12,blit_draw_shape_color_13,blit_draw_shape_color_14,blit_draw_shape_color_15 };
 
 // validate that the xoffs is in the current line and set 16 pixels
 #define blit_draw_shape_color_blit2screen() \

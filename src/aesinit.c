@@ -338,7 +338,7 @@ TEDINFO rs_tedinfo[1] = {
         };
 /* start index of all used resource trees */
 static long rs_trindex[14] = { 0,23,27,31,34,37,40,43,46,101,204,207,210,216 };
-static int pxy[8];
+static short pxy[8];
 static OBJECT *rsrc_tree_ptr; /* unused */
 static MFDB src_MFDB;
 static MFDB dest_MFDB;
@@ -349,11 +349,11 @@ short wind_handle;
  *** Copy the window background from logbase as a redraw
  ************************************************************/
 void redraw_window_background(int wi_ghandle) {
-int wi_gw_h;
-int wi_gw_w;
-int wi_gw_y;
-int wi_gw_x;
-int wi_gfield;
+short wi_gw_h;
+short wi_gw_w;
+short wi_gw_y;
+short wi_gw_x;
+short wi_gfield;
 
     wind_update(BEG_UPDATE);
     wi_gfield = WF_FIRSTXYWH;

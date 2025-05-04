@@ -178,10 +178,10 @@ int i;
  ************************************************************/
 void playername_edit_dialog(int isSolo) {
 static char *playerNameStrPtr;
-int fo_ch;
-int fo_cw;
-int fo_cy;
-int fo_cx;
+short fo_ch;
+short fo_cw;
+short fo_cy;
+short fo_cx;
 int i;
 
     playerNameStrPtr = (char*)rsrc_object_array[RSCTREE_TEAM_DIALOG][rsc_playername_rscindices[own_number]].ob_spec;

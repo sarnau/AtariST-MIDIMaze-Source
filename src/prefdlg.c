@@ -65,10 +65,10 @@ int i;
  ************************************************************/
 int do_preference_form(OBJECT *tree,int possibleDroneCount,int *droneCountPtr) {
 int obj_index;
-int fo_ch;
-int fo_cw;
-int fo_cy;
-int fo_cx;
+short fo_ch;
+short fo_cw;
+short fo_cy;
+short fo_cx;
 int j;
 int i;
 

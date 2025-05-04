@@ -1,7 +1,17 @@
 /************************************************************
  *** Header for global variables and functions
  ************************************************************/
+#ifndef __MIDIMAZE_GLOBAL_H__
+#define __MIDIMAZE_GLOBAL_H__ 1
+
+#include <stdio.h>
+#include <stdlib.h>
 #include "portab.h"
+#include "gemdefs.h"
+#include "osif.h"
+
+#define NON_ATARI_HACK 1 // Because we don't support MIDI, we disable the master/slave recognition at launch
+#define ATARI_LONG_HACK 1 // A long on a 68000k is 32 bit big-endian. This fix makes it work either way. 
 
 /* Several defines to enable individual bugfixes for the original MIDImaze */
 #define BUGFIX_MIDI_TIMEOUT     1 /* fix weird MIDI loop timeouts during play */
@@ -9,6 +19,14 @@
 #define BUGFIX_UMLAUTS_IN_NAMES 1 /* Anybody using an 8-bit ASCII character in a player name, will stop the MIDI transmission from working */
 
 #define DEBUG_2D_MAZE 0 // shows all oppnents and the 'plan' of Ninjas
+
+#ifdef __m68k__
+#define INTELSWAP16(a) a
+#define INTELSWAP32(a) a
+#else
+#define INTELSWAP16(a) ((unsigned short)(((unsigned short)(a) >> 8) | ((unsigned short)(a) << 8)))
+#define INTELSWAP32(a) ((uint32_t)((((uint32_t)(a) << 24) & 0xFF000000L) | (((uint32_t)(a) << 8) & 0x00FF0000L) | (((uint32_t)(a) >> 8) & 0x0000FF00L) | (((uint32_t)(a) >> 24) & 0x000000FFL)))
+#endif
 
 /* symbolic names for the 16 different colors */
 #define COLOR_BLACK_INDEX 0
@@ -40,6 +58,8 @@
 #define SCREEN_COL_HEIGHT 200
 #define SCREEN_COL_PLANES 4
 #define SCREEN_COL_LINEOFFSET (SCREEN_COL_WIDTH*SCREEN_COL_PLANES/8)
+/* screen size is same for both resolutions */
+#define SCREEN_SIZE 32000
 
 /* different modes for the dispatch() function */
 #define DISPATCH_QUIT -1
@@ -92,13 +112,13 @@
 
 /* A direction is always a 0..255 number, except in the drone code, */
 /* where 256 is sometimes used as 0 (because 0 has a special meaning) */
-#define PLAYER_DIR_NORTH 0x00
+#define PLAYER_DIR_NORTH     0x00
 #define PLAYER_DIR_NORTHEAST 0x20
-#define PLAYER_DIR_EAST 0x40
+#define PLAYER_DIR_EAST      0x40
 #define PLAYER_DIR_SOUTHEAST 0x60
-#define PLAYER_DIR_SOUTH 0x80
+#define PLAYER_DIR_SOUTH     0x80
 #define PLAYER_DIR_SOUTHWEST 0xa0
-#define PLAYER_DIR_WEST 0xc0
+#define PLAYER_DIR_WEST      0xc0
 #define PLAYER_DIR_NORTHWEST 0xe0
 
 #define MAZE_MAX_SIZE 64 /* 64x64 is the maximum size for a maze (if it gets larger, I would be careful - there might be short overflows - 64*64 is only 4096 bytes long) */
@@ -211,6 +231,14 @@ typedef struct {
     int deltaX;
 } XY_SPEED_TABLE;
 
+typedef void (*SETCOLOR)(unsigned short *scrPtr, int xoffs, int orMask, int andMask);
+
+#if BUGFIX_MIDI_TIMEOUT
+typedef long miditimeout_t;
+#else
+typedef short miditimeout_t;
+#endif
+
 
 extern const unsigned short colortable[16];
 extern short team_notes_color_table[PLAYER_MAX_TEAMS];
@@ -219,7 +247,7 @@ extern short maze_loaded_flag;
 extern const short team_group_rscindices[PLAYER_MAX_COUNT][PLAYER_MAX_TEAMS];
 extern const short rsc_playername_rscindices[PLAYER_MAX_COUNT];
 extern const unsigned short *bw_fillpattern_table[16+3]; /* +3 for the dithering function */
-extern void (*col_setcolor_jumptable[16])(unsigned short *scrPtr, int xoffs, int orMask, int andMask);
+extern SETCOLOR col_setcolor_jumptable[16];
 extern unsigned short *screen_offs_adr;
 extern short viewscreen_floor_height;
 extern short score_table[PLAYER_MAX_COUNT];
@@ -228,7 +256,7 @@ extern short team_flag;
 extern short maze_size;
 extern short color_cnv_back[PLAYER_MAX_COUNT];
 extern short midicam_autoselect_player_flag;
-extern int dummy;
+extern short dummy;
 extern short reload_time;
 extern short draw_shape_bodyImageOffset[BODY_SHAPE_COUNT];
 extern short *sine_table;
@@ -388,10 +416,18 @@ extern void blit_clear_window_bw(void);
 
 extern int check_copy_protection(void);
 
-extern void blit_draw_shape_color(int x,int y,const unsigned short *imageMask,int widthInWords,int height,void (*colFuncPtr)(unsigned short *,int,int,int));
+extern void blit_draw_shape_color(int x,int y,const unsigned short *imageMask,int widthInWords,int height, SETCOLOR colFuncPtr);
 extern void blit_draw_hline_color(int x1,int x2,int y,int col);
 extern void blit_draw_vline_color(int y1,int y2,int x,int col);
 extern void blit_fill_box_color(int x1,int y1,int x2,int y2,int col);
 extern void blit_clear_window_color(void);
 
 extern void decompress_image_to_screen(unsigned short *bytesW,unsigned short *screenPtrW);
+
+/*
+ * debugging helpers
+ */
+void dumpMapInfos(void);
+void dumpPlayerInfo(void);
+
+#endif

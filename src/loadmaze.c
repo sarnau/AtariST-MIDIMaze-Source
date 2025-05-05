@@ -16,22 +16,23 @@ int error;
 int fhandle;
 int fieldX;
 int fieldY;
+static char const alert_mazefile_header_booboo[] = "[3][ |Maze file|header boo-boo][OK]";
 
     error = NO;
 
     /* open the MAZ file */
-    fhandle = Fopen(pathname, 0);
+    fhandle = (int)Fopen(pathname, 0);
     if(fhandle < 0) {
         /* Generate an alert text with the filename, if the maze file can't be opened */
         fieldY = 0;
         fieldX = 0;
-        while((alertBuf[fieldY++] = "[3][ |Can't open|\""[fieldX++])) {}
+        while((alertBuf[fieldY++] = "[3][ |Can't open|\""[fieldX++]) != 0) {}
         fieldY--;
         fieldX = 0;
-        while((alertBuf[fieldY++] = filename[fieldX++])) {}
+        while((alertBuf[fieldY++] = filename[fieldX++]) != 0) {}
         fieldY--;
         fieldX = 0;
-        while((alertBuf[fieldY++] = "\"][OK]"[fieldX++])) {}
+        while((alertBuf[fieldY++] = "\"][OK]"[fieldX++]) != 0) {}
         form_alert(1, alertBuf);
         return FAILURE;
     }
@@ -39,13 +40,13 @@ int fieldY;
     /* the first 2 bytes are the size of the maze as ASCII numbers */
     Fread(fhandle, 1, &tmp);
     if(tmp < '0' || tmp > '9') {
-        form_alert(1, "[3][ |Maze file|header boo-boo][OK]");
+        form_alert(1, alert_mazefile_header_booboo);
         return -3;
     }
     maze_size = (tmp-'0')*10;
     Fread(fhandle, 1, &tmp);
     if(tmp < '0' || tmp > '9') {
-        form_alert(1, "[3][ |Maze file|header boo-boo][OK]");
+        form_alert(1, alert_mazefile_header_booboo);
         return -3;
     }
     maze_size += tmp-'0';

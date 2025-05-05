@@ -111,7 +111,8 @@ int i;
         }
     }
 
-    do {
+    again:
+    {
         form_center(tree, &fo_cx, &fo_cy, &fo_cw, &fo_ch);
         if(screen_rez == 0) { /* patch the position in color, because the dialog is too large */
             tree->ob_x = 5;
@@ -122,62 +123,65 @@ int i;
         }
         form_dial(FMD_START, fo_cx, fo_cy, fo_cw, fo_ch, fo_cx, fo_cy, fo_cw, fo_ch);
         objc_draw(tree, 0, 999, fo_cx, fo_cy, fo_cw, fo_ch);
-        do {
+        for (;;) {
             /* do the play dialog */
             obj_index = form_do(tree, 0)&0x7fff;
             /* deselect the clicked exit button */
             tree[obj_index].ob_state &= ~SELECTED;
-            if(obj_index == 49 || obj_index == 48) goto done; /* Yeah/Nah (Start or Cancel the game) */
-            if(obj_index != 54) break; /* Team button? No, then we have to update the drone numbers */
+            if(obj_index == 49 || obj_index == 48) break; /* Yeah/Nah (Start or Cancel the game) */
+            if(obj_index == 54) {
+            /* Team button? No, then we have to update the drone numbers */
+                tree[54].ob_state |= SELECTED; /* select team button */
+                update_names_in_rsc(rsc_drones); /* update the player names in the team dialog */
+                objc_draw(tree, 54, 999, fo_cx, fo_cy, fo_cw, fo_ch); /* redraw the team button */
+                graf_mouse(M_OFF, NULL);
+                redraw_window_background(wind_handle);
+                graf_mouse(M_ON, NULL);
+                form_center(rsrc_object_array[RSCTREE_TEAM_DIALOG], &fo_cx, &fo_cy, &fo_cw, &fo_ch);
+                form_dial(FMD_START, fo_cx, fo_cy, fo_cw, fo_ch, fo_cx, fo_cy, fo_cw, fo_ch);
+                objc_draw(rsrc_object_array[RSCTREE_TEAM_DIALOG], 0, 999, fo_cx, fo_cy, fo_cw, fo_ch);
+                /* do the team dialog */
+                form_do(rsrc_object_array[RSCTREE_TEAM_DIALOG], 0);
+                /* deselect the exit button of the team dialog */
+                rsrc_object_array[RSCTREE_TEAM_DIALOG][101].ob_state &= ~SELECTED;
+                form_dial(FMD_FINISH, fo_cx, fo_cy, fo_cw, fo_ch, fo_cx, fo_cy, fo_cw, fo_ch);
+                graf_mouse(M_OFF, NULL);
+                redraw_window_background(wind_handle);
+                graf_mouse(M_ON, NULL);
+                goto again;
+            }
+            /* This code path is only called, if the up/down arrows for the drones are clicked. */
+            /* MIDImaze has an auto-repeat on them. */
+            for(i = 0; i < DRONE_TYPES; i++) {
+                /* drone-up button clicked? */
+                if(drone_count_up_rscindices[i] == obj_index) {
+                    j = 1;
+                    break;
+                }
+                /* drone-down button clicked? */
+                if(drone_count_down_rscindices[i] == obj_index) {
+                    j = -1;
+                    break;
+                }
+            }
+            /* in/decrement number of drones */
+            rsc_drones[i] += j;
+            /* clip to a value between 0 and the maximum number of drones allowed */
+            if(rsc_drones[i] < 0 || rsc_drones[0]+rsc_drones[1]+rsc_drones[2] > possibleDroneCount) {
+                rsc_drones[i] -= j; /* otherwise don't accept the change */
+                Bconout(CON, 7); /* BELL sound */
+            } else {
+                /* update the number of drones in the dialog */
+                ((char*)tree[drone_count_number_rscindices[i]].ob_spec)[0] = (rsc_drones[i] < 10) ? ' ' : rsc_drones[i]/10+'0';
+                ((char*)tree[drone_count_number_rscindices[i]].ob_spec)[1] = rsc_drones[i]%10+'0';
+            }
+            /* redraw that number */
+            objc_draw(tree, drone_count_box_rscindices[i], 999, fo_cx, fo_cy, fo_cw, fo_ch);
+            /* ...and continue with the dialog seemlessly */
+        }
+    }
 
-            tree[54].ob_state |= SELECTED; /* select team button */
-            update_names_in_rsc(rsc_drones); /* update the player names in the team dialog */
-            objc_draw(tree, 54, 999, fo_cx, fo_cy, fo_cw, fo_ch); /* redraw the team button */
-            graf_mouse(M_OFF, 0);
-            redraw_window_background(wind_handle);
-            graf_mouse(M_ON, 0);
-            form_center(rsrc_object_array[RSCTREE_TEAM_DIALOG], &fo_cx, &fo_cy, &fo_cw, &fo_ch);
-            form_dial(FMD_START, fo_cx, fo_cy, fo_cw, fo_ch, fo_cx, fo_cy, fo_cw, fo_ch);
-            objc_draw(rsrc_object_array[RSCTREE_TEAM_DIALOG], 0, 999, fo_cx, fo_cy, fo_cw, fo_ch);
-            /* do the team dialog */
-            form_do(rsrc_object_array[RSCTREE_TEAM_DIALOG], 0);
-            /* deselect the exit button of the team dialog */
-            rsrc_object_array[RSCTREE_TEAM_DIALOG][101].ob_state &= ~SELECTED;
-            form_dial(FMD_FINISH, fo_cx, fo_cy, fo_cw, fo_ch, fo_cx, fo_cy, fo_cw, fo_ch);
-            graf_mouse(M_OFF, 0);
-            redraw_window_background(wind_handle);
-            graf_mouse(M_ON, 0);
-        } while(1);
-        /* This code path is only called, if the up/down arrows for the drones are clicked. */
-        /* MIDImaze has an auto-repeat on them. */
-        for(i = 0; i < DRONE_TYPES; i++) {
-            /* drone-up button clicked? */
-            if(drone_count_up_rscindices[i] == obj_index) {
-                j = 1;
-                break;
-            }
-            /* drone-down button clicked? */
-            if(drone_count_down_rscindices[i] == obj_index) {
-                j = -1;
-                break;
-            }
-        }
-        /* in/decrement number of drones */
-        rsc_drones[i] += j;
-        /* clip to a value between 0 and the maximum number of drones allowed */
-        if(rsc_drones[i] < 0 || rsc_drones[0]+rsc_drones[1]+rsc_drones[2] > possibleDroneCount) {
-            rsc_drones[i] -= j; /* otherwise don't accept the change */
-            Bconout(CON, 7); /* BELL sound */
-        } else {
-            /* update the number of drones in the dialog */
-            ((char*)tree[drone_count_number_rscindices[i]].ob_spec)[0] = (rsc_drones[i] < 10) ? ' ' : rsc_drones[i]/10+'0';
-            ((char*)tree[drone_count_number_rscindices[i]].ob_spec)[1] = rsc_drones[i]%10+'0';
-        }
-        /* redraw that number */
-        objc_draw(tree, drone_count_box_rscindices[i], 999, fo_cx, fo_cy, fo_cw, fo_ch);
-        /* ...and continue with the dialog seemlessly */
-    } while(1);
-done:
+/* done: */
     form_dial(FMD_FINISH, fo_cx, fo_cy, fo_cw, fo_ch, fo_cx, fo_cy, fo_cw, fo_ch);
     if(obj_index == 48) /* Nah/Cancel? */
         return FAILURE; /* => Do not start a game */
@@ -215,10 +219,10 @@ done:
  ************************************************************/
 void update_names_in_rsc(int *droneList) {
 static const char *str_drone_type_br_array[DRONE_TYPES] = { "(Target)","(Standard)","(Ninja)" };
-static char *str_drone_name;
+int i;
 int j;
 int mindex;
-int i;
+char *str_drone_name;
 
     for(i = machines_online; i < PLAYER_MAX_COUNT; i++)
         strcpy_srcdst("-------", (char*)rsrc_object_array[RSCTREE_TEAM_DIALOG][rsc_playername_rscindices[i]].ob_spec);

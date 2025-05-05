@@ -43,9 +43,7 @@ int lastJoystickButton;
 int joystickButton = 0;
 int savedDisplay_2d_map_flag;
 int midiCamRotateIndex;
-int unused_18 __attribute__((unused));
 int playerIndex;
-int unused_14 __attribute__((unused));
 int joystickDirection = 0;
 int tempVar;
 int k;
@@ -54,7 +52,6 @@ int i;
 int currentScore;
 
     playerIndex = 0;
-    unused_18 = 0;
     midiCamRotateIndex = 0;
     lastJoystickButton = 0;
     bwColorFlag = FALSE; /* flashing screen, when the player was hit */
@@ -264,7 +261,13 @@ int currentScore;
         /* maze map requested? */
         if(display_2d_map_flag) {
             draw_2Dmap();
-            if(user_is_midicam || DEBUG_2D_MAZE) { /* if MIDIcam, always show all players */
+            /* if MIDIcam, always show all players */
+#if DEBUG_2D_MAZE
+            if (TRUE)
+#else
+            if (user_is_midicam)
+#endif
+            {
                 for(i = 0; i < playerAndDroneCount; i++) {
                     if(player_data[i].ply_lives > 0) /* ignore dead players */
                         set_ply_2Dmap(i);
@@ -390,7 +393,7 @@ int currentScore;
             /* regular player (not a MIDIcam) */
 
             if(Bconstat(CON)) {
-                joystickDirection = Bconin(CON)&0xff;
+                joystickDirection = ((int)Bconin(CON))&0xff;
                 if(joystickDirection == ' ') { /* space toggles 2D and 3D map */
                     display_2d_map_flag ^= 1;
                 } else if(joystickDirection == 27 && !own_number) { /* ESC allows to terminate the game */
@@ -513,10 +516,10 @@ int currentScore;
             for(j = 0; j < sizeof(lose_anim)/sizeof(lose_anim[0]); j++) {
                 if(screen_rez) {
                     blit_fill_box_bw(0, 0, 319, 201, COLOR_SILVER_INDEX);
-                    draw_shape(96, BODY_SHAPE_MAX_SIZE*2, team_flag ? player_data[own_number].ply_team == player_data[i].ply_team : own_number == i ? winner_anim[j] : lose_anim[j], BODY_SHAPE_NO_SHADOW*2, i);
+                    draw_shape(96, BODY_SHAPE_MAX_SIZE*2, (team_flag ? player_data[own_number].ply_team == player_data[i].ply_team : own_number == i) ? winner_anim[j] : lose_anim[j], BODY_SHAPE_NO_SHADOW*2, i);
                 } else {
                     blit_fill_box_color(0, 0, 159, 100, COLOR_STEEL_INDEX);
-                    draw_shape(48, BODY_SHAPE_MAX_SIZE, team_flag ? player_data[own_number].ply_team == player_data[i].ply_team : own_number == i ? winner_anim[j] : lose_anim[j], BODY_SHAPE_NO_SHADOW, i);
+                    draw_shape(48, BODY_SHAPE_MAX_SIZE, (team_flag ? player_data[own_number].ply_team == player_data[i].ply_team : own_number == i) ? winner_anim[j] : lose_anim[j], BODY_SHAPE_NO_SHADOW, i);
                 }
                 BCON_SETCURSOR(7, screen_rez ? 15 : 3);
                 BCON_SETFCOLOR(COLOR_BLACK_INDEX);

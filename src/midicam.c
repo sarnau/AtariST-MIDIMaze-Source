@@ -31,12 +31,11 @@ static const struct {
  ************************************************************/
 void midicam_keyboard_shortcuts(void) {
 int newDisplay2DMapFlag;
-int key;
 
     if(Bconstat(CON)) {
         midicam_autoselect_player_flag = NO; /* do not automatically switch between players */
         newDisplay2DMapFlag = FALSE; /* map is off, if there is a key pressed */
-        switch(key = Bconin(CON)&0xff) {
+        switch(((int)Bconin(CON))&0xff) {
         case '0': own_number = 9; break;
         case '1': own_number = 0; break;
         case '2': own_number = 1; break;
@@ -185,7 +184,8 @@ int i;
 
     for(i = 0; i < 2; i++) {
         BCON_SETCURSOR(10, screen_rez ? 48 : 24);
-        BCON_DEFAULT_TEXT_COLOR();
+        BCON_SETFCOLOR(screen_rez ? COLOR_SILVER_INDEX : COLOR_WHITE_INDEX);
+        BCON_SETBCOLOR(COLOR_BLACK_INDEX);
         /* erase the area for the player name with 15 spaces (2 for the number, 1 for ":', plus 10 for the name plus 2 spare ones) */
         bconout_string("               ");
         BCON_SETCURSOR(10, screen_rez ? 48 : 24);

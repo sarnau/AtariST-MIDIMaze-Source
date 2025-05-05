@@ -114,9 +114,9 @@ def print_body_shapes(data,FACE_COUNT):
 
 data = bytearray(open('./MIDIMazeDisc/MIDIMAZE.D8A','rb').read())
 color_screen = data[0x00000:0x05076]
-convert_title(color_screen, 4, './Screenshots/TITLE_COL.PNG')
+convert_title(color_screen, 4, './images/TITLE_COL.PNG')
 bw_screen = data[0x05076:0x05076+0x5A62]
-convert_title(bw_screen, 1, './Screenshots/TITLE_BW.PNG')
+convert_title(bw_screen, 1, './images/TITLE_BW.PNG')
 sine_table = data[0x0AAD8:0x0AAD8+0x0082]
 #print_sine_table(sine_table)
 ball_images = data[0x0AB5A:0x0AB5A+0x0C64]

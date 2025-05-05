@@ -13,10 +13,10 @@ screen black/white image.
 
 Screen layout of the 320x200 16 color format:
 
-    |       |   Pixel 0..15   ||||   Pixel 16..31  ||||
-    |       | 4 planes=16 col |||| 4 planes=16 col ||||
-    --------|----|----|----|----|----|----|----|----|
-    |Line 0 | P0 | P1 | P2 | P3 | P0 | P1 | P2 | P3 |
-    |Line 1 | P0 | P1 | P2 | P3 | P0 | P1 | P2 | P3 |
-    |Line 2 | P0 | P1 | P2 | P3 | P0 | P1 | P2 | P3 |
-    |…      |    |    |    |    |    |    |    |    |
+|       |   Pixel 0..15   ||||   Pixel 16..31  ||||
+|       | 4 planes=16 col |||| 4 planes=16 col ||||
+--------|----|----|----|----|----|----|----|----|
+|Line 0 | P0 | P1 | P2 | P3 | P0 | P1 | P2 | P3 |
+|Line 1 | P0 | P1 | P2 | P3 | P0 | P1 | P2 | P3 |
+|Line 2 | P0 | P1 | P2 | P3 | P0 | P1 | P2 | P3 |
+|…      |    |    |    |    |    |    |    |    |

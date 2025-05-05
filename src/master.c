@@ -40,8 +40,8 @@ int i;
     else
         form_alert(1, "[1][ |This is the|  MASTER| machine.][OK]");
 
-    graf_mouse(ARROW, 0);
-    graf_mouse(M_ON, 0);
+    graf_mouse(ARROW, NULL);
+    graf_mouse(M_ON, NULL);
 
     own_number = 0;
     user_is_midicam = NO;
@@ -62,8 +62,8 @@ int i;
     Dgetpath(&filepath[2], i+1);
     for(i = 0; filepath[i]; i++) {}
     filepath[i++] = '\\';
-    filepath[i++] = '.';
     filepath[i++] = '*';
+    filepath[i++] = '.';
     filepath[i++] = 'M';
     filepath[i++] = 'A';
     filepath[i++] = 'Z';
@@ -120,9 +120,9 @@ int i;
                             get_midi(MIDI_DEFAULT_TIMEOUT);
                         }
                         save_part_of_screen_for_dialog(1);
-                        graf_mouse(M_OFF, 0);
+                        graf_mouse(M_OFF, NULL);
                         redraw_window_background(wind_handle);
-                        graf_mouse(M_ON, 0);
+                        graf_mouse(M_ON, NULL);
                         form_alert(1, "[2][ |What about it?][tee-hee]");
                         rsrc_object_array[RSCTREE_ABOUT][5].ob_state &= ~(SELECTED|DISABLED);
                         rsrc_object_array[RSCTREE_ABOUT][5].ob_flags |= DEFAULT;
@@ -139,21 +139,21 @@ int i;
                     case 16: /* Load a maze */
                         fsel_input(filepath, filename, &pbutton);
                         if(pbutton) {
-                            graf_mouse(HOURGLASS, 0);
+                            graf_mouse(HOURGLASS, NULL);
                             /* This code is in every Atari ST app dealing with fsel_input(): */
                             /* Copy the path into a buffer */
                             i = 0;
                             j = 0;
-                            while((mazePathAndName[i++] = filepath[j++])) {}
+                            while((mazePathAndName[i++] = filepath[j++]) != 0) {}
                             /* search for the last '\' (before the '*.MAZ' filter) */
                             while(!(--i <= 0 || mazePathAndName[i] == '\\')) {}
                             i++; /* move just behind that one */
                             /* now append the filename to the path */
                             j = 0;
-                            while((mazePathAndName[i++] = filename[j++])) {}
+                            while((mazePathAndName[i++] = filename[j++]) != 0) {}
                             /* ...and finally try to load the maze */
                             maze_loaded_flag = LoadMaze(mazePathAndName, filename) >= 0;
-                            graf_mouse(ARROW, 0);
+                            graf_mouse(ARROW, NULL);
                         }
                         break;
 
@@ -168,10 +168,10 @@ int i;
                         }
                         for(i = 0; i < PLAYER_MAX_COUNT; i++)
                             score_table[i] = 0;
-                        graf_mouse(M_OFF, 0);
+                        graf_mouse(M_OFF, NULL);
                         update_notes_score(team_flag ? PLAYER_MAX_TEAMS : playerAndDroneCount);
                         Setscreen(screen_ptr[1], screen_ptr[1], -1);
-                        graf_mouse(M_ON, 0);
+                        graf_mouse(M_ON, NULL);
                         break;
 
                     case 22: /* Set Names */
@@ -204,6 +204,7 @@ int i;
                     PLAY_GAME:
                         wind_update(BEG_UPDATE);
                         if(!maze_loaded_flag) {
+                            wind_update(END_UPDATE);
                             form_alert(1, "[3][ |Please load|a maze first][OK]");
                             break;
                         }
@@ -215,17 +216,20 @@ int i;
                             /* Count the number of machines online */
                             Bconout(MIDI, MIDI_COUNT_PLAYERS);
                             if((midiByte = get_midi(MIDI_DEFAULT_TIMEOUT)) < 0) {
+                              MIDIRING_BOOBOO3:
+                                wind_update(END_UPDATE);
                                 MIDIRING_BOOBOO2:
                                 form_alert(1, "[1][ |MIDI ring|boo-boo][Oh no!]");
                                 break;
                             }
                             Bconout(MIDI, 1); /* we are the first machine, then everybody increments it */
-                            if((midiByte = get_midi(MIDI_DEFAULT_TIMEOUT)) < 0) goto MIDIRING_BOOBOO2;
+                            if((midiByte = get_midi(MIDI_DEFAULT_TIMEOUT)) < 0) goto MIDIRING_BOOBOO3;
                             /* echo the final number to everybody */
                             Bconout(MIDI, machines_online = midiByte);
                             /* and when the number comes back: ignore it (it didn't change anyway) */
-                            if(get_midi(MIDI_DEFAULT_TIMEOUT) < 0) goto MIDIRING_BOOBOO2;
+                            if(get_midi(MIDI_DEFAULT_TIMEOUT) < 0) goto MIDIRING_BOOBOO3;
                             if(machines_online > PLAYER_MAX_COUNT) {
+                                wind_update(END_UPDATE);
                                 form_alert(1, "[3][ |Too many|machines|on-line!][Oops]");
                                 break;
                             }
@@ -235,29 +239,42 @@ int i;
                         prefReturnCode = do_preference_form(rsrc_object_array[RSCTREE_PLAY_DIALOG], PLAYER_MAX_COUNT-machines_online, active_drones_by_type);
                         wind_update(END_UPDATE);
                         menu_tnormal(rsrc_object_array[RSCTREE_MENU], 4, 1);
-                        graf_mouse(M_OFF, 0);
+                        graf_mouse(M_OFF, NULL);
                         redraw_window_background(wind_handle);
                         if(!isSolo) {
                             Bconout(MIDI, MIDI_COUNT_PLAYERS);
-                            if((midiByte = get_midi(MIDI_DEFAULT_TIMEOUT)) < 0) goto MIDIRING_BOOBOO2;
+                            if((midiByte = get_midi(MIDI_DEFAULT_TIMEOUT)) < 0)
+							{
+								graf_mouse(M_ON, NULL);
+								goto MIDIRING_BOOBOO2;
+							}
                         }
                         if(prefReturnCode < 0) {
-                            graf_mouse(M_ON, 0);
+                            graf_mouse(M_ON, NULL);
                             break;
                         }
                         if(!isSolo) {
                             Bconout(MIDI, MIDI_START_GAME);
-                            if(get_midi(MIDI_DEFAULT_TIMEOUT) < 0) goto MIDIRING_BOOBOO2;
+                            if(get_midi(MIDI_DEFAULT_TIMEOUT) < 0)
+							{
+								graf_mouse(M_ON, NULL);
+								goto MIDIRING_BOOBOO2;
+							}
                         }
                         if(!isSolo) {
-                            if(send_datas() < 0) goto MIDIRING_BOOBOO2;
+                            if(send_datas() < 0)
+							{
+								graf_mouse(M_ON, NULL);
+                                goto MIDIRING_BOOBOO2;
+                            }
                         }
 
                         /* play the game! */
                         midiByte = game_loop(isSolo, joystickActive);
 
                         /* Reset text colors (not sure why, because it seems to be set in every use case anyway) */
-                        BCON_DEFAULT_TEXT_COLOR();
+						BCON_SETFCOLOR(screen_rez ? COLOR_SILVER_INDEX : COLOR_WHITE_INDEX);
+						BCON_SETBCOLOR(COLOR_BLACK_INDEX);
 
                         /* remove all pending key presses */
                         while(Bconstat(CON))
@@ -268,7 +285,7 @@ int i;
                             exit_joystick();
                         else
                             exit_mouse();
-                        graf_mouse(M_ON, 0);
+                        graf_mouse(M_ON, NULL);
                         if(midiByte < 0) {
                             if(midiByte == -1)
                                 form_alert(1, "[3][ |The MIDI ring|has timed out.][Uh-oh]");
@@ -277,10 +294,10 @@ int i;
                             else
                                 form_alert(1, "[3][ |Guru bu-bu:|(maze too small?)][ok]");
                         }
-                        graf_mouse(M_OFF, 0);
+                        graf_mouse(M_OFF, NULL);
                         update_notes_score(team_flag ? PLAYER_MAX_TEAMS : playerAndDroneCount);
                         Setscreen(screen_ptr[1], screen_ptr[1], -1);
-                        graf_mouse(M_ON, 0);
+                        graf_mouse(M_ON, NULL);
                         break;
 
                     case 20: /* Quit */
@@ -288,12 +305,10 @@ int i;
                         if(midiByte == 1) {
                             returnCode = DISPATCH_QUIT;
                             dontExitLoop = NO;
-                            break;
                         }
+                        break;
 
                     default:
-                    case 21: /* "-------------" after Quit */
-                    case 18: /* "-------------" before Play */
                         break;
                     }
                     menu_tnormal(rsrc_object_array[RSCTREE_MENU], 4, 1);
@@ -305,15 +320,15 @@ int i;
             case WM_NEWTOP: /* AES redraw requests of the window */
             case WM_TOPPED:
             case WM_REDRAW:
-                graf_mouse(M_OFF, 0);
+                graf_mouse(M_OFF, NULL);
                 redraw_window_background(buffer[3]);
-                graf_mouse(M_ON, 0);
+                graf_mouse(M_ON, NULL);
                 break;
             default:
                 break;
             }
         }
     }
-    graf_mouse(M_OFF, 0);
+    graf_mouse(M_OFF, NULL);
     return returnCode;
 }

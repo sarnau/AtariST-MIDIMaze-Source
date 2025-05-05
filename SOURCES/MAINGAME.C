@@ -1,7 +1,7 @@
 /************************************************************
  *** The main game loop, shared by all types: master, solo, slave and MIDIcam
  ************************************************************/
-#include "GLOBALS.H"
+#include "globals.h"
 
 short team_notes_color_table[PLAYER_MAX_TEAMS] = { COLOR_YELLOW_INDEX, COLOR_BLUE_INDEX, COLOR_ORANGE_INDEX, COLOR_GREEN_INDEX };
 /* Atari ST colors are RGB (3 bit each) */

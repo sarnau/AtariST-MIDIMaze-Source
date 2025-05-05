@@ -1,7 +1,7 @@
 /************************************************************
  *** Draw a shape (player or shot)
  ************************************************************/
-#include "GLOBALS.H"
+#include "globals.h"
 
 #define FACE_COUNT 20
 

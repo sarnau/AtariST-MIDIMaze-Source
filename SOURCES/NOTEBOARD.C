@@ -1,7 +1,7 @@
 /************************************************************
  *** Thie file manages the score board with the note lines
  ************************************************************/
-#include "GLOBALS.H"
+#include "globals.h"
 
 short score_table[PLAYER_MAX_COUNT];
 short team_scores[PLAYER_MAX_TEAMS];

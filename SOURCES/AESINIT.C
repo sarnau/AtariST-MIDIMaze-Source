@@ -1,7 +1,7 @@
 /************************************************************
  *** Embedded RSC file and the AES initialization/exit code
  ************************************************************/
-#include "GLOBALS.H"
+#include "globals.h"
 
 /* Strings used by the resource tree */
 static char *rs_strings[NUM_STRINGS] = { " \x0e\x0f ", /* This is the Atari symbol */

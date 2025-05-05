@@ -2,7 +2,7 @@
  *** The main loop for the slave. The features are controlled
  *** by the master via MIDI.
  ************************************************************/
-#include "GLOBALS.H"
+#include "globals.h"
 
 
 /************************************************************

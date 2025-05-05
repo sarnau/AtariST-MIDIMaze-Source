@@ -1,4 +1,4 @@
-#include "GLOBALS.H"
+#include "globals.h"
 
 /*
 ; The protection of Midi Maze is quite simple: Track 0, Sector 0 on Side 0 is read twice and

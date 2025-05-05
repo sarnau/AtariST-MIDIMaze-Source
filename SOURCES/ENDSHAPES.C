@@ -1,7 +1,7 @@
 /************************************************************
  *** Artwork for the shapes used to decorate the smiley at a win/loose
  ************************************************************/
-#include "GLOBALS.H"
+#include "globals.h"
 
 /* the tongue, in case the player/team lost */
 /* X___ ____ ____ ____ _X__ ____ ____ ____ */

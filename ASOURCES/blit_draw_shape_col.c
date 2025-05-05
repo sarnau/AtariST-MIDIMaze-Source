@@ -1,5 +1,5 @@
-#include "GLOBALS.H"
-#include "CALC_TAB.H"
+#include "globals.h"
+#include "calc_tab.h"
 
 /*
 ; L0A16

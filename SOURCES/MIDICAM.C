@@ -1,7 +1,7 @@
 /************************************************************
  *** Specific code for the MIDIcam
  ************************************************************/
-#include "GLOBALS.H"
+#include "globals.h"
 
 /* mask away a potential negative sign, we only want positive numbers */
 #define RANDOM_POSITIVE() (Random() & 0x7fff)

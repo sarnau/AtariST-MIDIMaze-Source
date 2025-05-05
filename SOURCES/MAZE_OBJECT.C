@@ -1,7 +1,7 @@
 /************************************************************
  *** MAZE_OBJECT.C
  ************************************************************/
-#include "GLOBALS.H"
+#include "globals.h"
 
 char maze_datas[MAZE_MAX_SIZE*MAZE_MAX_SIZE];
 short objekt_anz = 0;

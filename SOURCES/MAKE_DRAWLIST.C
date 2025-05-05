@@ -1,7 +1,7 @@
 /************************************************************
  *** MAZE_DRAWLIST.C
  ************************************************************/
-#include "GLOBALS.H"
+#include "globals.h"
 
 /* This table allows us to use one code path for building the draw list, depending on the viewing direction of the player */
 static struct {

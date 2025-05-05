@@ -3,7 +3,7 @@
  *** Also opens the window, checks the copy protection and
  *** shows the title screen by loading it from MIDIMAZE.D8A
  ************************************************************/
-#include "GLOBALS.H"
+#include "globals.h"
 
 static int load_color_titlescreen(void);
 static int load_bw_titlescreen(void);

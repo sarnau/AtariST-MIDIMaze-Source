@@ -1,7 +1,7 @@
 /************************************************************
  *** Header for global variables and functions
  ************************************************************/
-#include "PORTAB.H"
+#include "portab.h"
 
 /* Several defines to enable individual bugfixes for the original MIDImaze */
 #define BUGFIX_MIDI_TIMEOUT     1 /* fix weird MIDI loop timeouts during play */

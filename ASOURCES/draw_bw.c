@@ -1,5 +1,5 @@
-#include "GLOBALS.H"
-#include "CALC_TAB.H"
+#include "globals.h"
+#include "calc_tab.h"
 
 /*
 ; L09C7
@@ -419,7 +419,7 @@ void blit_fill_box_bw_double(int x1, int y1, int x2, int y2, int col)
     } while(++y1 <= y2);
 }
 
-void blit_clear_window_bw()
+void blit_clear_window_bw(void)
 {
     const int width = screen_rez != 0 ? SCREEN_BW_WIDTH : SCREEN_COL_WIDTH;
     unsigned int colorBits = 0xFFFFFFFF; // The sky color is a plain white

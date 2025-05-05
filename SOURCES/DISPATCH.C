@@ -1,7 +1,7 @@
 /************************************************************
  *** Dispatch code to switch between the different modes: master, solo, slave and MIDIcam
  ************************************************************/
-#include "GLOBALS.H"
+#include "globals.h"
 
 
 /************************************************************

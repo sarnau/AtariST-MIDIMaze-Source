@@ -1,7 +1,7 @@
 /************************************************************
  *** DRAWWALLS.C
  ************************************************************/
-#include "GLOBALS.H"
+#include "globals.h"
 
 static int objecttable_set_wall(int x1,int h1,int x2,int h2,int color,int leftRightFlag);
 static int draw_mazes_clip_wall(int *py1,int *px1,int *py2,int *px2);

@@ -1,7 +1,7 @@
 /************************************************************
  *** The Play/Team dialog
  ************************************************************/
-#include "GLOBALS.H"
+#include "globals.h"
 
 static void update_names_in_rsc(int *droneList);
 

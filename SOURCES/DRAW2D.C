@@ -1,7 +1,7 @@
 /************************************************************
  *** Routines to draw the 2D map
  ************************************************************/
-#include "GLOBALS.H"
+#include "globals.h"
 
 #define BORDER_WIDTH    3
 

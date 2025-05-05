@@ -1,7 +1,7 @@
 /************************************************************
  *** DRAW3D.C
  ************************************************************/
-#include "GLOBALS.H"
+#include "globals.h"
 
 static void draw_vline(int x,int h);
 static void draw_wall(int x1,int h1,int x2,int h2,int color);

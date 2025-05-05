@@ -1,7 +1,7 @@
 /************************************************************
  *** The main loop for the master or in solo mode.
  ************************************************************/
-#include "GLOBALS.H"
+#include "globals.h"
 
 short maze_loaded_flag = FALSE;
 int dummy;

@@ -1,7 +1,7 @@
 /************************************************************
  *** MAKE_RENDERLIST.C
  ************************************************************/
-#include "GLOBALS.H"
+#include "globals.h"
 
 /************************************************************
  *** void draw_maze_generate_renderlist(int y,int x,int fieldOffsetY,int fieldOffsetX,int flip,int leftRightFlag)

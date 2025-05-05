@@ -1,4 +1,4 @@
-#include "GLOBALS.H"
+#include "globals.h"
 
 // The compressed title is always encoded as a color image (160 bytes per line, 200 lines)
 // It is expected that the destination buffer has the same size!

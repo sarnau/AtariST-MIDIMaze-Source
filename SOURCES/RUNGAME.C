@@ -1,7 +1,7 @@
 /************************************************************
  *** Setup of the game, only called once
  ************************************************************/
-#include "GLOBALS.H"
+#include "globals.h"
 
 static int load_datas(void);
 

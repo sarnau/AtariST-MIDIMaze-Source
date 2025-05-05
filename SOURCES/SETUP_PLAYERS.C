@@ -1,7 +1,7 @@
 /************************************************************
  *** SETUP_PLAYERS.C
  ************************************************************/
-#include "GLOBALS.H"
+#include "globals.h"
 
 /***********************************************************
  *** At game start initialize all player variables and position them in the maze

@@ -1,4 +1,4 @@
-#include "GLOBALS.H"
+#include "globals.h"
 
 /*
 * // Multiply and divide 3 16-bit signed integer values with the temporary

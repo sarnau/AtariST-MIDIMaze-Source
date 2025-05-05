@@ -1,5 +1,5 @@
-#include "GLOBALS.H"
-#include "CALC_TAB.H"
+#include "globals.h"
+#include "calc_tab.h"
 
 /*
 ; L0A2E
@@ -268,7 +268,7 @@ void blit_fill_box_color(int x1, int y1, int x2, int y2, int col)
     } while(++y1 <= y2);
 }
 
-void blit_clear_window_color()
+void blit_clear_window_color(void)
 {
     const int width = screen_rez != 0 ? SCREEN_BW_WIDTH : SCREEN_COL_WIDTH;
     const int skyColor = COLOR_BLUE_INDEX;

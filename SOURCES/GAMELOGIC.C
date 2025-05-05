@@ -2,7 +2,7 @@
  *** Movement of players and shots, collisions, etc.
  *** This is were all the magic happens!
  ************************************************************/
-#include "GLOBALS.H"
+#include "globals.h"
 
 /* These sizes are just for collision detection. They don't define how the shape is drawn. */
 /* e.g. a shot has no radius at all, it hits if it enters the radius of the player. */

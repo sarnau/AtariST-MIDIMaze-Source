@@ -1,7 +1,7 @@
 /************************************************************
  *** This file shows the current happiness indicator
  ************************************************************/
-#include "GLOBALS.H"
+#include "globals.h"
 
 #define HQUOT_WIDTH 20 /* width in words */
 #define HQUOT_HEIGHT 2 /* height in lines */

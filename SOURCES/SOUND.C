@@ -1,7 +1,7 @@
 /************************************************************
  *** Manages the two sounds MIDImaze has: a shot and a hit
  ************************************************************/
-#include "GLOBALS.H"
+#include "globals.h"
 
 
 static const unsigned char sound_shot[] = {

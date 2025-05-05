@@ -1,7 +1,7 @@
 /************************************************************
  *** LOWMEM.C
  ************************************************************/
-#include "GLOBALS.H"
+#include "globals.h"
 
 #if BUGFIX_MIDI_TIMEOUT
 static long read_vbclock_ret;

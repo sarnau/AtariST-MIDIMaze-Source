@@ -1,7 +1,7 @@
 /************************************************************
  *** Joystick/Mouse code
  ************************************************************/
-#include "GLOBALS.H"
+#include "globals.h"
 
 static void own_joyvec(char *buf);
 static void own_mousevec(char *buf);

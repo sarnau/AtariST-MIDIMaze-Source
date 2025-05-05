@@ -2,7 +2,7 @@
  *** All code to manage the drones
  *** The vast majority of it is for the ninja.
  ************************************************************/
-#include "GLOBALS.H"
+#include "globals.h"
 
 static int drone_move(int player);
 static void drone_check_directions(int player,int *canNorthPtr,int *canSouthPtr,int *canEastPtr,int *canWestPtr,int useAltCoord,int altYField,int altXField);

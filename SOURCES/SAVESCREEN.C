@@ -2,7 +2,7 @@
  *** Restore/Save the screen/areas of the screen. Used in the
  *** context of AES, which doesn't support double buffering.
  ************************************************************/
-#include "GLOBALS.H"
+#include "globals.h"
 
 /************************************************************
  *** Copy currently visible screen onto the double-buffer

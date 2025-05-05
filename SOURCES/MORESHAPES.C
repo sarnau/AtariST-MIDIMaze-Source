@@ -1,7 +1,7 @@
 /************************************************************
  *** Artwork for the shapes used in the pop chart or on the notes board
  ************************************************************/
-#include "GLOBALS.H"
+#include "globals.h"
 
 /* ______XXXXXX____ ________________ */
 /* ____XXXXXXXXXX__ ________________ */

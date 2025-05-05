@@ -7,7 +7,9 @@
  */
 
 #import "AppDelegate.h"
-#include "GLOBALS.H"
+extern "C" {
+    #import "globals.h"
+}
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdlib.h>

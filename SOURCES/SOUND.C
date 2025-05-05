@@ -4,7 +4,7 @@
 #include "GLOBALS.H"
 
 
-static const char sound_shot[] = {
+static const unsigned char sound_shot[] = {
                                     0x07,0x34, /* Mixer Control: Channel C Noise (1=Off), Channel B Noise, Channel C Tone (0=On) */
                                     0x08,0x00, /* Channel A Amplitude Control: 0 */
                                     0x09,0x00, /* Channel B Amplitude Control */
@@ -120,7 +120,7 @@ static const char sound_shot[] = {
                                     0x09,0x00, /* Channel B Amplitude Control: 0 */
                                     0x82,0x00 /* end of sound */
                                     };
-static const char sound_hit[] = {
+static const unsigned char sound_hit[] = {
                                     0x07,0x36, /* Mixer Control: Channel C Noise (1=Off), Channel B Noise, Channel C Tone (0=On), Channel B Tone */
                                     0x08,0x10, /* Channel A Amplitude Control: Variable */
                                     0x00,0xff, /* Channel A Freq Low: 255 */
@@ -144,8 +144,8 @@ int i;
 
     for(i = 0; i < GI_REGS; i++)
         saved_sound_regs[i] = Giaccess(0, i);
-    sound_shot_ptr = sound_shot;
-    sound_hit_ptr = sound_hit;
+    sound_shot_ptr = (char *)sound_shot;
+    sound_hit_ptr = (char *)sound_hit;
 }
 
 /************************************************************

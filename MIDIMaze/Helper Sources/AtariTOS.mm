@@ -349,7 +349,7 @@ static void updateScreenView()
     if(gImageRep.bitmapData) {
         plainConvert((unsigned short*)physBuffer, gImageRep.bitmapData);
         [NSOperationQueue.mainQueue addOperationWithBlock:^(){
-            [gAppDelegate.imageView setNeedsDisplay];
+            gAppDelegate.imageView.needsDisplay = YES;
         }];
     }
 }
@@ -421,6 +421,7 @@ int evnt_multi(int flags,int bclk,int bmsk,int bst,int m1flags,int m1x,int m1y,i
     if(gSelectedMenuItem != MMSelectedMenuItemNone) {
         mepbuff[0] = MN_SELECTED;
         switch(gSelectedMenuItem) {
+        case MMSelectedMenuItemNone: break;
         case MMSelectedMenuItemAbout: mepbuff[3] = 3; mepbuff[4] =  7; break;
         case MMSelectedMenuItemLoad:  mepbuff[3] = 4; mepbuff[4] = 16; break;
         case MMSelectedMenuItemReset: mepbuff[3] = 4; mepbuff[4] = 17; break;

@@ -11,7 +11,6 @@
 #include "osif.h"
 
 #define NON_ATARI_HACK 1 // Because we don't support MIDI, we disable the master/slave recognition at launch
-#define ATARI_LONG_HACK 1 // A long on a 68000k is 32 bit big-endian. This fix makes it work either way. 
 
 /* Several defines to enable individual bugfixes for the original MIDImaze */
 #define BUGFIX_MIDI_TIMEOUT     1 /* fix weird MIDI loop timeouts during play */

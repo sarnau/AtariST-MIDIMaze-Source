@@ -48,7 +48,8 @@ unsigned short *mapsmilyface_ptr;
  *** The reason for this is probably to avoid touching the artwork again.
  ************************************************************/
 static void flip_crossedsmil_img(void) {
-#if !ATARI_LONG_HACK
+#ifdef __m68k__
+/* we can only do this on big-endian machines */
 unsigned long *imageMaskPtr;
 #else
 unsigned short *imageMaskPtr;
@@ -58,13 +59,13 @@ unsigned long orgBitMask;
 int bits;
 int i;
 
-#if !ATARI_LONG_HACK
-    imageMaskPtr = (unsigned long*)crossedsmil_img;
+#ifdef __m68k__
+    imageMaskPtr = (unsigned long*)smileybuster_img;
 #else
     imageMaskPtr = smileybuster_img;
 #endif
     for(i = 0; i < 15; i++) {
-#if !ATARI_LONG_HACK
+#ifdef __m68k__
         orgBitMask = imageMaskPtr[i];
 #else
         orgBitMask = (imageMaskPtr[i*2]<<16)|imageMaskPtr[i*2+1];
@@ -72,13 +73,13 @@ int i;
         newBitMask = 0;
         for(bits = 0; bits < 18; bits++) {
             newBitMask >>= 1;
-            if(orgBitMask&0x80000000)
-                newBitMask |= 0x80000000;
+            if(orgBitMask&0x80000000L)
+                newBitMask |= 0x80000000L;
             else
-                newBitMask &= 0x7FFFFFFF;
+                newBitMask &= 0x7FFFFFFFL;
             orgBitMask <<= 1;
         }
-#if !ATARI_LONG_HACK
+#ifdef __m68k__
         imageMaskPtr[i] = newBitMask;
 #else
         imageMaskPtr[i*2] = newBitMask>>16; imageMaskPtr[i*2+1] = newBitMask;

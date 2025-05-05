@@ -104,27 +104,28 @@ int i;
 
         /* count number of players online */
         } else if(midiByte == MIDI_COUNT_PLAYERS) {
-            if((midiByte = get_midi(MIDI_DEFAULT_TIMEOUT)) < 0) break;
+            if((midiByte = get_midi(MIDI_DEFAULT_TIMEOUT)) < 0) continue;
             if(user_is_midicam) {
                 Bconout(MIDI, midiByte);
                 midicam_player_count = midiByte-1;
             } else {
                 Bconout(MIDI, (own_number = midiByte)+1); /* store our own number and send a new one to the next player */
             }
-            if((midiByte = get_midi(MIDI_DEFAULT_TIMEOUT)) < 0) break;
+            if((midiByte = get_midi(MIDI_DEFAULT_TIMEOUT)) < 0) continue;
             Bconout(MIDI, machines_online = midiByte);
             Bconin(MIDI); /* ignore the byte */
             Bconout(MIDI, MIDI_COUNT_PLAYERS);
 
         /* start/continue the game */
         } else if(midiByte == MIDI_START_GAME) {
-            if(receive_datas() < 0) break;
+            if(receive_datas() < 0) continue;
 
             /* main loop for the whole game (shared with the master) */
-            midiByte = game_loop(0, joystickActive);
+            midiByte = game_loop(FALSE, joystickActive);
 
             /* reset VT52 colors */
-            BCON_DEFAULT_TEXT_COLOR();
+            BCON_SETFCOLOR(screen_rez ? COLOR_SILVER_INDEX : COLOR_WHITE_INDEX);
+            BCON_SETBCOLOR(COLOR_BLACK_INDEX);
             Vsync();
             (void)Setcolor(0, 0); /* reset background color to black */
             copy_screen();
@@ -147,14 +148,14 @@ int i;
 
         /* allow the user to enter a name for their player */
         } else if(midiByte == MIDI_NAME_DIALOG) {
-            if((midiByte = get_midi(MIDI_DEFAULT_TIMEOUT)) < 0) break;
+            if((midiByte = get_midi(MIDI_DEFAULT_TIMEOUT)) < 0) continue;
             if(user_is_midicam) {
                 Bconout(MIDI, midiByte);
                 midicam_player_count = midiByte-1;
             } else {
                 Bconout(MIDI, (own_number = midiByte)+1);
             }
-            if((midiByte = get_midi(MIDI_DEFAULT_TIMEOUT)) < 0) break;
+            if((midiByte = get_midi(MIDI_DEFAULT_TIMEOUT)) < 0) continue;
             Bconout(MIDI, machines_online = midiByte);
             if(user_is_midicam) {
                 for(i = 0; i < machines_online; i++) {

@@ -15,7 +15,7 @@ short _random_seed;
 
 static int _random(void) {
     /* This type of random generate is a "Linear congruential generators" (see Knuth), similar to the one used in the Atari ST XBIOS. Both numbers are prime, but because we use shorts to store the results, the +130253 is actually just a -819 (and not a prime) */
-    _random_seed = _random_seed*6907+130253;
+    _random_seed = (long)(_random_seed*6907)+130253L;
     return _random_seed;
 }
 

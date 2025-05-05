@@ -402,7 +402,7 @@ extern int move_player(int player,int joystickData,int dronesActiveFlag);
 
 extern void blit_draw_shape_bw(int x,int y,const unsigned short *imageMask,int widthInWords,int height,const unsigned short *ditherTable);
 
-extern int muls_divs(int a,int b,int c);
+extern short muls_divs(short a,short b,short c);
 
 extern void calc_color_mult_tab(void);
 extern void calc_bw_mult_tab(void);

@@ -106,7 +106,7 @@ def print_body_shapes(data,FACE_COUNT):
 			offs = shapeOffset
 			for _ in range(draw_shape_bodyHeight):
 				for b in range(shapeWidthInWords * 2):
-					print("{:08b}".format(data[offs+b]),end='')
+					print("{:08b}".format(data[offs+b]).replace('0',' ').replace('1','X'),end='')
 				print()
 				offs += shapeWidthInWords * 2
 			
@@ -118,8 +118,8 @@ convert_title(color_screen, 4, './images/TITLE_COL.PNG')
 bw_screen = data[0x05076:0x05076+0x5A62]
 convert_title(bw_screen, 1, './images/TITLE_BW.PNG')
 sine_table = data[0x0AAD8:0x0AAD8+0x0082]
-#print_sine_table(sine_table)
+print_sine_table(sine_table)
 ball_images = data[0x0AB5A:0x0AB5A+0x0C64]
-#print_body_shapes(ball_images,1)
+print_body_shapes(ball_images,1)
 face_images = data[0x0B7BE:0x0B7BE+0xF7D0]
-#print_body_shapes(face_images,20)
+print_body_shapes(face_images,20)

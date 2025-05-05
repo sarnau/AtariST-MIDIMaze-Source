@@ -139,7 +139,6 @@
 		F8A7D3661F7BF3A800610920 /* popchart.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = popchart.c; sourceTree = "<group>"; };
 		F8A7D3671F7BF3A800610920 /* rungame.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = rungame.c; sourceTree = "<group>"; };
 		F8A7D3681F7BF3A800610920 /* midicomm.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = midicomm.c; sourceTree = "<group>"; };
-		F8A7D3691F7BF3A800610920 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.c; sourceTree = "<group>"; };
 		F8A7D36A1F7BF3A800610920 /* sound.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = sound.c; sourceTree = "<group>"; };
 		F8A7D36B1F7BF3A800610920 /* drawshap.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = drawshap.c; sourceTree = "<group>"; };
 		F8A7D36C1F7BF3A800610920 /* rscmisc.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = rscmisc.c; sourceTree = "<group>"; };
@@ -215,7 +214,7 @@
 			path = "Helper Sources";
 			sourceTree = "<group>";
 		};
-		F88877061F7E30000027D68B /* src */ = {
+		F88877061F7E30000027D68B /* ASOURCES */ = {
 			isa = PBXGroup;
 			children = (
 				F88877091F7E30000027D68B /* mulsdivs.c */,
@@ -229,6 +228,7 @@
 				F88877101F7E30000027D68B /* decomp.c */,
 				F88877111F7E30000027D68B /* delay.s */,
 			);
+			name = ASOURCES;
 			path = src;
 			sourceTree = SOURCE_ROOT;
 		};
@@ -284,18 +284,17 @@
 				F8A7D3241F7BF35300610920 /* AppDelegate.h */,
 				F8A7D3251F7BF35300610920 /* AppDelegate.mm */,
 				F88877021F7D54280027D68B /* Helper Sources */,
-				F88877061F7E30000027D68B /* src */,
-				F8A7D3521F7BF3A800610920 /* src */,
+				F88877061F7E30000027D68B /* ASOURCES */,
+				F8A7D3521F7BF3A800610920 /* SOURCES */,
 				F88877181F7E33B80027D68B /* Resources */,
 			);
 			path = MIDIMaze;
 			sourceTree = "<group>";
 		};
-		F8A7D3521F7BF3A800610920 /* src */ = {
+		F8A7D3521F7BF3A800610920 /* SOURCES */ = {
 			isa = PBXGroup;
 			children = (
 				F8A7D3611F7BF3A800610920 /* globals.h */,
-				F8A7D3691F7BF3A800610920 /* main.c */,
 				F8A7D3671F7BF3A800610920 /* rungame.c */,
 				F8A7D3551F7BF3A800610920 /* dispatch.c */,
 				F8A7D3581F7BF3A800610920 /* master.c */,
@@ -335,6 +334,7 @@
 				F8A7D3631F7BF3A800610920 /* miscout.c */,
 				F8A7D3721F7BF3A800610920 /* fastmath.c */,
 			);
+			name = SOURCES;
 			path = src;
 			sourceTree = SOURCE_ROOT;
 		};

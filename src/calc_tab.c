@@ -50,20 +50,24 @@ const unsigned short bmask_singlebit[16] = { 0x8000,0x4000,0x2000,0x1000,
                                              0x0008,0x0004,0x0002,0x0001 };
 
 
-void calc_color_mult_tab()
+void calc_color_mult_tab(void)
 {
 	int val = 0;
-	for(int i=0; i<256; ++i)
+	int i;
+
+	for(i=0; i<256; ++i)
 	{
 		mult160table[i] = val;
 		val += SCREEN_COL_LINEOFFSET;
 	}
 }
 
-void calc_bw_mult_tab()
+void calc_bw_mult_tab(void)
 {
 	int val = 0;
-	for(int i=0; i<SCREEN_BW_HEIGHT; ++i)
+	int i;
+
+	for(i=0; i<SCREEN_BW_HEIGHT; ++i)
 	{
 		mult80table[i] = val;
 		val += SCREEN_BW_LINEOFFSET;

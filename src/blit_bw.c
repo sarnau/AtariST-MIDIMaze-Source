@@ -110,7 +110,7 @@ L09C0:TST.W     D4
 L09C1:RTS
 */
 
-// validate that the xoffs is in the current line and set 16 pixels in 2 lines
+/* validate that the xoffs is in the current line and set 16 pixels in 2 lines */
 #define blit_draw_shape_bw_blit2screen() \
     if(xoffs >= 0 && xoffs < SCREEN_BW_LINEOFFSET/4) { \
         scrPtr[xoffs] ^= (scrPtr[xoffs] ^ INTELSWAP16(ditherOne)) & INTELSWAP16(imageMaskBits); \
@@ -124,11 +124,11 @@ L09C1:RTS
  ***/
 void blit_draw_shape_bw(int x, int y, const unsigned short *imageMask, int widthInWords, int halfHeight, const unsigned short *ditherTable)
 {
-    // destination address of the first line
+    /* destination address of the first line */
     unsigned short *scrPtr = screen_offs_adr + mult80table[y]/sizeof(unsigned short);
-    // pixel within the word
+    /* pixel within the word */
     int pixelBitOffset = x & 0x0F;
-    // word offset to the x + width coordinate
+    /* word offset to the x + width coordinate */
     int xWordOffset = (x >> 4) + widthInWords;
     if(pixelBitOffset <= 8)
     {
@@ -137,23 +137,23 @@ void blit_draw_shape_bw(int x, int y, const unsigned short *imageMask, int width
             int width = widthInWords;
             unsigned short ditherOne = ditherTable[(y & 3) + 1];
             unsigned short ditherTwo = ditherTable[(y & 3) + 0];
-            unsigned int   imageMaskBits;
-            // leftover bits from the previous word
+            uint32_t imageMaskBits;
+            /* leftover bits from the previous word */
             unsigned short imageMaskLeftoverBits = 0;
             do {
-                // get the last word from the image and shift it into position
-                imageMaskBits = ((*--imageMask << 16) | imageMaskLeftoverBits) >> pixelBitOffset;
-                // draw 16 pixels in two lines
+                /* get the last word from the image and shift it into position */
+                imageMaskBits = (((uint32_t)(*--imageMask) << 16) | imageMaskLeftoverBits) >> pixelBitOffset;
+                /* draw 16 pixels in two lines */
                 blit_draw_shape_bw_blit2screen();
-                // next word to the left
-                xoffs -= 2/sizeof(unsigned short);
+                /* next word to the left */
+                xoffs -= 2/(int)sizeof(unsigned short);
                 imageMaskLeftoverBits = *imageMask;
             } while(--width > 0);
-            // draw the last remaining leftover bits
+            /* draw the last remaining leftover bits */
             imageMaskBits = imageMaskLeftoverBits >> pixelBitOffset;
             blit_draw_shape_bw_blit2screen();
-            // and jump up by two lines
-            xoffs -= 2/sizeof(unsigned short);
+            /* and jump up by two lines */
+            xoffs -= 2/(int)sizeof(unsigned short);
             scrPtr -= 2*SCREEN_BW_LINEOFFSET/sizeof(unsigned short);
             y -= 2;
         } while(--halfHeight > 0);
@@ -164,26 +164,26 @@ void blit_draw_shape_bw(int x, int y, const unsigned short *imageMask, int width
             int width = widthInWords;
             unsigned short ditherOne = ditherTable[(y & 3) + 1];
             unsigned short ditherTwo = ditherTable[(y & 3) + 0];
-            unsigned int    imageMaskBits = 0;
-            // leftover bits from the previous word
+            uint32_t imageMaskBits = 0;
+            /* leftover bits from the previous word */
             unsigned short imageMaskLeftoverBits = 0;
             do {
-                // get the last word from the image and shift it into position
+                /* get the last word from the image and shift it into position */
                 imageMaskBits &= 0xFFFF0000L;
                 imageMaskBits |= *--imageMask;
                 imageMaskBits <<= pixelBitOffset;
                 imageMaskBits |= imageMaskLeftoverBits;
-                // draw 16 pixels in two lines
+                /* draw 16 pixels in two lines */
                 blit_draw_shape_bw_blit2screen();
                 imageMaskBits >>= 16;
                 imageMaskLeftoverBits = imageMaskBits;
-                // next word to the left
-                xoffs -= 2/sizeof(unsigned short);
+                /* next word to the left */
+                xoffs -= 2/(int)sizeof(unsigned short);
             } while(--width > 0);
-            // draw the last remaining leftover bits
+            /* draw the last remaining leftover bits */
             imageMaskBits = imageMaskLeftoverBits;
             blit_draw_shape_bw_blit2screen();
-            // and jump up by two lines
+            /* and jump up by two lines */
             scrPtr -= 2*SCREEN_BW_LINEOFFSET/sizeof(unsigned short);
             y -= 2;
         } while(--halfHeight > 0);

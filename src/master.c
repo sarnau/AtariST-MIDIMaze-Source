@@ -2,6 +2,7 @@
  *** The main loop for the master or in solo mode.
  ************************************************************/
 #include "globals.h"
+#include "rstest.h"
 
 short maze_loaded_flag = FALSE;
 short dummy;
@@ -108,9 +109,9 @@ int i;
                 menuTitleId = buffer[3];
                 menuItemId = buffer[4];
                 switch(menuTitleId) {
-                case 3: /* About menu */
+                case TITLE_ABOUT: /* About menu */
                     switch(menuItemId) {
-                    case 7: /* About */
+                    case ABOUT: /* About */
                         if(!isSolo) {
                             /* remove all pending MIDI bytes */
                             while(Bconstat(MIDI))
@@ -124,19 +125,19 @@ int i;
                         redraw_window_background(wind_handle);
                         graf_mouse(M_ON, NULL);
                         form_alert(1, "[2][ |What about it?][tee-hee]");
-                        rsrc_object_array[RSCTREE_ABOUT][5].ob_state &= ~(SELECTED|DISABLED);
-                        rsrc_object_array[RSCTREE_ABOUT][5].ob_flags |= DEFAULT;
+                        rsrc_object_array[RSCTREE_ABOUT][ABOUT_WOW].ob_state &= ~(SELECTED|DISABLED);
+                        rsrc_object_array[RSCTREE_ABOUT][ABOUT_WOW].ob_flags |= DEFAULT;
                         do_about_dialog(RSCTREE_ABOUT);
                         break;
                     default:
                         break;
                     }
-                    menu_tnormal(rsrc_object_array[RSCTREE_MENU], 3, 1);
+                    menu_tnormal(rsrc_object_array[RSCTREE_MENU], TITLE_ABOUT, 1);
                     break;
-                case 4: /* MAZE menu */
+                case TITLE_MAZE: /* MAZE menu */
                     switch(menuItemId) {
 
-                    case 16: /* Load a maze */
+                    case MAZE_LOAD: /* Load a maze */
                         fsel_input(filepath, filename, &pbutton);
                         if(pbutton) {
                             graf_mouse(HOURGLASS, NULL);
@@ -157,7 +158,7 @@ int i;
                         }
                         break;
 
-                    case 17: /* Reset Score */
+                    case MAZE_RESET_SCORE: /* Reset Score */
                         if(!isSolo) {
                             /* remove all pending MIDI bytes */
                             while(Bconstat(MIDI))
@@ -174,7 +175,7 @@ int i;
                         graf_mouse(M_ON, NULL);
                         break;
 
-                    case 22: /* Set Names */
+                    case MAZE_SET_NAMES: /* Set Names */
                         if(!isSolo) {
                             /* remove all pending MIDI bytes */
                             while(Bconstat(MIDI))
@@ -200,7 +201,7 @@ int i;
                         playername_edit_dialog(isSolo);
                         break;
 
-                    case 19: /* Play */
+                    case MAZE_PLAY: /* Play */
                     PLAY_GAME:
                         wind_update(BEG_UPDATE);
                         if(!maze_loaded_flag) {
@@ -238,7 +239,7 @@ int i;
                         }
                         prefReturnCode = do_preference_form(rsrc_object_array[RSCTREE_PLAY_DIALOG], PLAYER_MAX_COUNT-machines_online, active_drones_by_type);
                         wind_update(END_UPDATE);
-                        menu_tnormal(rsrc_object_array[RSCTREE_MENU], 4, 1);
+                        menu_tnormal(rsrc_object_array[RSCTREE_MENU], TITLE_MAZE, 1);
                         graf_mouse(M_OFF, NULL);
                         redraw_window_background(wind_handle);
                         if(!isSolo) {
@@ -300,7 +301,7 @@ int i;
                         graf_mouse(M_ON, NULL);
                         break;
 
-                    case 20: /* Quit */
+                    case MAZE_QUIT: /* Quit */
                         midiByte = form_alert(2, "[2][ |Do you really|wanna quit?][Yeah|Nah]");
                         if(midiByte == 1) {
                             returnCode = DISPATCH_QUIT;
@@ -311,7 +312,7 @@ int i;
                     default:
                         break;
                     }
-                    menu_tnormal(rsrc_object_array[RSCTREE_MENU], 4, 1);
+                    menu_tnormal(rsrc_object_array[RSCTREE_MENU], TITLE_MAZE, 1);
                     break;
                 default:
                     break;

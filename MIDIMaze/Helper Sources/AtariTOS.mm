@@ -12,7 +12,8 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <strings.h>
+#include <string.h>
+#include "rstest.h"
 
 // convert an Atari bitmap into our image
 static void        plainConvert(const unsigned short *atariScreenBufP, unsigned char *rgbScreenBuf);
@@ -421,12 +422,12 @@ short evnt_multi(short flags,short bclk,short bmsk,short bst,short m1flags,short
     if(gSelectedMenuItem != MMSelectedMenuItemNone) {
         mepbuff[0] = MN_SELECTED;
         switch(gSelectedMenuItem) {
-        case MMSelectedMenuItemAbout: mepbuff[3] = 3; mepbuff[4] =  7; break;
-        case MMSelectedMenuItemLoad:  mepbuff[3] = 4; mepbuff[4] = 16; break;
-        case MMSelectedMenuItemReset: mepbuff[3] = 4; mepbuff[4] = 17; break;
-        case MMSelectedMenuItemPlay:  mepbuff[3] = 4; mepbuff[4] = 19; break;
-        case MMSelectedMenuItemQuit:  mepbuff[3] = 4; mepbuff[4] = 20; break;
-        case MMSelectedMenuItemNames: mepbuff[3] = 4; mepbuff[4] = 22; break;
+        case MMSelectedMenuItemAbout: mepbuff[3] = TITLE_ABOUT; mepbuff[4] = ABOUT; break;
+        case MMSelectedMenuItemLoad:  mepbuff[3] = TITLE_MAZE; mepbuff[4] = MAZE_LOAD; break;
+        case MMSelectedMenuItemReset: mepbuff[3] = TITLE_MAZE; mepbuff[4] = MAZE_RESET_SCORE; break;
+        case MMSelectedMenuItemPlay:  mepbuff[3] = TITLE_MAZE; mepbuff[4] = MAZE_PLAY; break;
+        case MMSelectedMenuItemQuit:  mepbuff[3] = TITLE_MAZE; mepbuff[4] = MAZE_QUIT; break;
+        case MMSelectedMenuItemNames: mepbuff[3] = TITLE_MAZE; mepbuff[4] = MAZE_SET_NAMES; break;
         }
         gSelectedMenuItem = MMSelectedMenuItemNone;
         return MU_MESAG;
@@ -478,7 +479,7 @@ __kindof NSView *viewForTag(NSWindow *window, NSInteger tag)
 short form_do(OBJECT *form,short start)
 {
     int treeIndex = -1;
-    for(int i=0; i<sizeof(rsrc_object_array)/sizeof(rsrc_object_array[0]); ++i) {
+    for(int i=0; i<NUM_TREE; ++i) {
         if(form == rsrc_object_array[i]) {
             treeIndex = i;
             break;
@@ -489,11 +490,11 @@ short form_do(OBJECT *form,short start)
     case RSCTREE_PLAY_DIALOG: {
             __block NSModalResponse ret;
             dispatch_sync(dispatch_get_main_queue(), ^{
-                NSArray<NSArray <NSNumber *> *> *selectedRsc = @[@[@29,@30],@[@33,@34],@[@38,@39],@[@42,@43,@44],@[@53,@54]];
+                NSArray<NSArray <NSNumber *> *> *selectedRsc = @[@[@RELOAD_FAST,@RELOAD_SLOW],@[@REGEN_SLOW,@REGEN_FAST],@[@REVIVE_SLOW,@REVIVE_FAST],@[@PREF_1LIFE,@PREF_2LIVES,@PREF_3LIVES],@[@PREF_SINGLES,@PREF_TEAMS]];
                 do {
-                    NSTextField *tf = viewForTag(gAppDelegate.playDialog,45);
+                    NSTextField *tf = viewForTag(gAppDelegate.playDialog,PREF_TITLE);
                     // machines online
-                    tf.stringValue = @((char*)form[45].ob_spec);
+                    tf.stringValue = @((char*)form[PREF_TITLE].ob_spec);
                     for(NSArray <NSNumber *> *radioList in selectedRsc) {
                         for(NSNumber *rsrcID in radioList) {
                             NSButton *button = viewForTag(gAppDelegate.playDialog,rsrcID.integerValue);
@@ -501,7 +502,7 @@ short form_do(OBJECT *form,short start)
                         }
                     }
                     // Numbers of drones
-                    for(NSNumber *rsrcID in @[@14,@19,@24]) {
+                    for(NSNumber *rsrcID in @[@DUMB_VAL,@PLAIN_VAL,@NINJA_VAL]) {
                         NSButton *button = viewForTag(gAppDelegate.playDialog,rsrcID.integerValue);
                         button.title = @((char*)form[rsrcID.integerValue].ob_spec);
                     }
@@ -516,7 +517,7 @@ short form_do(OBJECT *form,short start)
                             }
                         }
                     }
-                    if(ret == 54) break; // Team
+                    if(ret == PREF_TEAMS) break; // Team
                     Boolean foundIt = false;
                     for(NSArray <NSNumber *> *radioList in selectedRsc) {
                         if([radioList containsObject:@(ret)]) {
@@ -527,7 +528,7 @@ short form_do(OBJECT *form,short start)
                     if(!foundIt)
                         break;
                 } while(1);
-                if(ret == 48 || ret == 49)
+                if(ret == PREF_NAH || ret == PREF_OK)
                     [gAppDelegate.playDialog orderOut:gAppDelegate];
             });
             return (int)ret;
@@ -545,12 +546,12 @@ short form_do(OBJECT *form,short start)
                             button.state = (form[kk].ob_state & SELECTED) == SELECTED;
                         }
                     }
-                    NSButton *button = viewForTag(gAppDelegate.teamDialog,102);
-                    button.state = (form[102].ob_state & SELECTED) == SELECTED;
+                    NSButton *button = viewForTag(gAppDelegate.teamDialog,FRIENDLY_FIRE);
+                    button.state = (form[FRIENDLY_FIRE].ob_state & SELECTED) == SELECTED;
                     ret = [NSApp runModalForWindow:gAppDelegate.teamDialog];
-                    form[102].ob_state &= ~SELECTED;
+                    form[FRIENDLY_FIRE].ob_state &= ~SELECTED;
                     if(button.state)
-                        form[102].ob_state |= SELECTED;
+                        form[FRIENDLY_FIRE].ob_state |= SELECTED;
                     for(int i=0;i<PLAYER_MAX_COUNT;++i) {
                         for(int j=0; j<PLAYER_MAX_TEAMS; ++j) {
                             int kk = team_group_rscindices[i][j];
@@ -569,7 +570,7 @@ short form_do(OBJECT *form,short start)
                             }
                         }
                     }
-                } while(ret != 101);
+                } while(ret != TEAM_OK);
                 [gAppDelegate.teamDialog orderOut:gAppDelegate];
             });
             break;
@@ -590,7 +591,7 @@ short form_do(OBJECT *form,short start)
             dispatch_sync(dispatch_get_main_queue(), ^{
                 [NSApp runModalForWindow:gAppDelegate.aboutDialog];
             });
-            return 5;
+            return ABOUT_WOW;
     }
     default: break;
     }
@@ -636,7 +637,7 @@ short form_alert(short defbut,const char *astring)
 short form_center(OBJECT *tree,short *pcx,short *pcy,short *pcw,short *pch)
 {
     int treeIndex = -1;
-    for(int i=0; i<sizeof(rsrc_object_array)/sizeof(rsrc_object_array[0]); ++i) {
+    for(int i=0; i<NUM_TREE; ++i) {
         if(tree == rsrc_object_array[i]) {
             treeIndex = i;
             break;
@@ -693,7 +694,7 @@ short menu_bar(OBJECT *tree,short showit)
 short objc_draw(OBJECT *tree,short drawob,short depth,short xc,short yc,short wc,short hc)
 {
     int treeIndex = -1;
-    for(int i=0; i<sizeof(rsrc_object_array)/sizeof(rsrc_object_array[0]); ++i) {
+    for(int i=0; i<NUM_TREE; ++i) {
         if(tree == rsrc_object_array[i]) {
             treeIndex = i;
             break;

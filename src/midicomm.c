@@ -2,6 +2,7 @@
  *** Send/Receive the MIDI package for setting up a game
  ************************************************************/
 #include "globals.h"
+#include "rstest.h"
 
 
 /************************************************************

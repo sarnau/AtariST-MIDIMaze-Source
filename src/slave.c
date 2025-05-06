@@ -3,6 +3,7 @@
  *** by the master via MIDI.
  ************************************************************/
 #include "globals.h"
+#include "rstest.h"
 
 
 /************************************************************
@@ -17,7 +18,7 @@ int midiByte = 0;
 int i;
 
     /* draw a window showing if we are MIDIcam or a slave */
-    if((user_is_midicam = isMidicamFlag))
+    if((user_is_midicam = isMidicamFlag) != 0)
         rsc_draw_buttonless_dialog(RSCTREE_MIDICAM);
     else
         rsc_draw_buttonless_dialog(RSCTREE_SLAVE);
@@ -89,9 +90,9 @@ int i;
             save_part_of_screen_for_dialog(1);
             redraw_window_background(wind_handle);
             /* disable the button, because the master controls it */
-            rsrc_object_array[RSCTREE_ABOUT][5].ob_state |= DISABLED;
-            rsrc_object_array[RSCTREE_ABOUT][5].ob_state &= ~SELECTED;
-            rsrc_object_array[RSCTREE_ABOUT][5].ob_flags &= ~DEFAULT;
+            rsrc_object_array[RSCTREE_ABOUT][ABOUT_WOW].ob_state |= DISABLED;
+            rsrc_object_array[RSCTREE_ABOUT][ABOUT_WOW].ob_state &= ~SELECTED;
+            rsrc_object_array[RSCTREE_ABOUT][ABOUT_WOW].ob_flags &= ~DEFAULT;
             rsc_draw_buttonless_dialog(RSCTREE_ABOUT);
 
         /* reset the scoreboard  */
@@ -178,7 +179,7 @@ int i;
  *** void playername_edit_dialog(int isSolo)
  ************************************************************/
 void playername_edit_dialog(int isSolo) {
-static char *playerNameStrPtr;
+char *playerNameStrPtr;
 short fo_ch;
 short fo_cw;
 short fo_cy;
@@ -204,10 +205,10 @@ int i;
     rsrc_object_array[RSCTREE_SET_NAME][2].ob_state &= ~SELECTED;
     form_dial(FMD_FINISH, fo_cx, fo_cy, fo_cw, fo_ch, fo_cx, fo_cy, fo_cw, fo_ch);
     if(!own_number)
-        graf_mouse(M_OFF, 0);
+        graf_mouse(M_OFF, NULL);
     redraw_window_background(wind_handle);
     if(!own_number)
-        graf_mouse(M_ON, 0);
+        graf_mouse(M_ON, NULL);
 
     /* update the name in the team dialog (which contains the player names) */
     strcpy_srcdst(rs_tedinfo[0].te_ptext, playerNameStrPtr);

@@ -52,6 +52,7 @@ include ../SRCFILES
 include ../RULES
 
 OBJS += \
+	main.o \
 	joystick.o \
 	$(GEMLIB_OBJS) \
 	$(empty)
@@ -59,14 +60,13 @@ OBJS += \
 .c.o:
 	$(AM_V_CC)$(CC) $(CFLAGS) -c -o $@ $<
 
-
 midimaze.prg: $(OBJS)
 	$(AM_V_LD)$(LD) -o $@ $(LDFLAGS) $(OBJS) $(LIBS)
 
 $(GEMLIB_OBJS): gemlib/crysbind.h gemlib/vdilib.h
 
-gemlib/apstart.o: gemlib/apstart.S
-	$(AM_V_CC)$(CC) -c -o $@ $<
+main.o: main.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
 
 crt0.o: crt0.S
 	$(AM_V_CC)$(CC) -c -o $@ $<

@@ -171,7 +171,8 @@ register int endX;
     endX = x1; endX *= 16; endX += slope>>1; endX += 16/2;
     while(++h1 <= h2) {
         if(h1 > WALL_CENTER_OFFSET) break; /* top of the window area reached? */
-        xe = endX; xe /= 16;
+        xe = endX;
+        xe >>= 4;
         /* The wall is mirrored around the horizon line  */
         if(screen_rez) {
             blit_draw_hline_bw_double(x2, xe, WALL_CENTER_OFFSET-h1, color);

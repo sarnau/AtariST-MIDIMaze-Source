@@ -1,7 +1,7 @@
 #include "globals.h"
 
-// The compressed title is always encoded as a color image (160 bytes per line, 200 lines)
-// It is expected that the destination buffer has the same size!
+/* The compressed title is always encoded as a color image (160 bytes per line, 200 lines) */
+/* It is expected that the destination buffer has the same size! */
 #define SCR_LINEOFFSET 160
 #define SCR_HEIGHT 200
 
@@ -134,15 +134,19 @@ void decompress_image_to_screen(unsigned short *bytesW, unsigned short *screenPt
     int byteCount = (bytes[2] << 8) + bytes[3];
     const unsigned char	*offsetDataPtr = bytes + sizeof(short) + sizeof(short);
     const unsigned char	*imageDataPtr = offsetDataPtr + byteCount;
+    int linesLeft;
+
     byteCount /= 2;
-    int linesLeft = SCR_HEIGHT;
+    linesLeft = SCR_HEIGHT;
     while(byteCount-- > 0)
     {
         int	numberOflines = *offsetDataPtr++;
+        int numberOfSkippedlines;
+
         if(linesLeft > numberOflines)
         {
             linesLeft -= numberOflines;
-            // copy numberOflines into the screen
+            /* copy numberOflines into the screen */
             while(numberOflines-- > 0)
             {
                 screenPtr[0] = *imageDataPtr++;
@@ -151,7 +155,7 @@ void decompress_image_to_screen(unsigned short *bytesW, unsigned short *screenPt
             }
         } else {
             numberOflines -= linesLeft;
-            // copy leftover lines in the current column into the screen
+            /* copy leftover lines in the current column into the screen */
             while(linesLeft-- > 0)
             {
                 screenPtr[0] = *imageDataPtr++;
@@ -160,7 +164,7 @@ void decompress_image_to_screen(unsigned short *bytesW, unsigned short *screenPt
             }
             linesLeft = SCR_HEIGHT - numberOflines;
             screenPtr -= SCR_LINEOFFSET*SCR_HEIGHT-sizeof(short);
-            // copy numberOflines in the next column into the screen
+            /* copy numberOflines in the next column into the screen */
             while(numberOflines-- > 0)
             {
                 screenPtr[0] = *imageDataPtr++;
@@ -168,7 +172,7 @@ void decompress_image_to_screen(unsigned short *bytesW, unsigned short *screenPt
                 screenPtr += SCR_LINEOFFSET;
             }
         }
-        int numberOfSkippedlines = *offsetDataPtr++;
+        numberOfSkippedlines = *offsetDataPtr++;
         linesLeft -= numberOfSkippedlines;
         if(linesLeft <= 0)
         {

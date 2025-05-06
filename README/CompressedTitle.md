@@ -11,19 +11,13 @@ screen black/white image.
 
 Screen layout of the 320x200 16 color format:
 
-                  Pixel 0..15    |   Pixel 16..31    | ...
-             | 4 planes=16 colors| 4 planes=16 colors|
-             +----+----+----+----+----+----+----+----+-
-    Line   0 | P0 | P1 | P2 | P3 | P0 | P1 | P2 | P3 |
-             +----+----+----+----+----+----+----+----+-
-    Line   1 |    |    |    |    |    |    |    |    | 
-             +----+----+----+----+----+----+----+----+-
-                                 ...
-             +----+----+----+----+----+----+----+----+-
-    Line 198 |    |    |    |    |    |    |    |    | 
-             +----+----+----+----+----+----+----+----+-
-    Line 199 |    |    |    |    |    |    |    |    | 
-             +----+----+----+----+----+----+----+----+-
+|       |   Pixel 0..15   ||||   Pixel 16..31  ||||
+|       | 4 planes=16 col |||| 4 planes=16 col ||||
+--------|----|----|----|----|----|----|----|----|
+|Line 0 | P0 | P1 | P2 | P3 | P0 | P1 | P2 | P3 |
+|Line 1 | P0 | P1 | P2 | P3 | P0 | P1 | P2 | P3 |
+|Line 2 | P0 | P1 | P2 | P3 | P0 | P1 | P2 | P3 |
+|…      |    |    |    |    |    |    |    |    |
 
 This algorithm assumes that changes in the color plane are more rare when going
 vertically through the picture and it allows skipping an empty run (it is assumed

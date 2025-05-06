@@ -12,6 +12,8 @@
 
 #define NON_ATARI_HACK 1 // Because we don't support MIDI, we disable the master/slave recognition at launch
 
+#define ALLOW_JUST_LF_IN_MAZ_FILES 1 // MAZ-files have CR/LF line endings on the Atari. This allows also just LF as a line ending
+
 /* Several defines to enable individual bugfixes for the original MIDImaze */
 #define BUGFIX_MIDI_TIMEOUT     1 /* fix weird MIDI loop timeouts during play */
 #define BUGFIX_DIVISION_BY_ZERO 1 /* Avoid a division by zero when drawing a horizontal wall. Not needed on an original Atari ST, because the Atari ignores a division by zero. */

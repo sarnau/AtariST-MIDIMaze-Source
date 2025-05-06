@@ -53,16 +53,32 @@ static char const alert_mazefile_header_booboo[] = "[3][ |Maze file|header boo-b
 
     /* read over the CR/LF (because a MAZ-File is an Atari ST text file) */
     Fread(fhandle, 1, &tmp);
+#if ALLOW_JUST_LF_IN_MAZ_FILES
     if (tmp == '\r')
+#endif
         Fread(fhandle, 1, &tmp);
 
     for(fieldY = 0; fieldY <= MAZE_MAX_SIZE-1; fieldY++) {
         /* read a line of the MAZ (+ 3, because the final 'X' and CR/LF at the end) */
         if(fieldY <= maze_size){
+#if ALLOW_JUST_LF_IN_MAZ_FILES
+            if(fieldY <= maze_size && Fread(fhandle, maze_size+3, &lineBuf) != maze_size+3) {
+                 form_alert(1, "[3][ |Error reading|maze file][OK]");
+                 return -2;
+             if(fieldY <= maze_size){
+                 if (Fread(fhandle, maze_size+2, lineBuf) != maze_size+2) {
+                     form_alert(1, "[3][ |Error reading|maze file][OK]");
+                     return -2;
+                 }
+                 if (lineBuf[maze_size + 1] == '\r')
+                     Fread(fhandle, 1, &tmp);
+             }
+#else
             if (Fread(fhandle, maze_size+2, lineBuf) != maze_size+2) {
                 form_alert(1, "[3][ |Error reading|maze file][OK]");
                 return -2;
             }
+#endif
             if (lineBuf[maze_size + 1] == '\r')
                 Fread(fhandle, 1, &tmp);
         }

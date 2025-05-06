@@ -193,14 +193,18 @@ L0A47:BSR.S     L0A3D
 
 static void fill_vline(int y1, int y2, int x, int col, unsigned short *a0)
 {
+    unsigned short *scrPtr;
+    unsigned short orMask;
+    unsigned short andMask;
+
     if(y1 > y2)
     {
         int temp = y1; y1 = y2; y2 = temp;
     }
     y2 -= y1;
-    unsigned short    *scrPtr = (unsigned short*)((unsigned char*)a0 + ((x >> 1) & 0xFFF8) + mult160table[y1]);
-    unsigned short    orMask = INTELSWAP16(bmask_singlebit[x & 0x0F]);
-    unsigned short    andMask = ~orMask;
+    scrPtr = (unsigned short*)((unsigned char*)a0 + ((x >> 1) & 0xFFF8) + mult160table[y1]);
+    orMask = INTELSWAP16(bmask_singlebit[x & 0x0F]);
+    andMask = ~orMask;
     do {
         c_push_pixel();
         scrPtr += (SCREEN_COL_LINEOFFSET-8)/2;
@@ -215,18 +219,21 @@ static void fill_vline(int y1, int y2, int x, int col, unsigned short *a0)
 
 static void fill_cline(int x1, int x2, int y, int col, unsigned short *scr)
 {
-    static const unsigned int  bmask_d[8]  = { 0x00000000,0xFFFF0000, 0x0000FFFF,0xFFFFFFFF };
+    unsigned short *scrPtr;
+    unsigned short orMask;
+    unsigned short andMask;
+    int countWordCount;
+    static const uint32_t bmask_d[4]  = { 0x00000000L, 0xFFFF0000L, 0x0000FFFFL, 0xFFFFFFFFL };
+
     if(x1 > x2)
     {
         int temp = x1; x1 = x2; x2 = temp;
     }
-    unsigned short    *scrPtr = (unsigned short*)((unsigned char*)scr + ((x1 >> 4) * 8) + mult160table[y]);
+    scrPtr = (unsigned short*)((unsigned char*)scr + ((x1 >> 4) * 8) + mult160table[y]);
     
-    // number of full words to be copied
-    int countWordCount = (x2 >> 4) - (x1 >> 4) - 1;
+    /* number of full words to be copied */
+    countWordCount = (x2 >> 4) - (x1 >> 4) - 1;
 
-    unsigned short orMask;
-    unsigned short andMask;
     if(countWordCount < 0)
     {
         orMask = INTELSWAP16(bmask_allDown[x1 & 0x0F]) & INTELSWAP16(bmask_allUp[x2 & 0x0F]);
@@ -238,8 +245,8 @@ static void fill_cline(int x1, int x2, int y, int col, unsigned short *scr)
     c_push_pixelm();
     if(--countWordCount >= 0)
     {
-        unsigned int plane12 = INTELSWAP32(bmask_d[col & 0x03]);
-        unsigned int plane34 = INTELSWAP32(bmask_d[col >> 2]);
+        uint32_t plane12 = INTELSWAP32(bmask_d[col & 0x03]);
+        uint32_t plane34 = INTELSWAP32(bmask_d[col >> 2]);
         do {
             *scrPtr++ = plane12;
             *scrPtr++ = plane12 >> 16;
@@ -268,32 +275,35 @@ void blit_fill_box_color(int x1, int y1, int x2, int y2, int col)
     } while(++y1 <= y2);
 }
 
-void blit_clear_window_color()
+void blit_clear_window_color(void)
 {
     const int width = screen_rez != 0 ? SCREEN_BW_WIDTH : SCREEN_COL_WIDTH;
     const int skyColor = COLOR_BLUE_INDEX;
     const int floorColor = COLOR_STEEL_INDEX;
-    unsigned short *scrPtr = (unsigned short *)screen_offs_adr;
-    for(int lines=0; lines<viewscreen_sky_height; ++lines)        // 50 lines
+    unsigned short *scrPtr = screen_offs_adr;
+	int lines;
+	int i;
+
+    for(lines=0; lines<viewscreen_sky_height; ++lines)        /* 50 lines */
     {
-        for(int i=0; i<(viewscreen_hcenter+viewscreen_halfwidth)/16; ++i)  // 160 pixels of blue
+        for(i=0; i<(viewscreen_hcenter+viewscreen_halfwidth)/16; ++i)  /* 160 pixels of blue */
         {
             *scrPtr++ = (skyColor & 1) ? 0xFFFF : 0x0000;
             *scrPtr++ = (skyColor & 2) ? 0xFFFF : 0x0000;
             *scrPtr++ = (skyColor & 4) ? 0xFFFF : 0x0000;
             *scrPtr++ = (skyColor & 8) ? 0xFFFF : 0x0000;
         }
-        scrPtr += (width-(viewscreen_hcenter+viewscreen_halfwidth))/8*sizeof(unsigned short);    // skip 160 pixels
+        scrPtr += (width-(viewscreen_hcenter+viewscreen_halfwidth))/8*sizeof(unsigned short);    /* skip 160 pixels */
     }
-    for(int lines=0; lines<=viewscreen_floor_height; ++lines)        // 51 lines
+    for(lines=0; lines<=viewscreen_floor_height; ++lines)        /* 51 lines */
     {
-        for(int i=0; i<(viewscreen_hcenter+viewscreen_halfwidth)/16; ++i)  // 160 pixels of dark grey
+        for(i=0; i<(viewscreen_hcenter+viewscreen_halfwidth)/16; ++i)  /* 160 pixels of dark grey */
         {
             *scrPtr++ = (floorColor & 1) ? 0xFFFF : 0x0000;
             *scrPtr++ = (floorColor & 2) ? 0xFFFF : 0x0000;
             *scrPtr++ = (floorColor & 4) ? 0xFFFF : 0x0000;
             *scrPtr++ = (floorColor & 8) ? 0xFFFF : 0x0000;
         }
-        scrPtr += (width-(viewscreen_hcenter+viewscreen_halfwidth))/8*sizeof(unsigned short);    // skip 160 pixels
+        scrPtr += (width-(viewscreen_hcenter+viewscreen_halfwidth))/8*sizeof(unsigned short);    /* skip 160 pixels */
     }
 }

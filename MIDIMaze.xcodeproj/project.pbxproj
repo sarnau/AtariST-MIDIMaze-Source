@@ -25,52 +25,52 @@
 		F8B547A71F7CC57B00705C64 /* AtariTOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = F8B547A61F7CC57B00705C64 /* AtariTOS.mm */; };
 		F8BC26A01F7D119200315B98 /* MIDIMAZE.D8A in Resources */ = {isa = PBXBuildFile; fileRef = F8BC269F1F7D118F00315B98 /* MIDIMAZE.D8A */; };
 		F8BC26A21F7D12C600315B98 /* MIDIMAZE.MAZ in Resources */ = {isa = PBXBuildFile; fileRef = F8BC26A11F7D124900315B98 /* MIDIMAZE.MAZ */; };
-		F8C006762DCA452F00827D07 /* decomp.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006452DCA452F00827D07 /* decomp.c */; };
-		F8C006772DCA452F00827D07 /* rnd.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006662DCA452F00827D07 /* rnd.c */; };
-		F8C006782DCA452F00827D07 /* lowmem.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006552DCA452F00827D07 /* lowmem.c */; };
-		F8C006792DCA452F00827D07 /* sound.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006732DCA452F00827D07 /* sound.c */; };
-		F8C0067A2DCA452F00827D07 /* drone.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C0064E2DCA452F00827D07 /* drone.c */; };
-		F8C0067B2DCA452F00827D07 /* draw3d.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C0064B2DCA452F00827D07 /* draw3d.c */; };
-		F8C0067C2DCA452F00827D07 /* slave.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006722DCA452F00827D07 /* slave.c */; };
-		F8C0067D2DCA452F00827D07 /* rscmisc.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006672DCA452F00827D07 /* rscmisc.c */; };
-		F8C0067E2DCA452F00827D07 /* loadmaze.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006542DCA452F00827D07 /* loadmaze.c */; };
-		F8C0067F2DCA452F00827D07 /* maze_obj.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C0065A2DCA452F00827D07 /* maze_obj.c */; };
-		F8C006802DCA452F00827D07 /* draw_col.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006492DCA452F00827D07 /* draw_col.c */; };
-		F8C006812DCA452F00827D07 /* copyprot.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006442DCA452F00827D07 /* copyprot.c */; };
-		F8C006822DCA452F00827D07 /* conterm.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006432DCA452F00827D07 /* conterm.c */; };
-		F8C006842DCA452F00827D07 /* draw_bw.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006482DCA452F00827D07 /* draw_bw.c */; };
-		F8C006852DCA452F00827D07 /* makedraw.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006572DCA452F00827D07 /* makedraw.c */; };
-		F8C006862DCA452F00827D07 /* moreshap.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C0065F2DCA452F00827D07 /* moreshap.c */; };
-		F8C006872DCA452F00827D07 /* prefdlg.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006632DCA452F00827D07 /* prefdlg.c */; };
-		F8C006882DCA452F00827D07 /* screen.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006702DCA452F00827D07 /* screen.c */; };
-		F8C006892DCA452F00827D07 /* readmidi.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006652DCA452F00827D07 /* readmidi.c */; };
-		F8C0068A2DCA452F00827D07 /* notebrd.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006612DCA452F00827D07 /* notebrd.c */; };
-		F8C0068B2DCA452F00827D07 /* draw2d.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C0064A2DCA452F00827D07 /* draw2d.c */; };
-		F8C0068C2DCA452F00827D07 /* master.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006592DCA452F00827D07 /* master.c */; };
-		F8C0068D2DCA452F00827D07 /* setup.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006712DCA452F00827D07 /* setup.c */; };
-		F8C0068E2DCA452F00827D07 /* gamelogi.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006512DCA452F00827D07 /* gamelogi.c */; };
-		F8C0068F2DCA452F00827D07 /* popchart.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006622DCA452F00827D07 /* popchart.c */; };
-		F8C006902DCA452F00827D07 /* endshape.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C0064F2DCA452F00827D07 /* endshape.c */; };
-		F8C006912DCA452F00827D07 /* makelist.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006582DCA452F00827D07 /* makelist.c */; };
-		F8C006922DCA452F00827D07 /* maingame.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006562DCA452F00827D07 /* maingame.c */; };
-		F8C006932DCA452F00827D07 /* calc_tab.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006422DCA452F00827D07 /* calc_tab.c */; };
-		F8C006942DCA452F00827D07 /* drawwall.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C0064D2DCA452F00827D07 /* drawwall.c */; };
-		F8C006952DCA452F00827D07 /* midicam.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C0065C2DCA452F00827D07 /* midicam.c */; };
-		F8C006962DCA452F00827D07 /* happyind.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006532DCA452F00827D07 /* happyind.c */; };
-		F8C006972DCA452F00827D07 /* miscout.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C0065E2DCA452F00827D07 /* miscout.c */; };
-		F8C006982DCA452F00827D07 /* dispatch.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006472DCA452F00827D07 /* dispatch.c */; };
-		F8C006992DCA452F00827D07 /* blit_col.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006402DCA452F00827D07 /* blit_col.c */; };
-		F8C0069A2DCA452F00827D07 /* blit_bw.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C0063F2DCA452F00827D07 /* blit_bw.c */; };
-		F8C0069B2DCA452F00827D07 /* maze_set.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C0065B2DCA452F00827D07 /* maze_set.c */; };
-		F8C0069C2DCA452F00827D07 /* drawshap.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C0064C2DCA452F00827D07 /* drawshap.c */; };
-		F8C0069D2DCA452F00827D07 /* string.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006742DCA452F00827D07 /* string.c */; };
-		F8C0069E2DCA452F00827D07 /* aesinit.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C0063E2DCA452F00827D07 /* aesinit.c */; };
-		F8C0069F2DCA452F00827D07 /* midicomm.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C0065D2DCA452F00827D07 /* midicomm.c */; };
-		F8C006A02DCA452F00827D07 /* savescr.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C0066F2DCA452F00827D07 /* savescr.c */; };
-		F8C006A12DCA452F00827D07 /* mulsdivs.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006602DCA452F00827D07 /* mulsdivs.c */; };
-		F8C006A22DCA452F00827D07 /* rungame.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C0066E2DCA452F00827D07 /* rungame.c */; };
-		F8C006A32DCA452F00827D07 /* fastmath.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006502DCA452F00827D07 /* fastmath.c */; };
-		F8C006AA2DCA488600827D07 /* rstest.rsh in Resources */ = {isa = PBXBuildFile; fileRef = F8C0066B2DCA452F00827D07 /* rstest.rsh */; };
+		F8DB1D092DCA72AB00E9CE63 /* rstest.rsh in Resources */ = {isa = PBXBuildFile; fileRef = F8DB1CF92DCA72AB00E9CE63 /* rstest.rsh */; };
+		F8DB1D0A2DCA72AB00E9CE63 /* makedraw.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CE52DCA72AB00E9CE63 /* makedraw.c */; };
+		F8DB1D0B2DCA72AB00E9CE63 /* prefdlg.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CF12DCA72AB00E9CE63 /* prefdlg.c */; };
+		F8DB1D0C2DCA72AB00E9CE63 /* loadmaze.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CE22DCA72AB00E9CE63 /* loadmaze.c */; };
+		F8DB1D0D2DCA72AB00E9CE63 /* fastmath.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CDE2DCA72AB00E9CE63 /* fastmath.c */; };
+		F8DB1D0E2DCA72AB00E9CE63 /* draw_col.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CD72DCA72AB00E9CE63 /* draw_col.c */; };
+		F8DB1D0F2DCA72AB00E9CE63 /* calc_tab.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CD02DCA72AB00E9CE63 /* calc_tab.c */; };
+		F8DB1D102DCA72AB00E9CE63 /* blit_bw.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CCD2DCA72AB00E9CE63 /* blit_bw.c */; };
+		F8DB1D112DCA72AB00E9CE63 /* rungame.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CFC2DCA72AB00E9CE63 /* rungame.c */; };
+		F8DB1D122DCA72AB00E9CE63 /* maze_set.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CE92DCA72AB00E9CE63 /* maze_set.c */; };
+		F8DB1D132DCA72AB00E9CE63 /* readmidi.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CF32DCA72AB00E9CE63 /* readmidi.c */; };
+		F8DB1D142DCA72AB00E9CE63 /* midicomm.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CEB2DCA72AB00E9CE63 /* midicomm.c */; };
+		F8DB1D152DCA72AB00E9CE63 /* popchart.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CF02DCA72AB00E9CE63 /* popchart.c */; };
+		F8DB1D162DCA72AB00E9CE63 /* savescr.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CFD2DCA72AB00E9CE63 /* savescr.c */; };
+		F8DB1D172DCA72AB00E9CE63 /* conterm.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CD12DCA72AB00E9CE63 /* conterm.c */; };
+		F8DB1D182DCA72AB00E9CE63 /* midicam.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CEA2DCA72AB00E9CE63 /* midicam.c */; };
+		F8DB1D192DCA72AB00E9CE63 /* drone.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CDC2DCA72AB00E9CE63 /* drone.c */; };
+		F8DB1D1A2DCA72AB00E9CE63 /* dispatch.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CD52DCA72AB00E9CE63 /* dispatch.c */; };
+		F8DB1D1B2DCA72AB00E9CE63 /* draw2d.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CD82DCA72AB00E9CE63 /* draw2d.c */; };
+		F8DB1D1C2DCA72AB00E9CE63 /* sound.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1D012DCA72AB00E9CE63 /* sound.c */; };
+		F8DB1D1D2DCA72AB00E9CE63 /* rscmisc.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CF52DCA72AB00E9CE63 /* rscmisc.c */; };
+		F8DB1D1E2DCA72AB00E9CE63 /* maze_obj.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CE82DCA72AB00E9CE63 /* maze_obj.c */; };
+		F8DB1D1F2DCA72AB00E9CE63 /* decomp.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CD32DCA72AB00E9CE63 /* decomp.c */; };
+		F8DB1D202DCA72AB00E9CE63 /* maingame.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CE42DCA72AB00E9CE63 /* maingame.c */; };
+		F8DB1D212DCA72AB00E9CE63 /* gamelogi.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CDF2DCA72AB00E9CE63 /* gamelogi.c */; };
+		F8DB1D222DCA72AB00E9CE63 /* draw3d.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CD92DCA72AB00E9CE63 /* draw3d.c */; };
+		F8DB1D232DCA72AB00E9CE63 /* happyind.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CE12DCA72AB00E9CE63 /* happyind.c */; };
+		F8DB1D242DCA72AB00E9CE63 /* drawwall.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CDB2DCA72AB00E9CE63 /* drawwall.c */; };
+		F8DB1D262DCA72AB00E9CE63 /* endshape.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CDD2DCA72AB00E9CE63 /* endshape.c */; };
+		F8DB1D272DCA72AB00E9CE63 /* miscout.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CEC2DCA72AB00E9CE63 /* miscout.c */; };
+		F8DB1D282DCA72AB00E9CE63 /* setup.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CFF2DCA72AB00E9CE63 /* setup.c */; };
+		F8DB1D292DCA72AB00E9CE63 /* mulsdivs.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CEE2DCA72AB00E9CE63 /* mulsdivs.c */; };
+		F8DB1D2A2DCA72AB00E9CE63 /* drawshap.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CDA2DCA72AB00E9CE63 /* drawshap.c */; };
+		F8DB1D2B2DCA72AB00E9CE63 /* notebrd.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CEF2DCA72AB00E9CE63 /* notebrd.c */; };
+		F8DB1D2C2DCA72AB00E9CE63 /* draw_bw.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CD62DCA72AB00E9CE63 /* draw_bw.c */; };
+		F8DB1D2D2DCA72AB00E9CE63 /* makelist.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CE62DCA72AB00E9CE63 /* makelist.c */; };
+		F8DB1D2E2DCA72AB00E9CE63 /* lowmem.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CE32DCA72AB00E9CE63 /* lowmem.c */; };
+		F8DB1D2F2DCA72AB00E9CE63 /* screen.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CFE2DCA72AB00E9CE63 /* screen.c */; };
+		F8DB1D302DCA72AB00E9CE63 /* copyprot.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CD22DCA72AB00E9CE63 /* copyprot.c */; };
+		F8DB1D312DCA72AB00E9CE63 /* moreshap.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CED2DCA72AB00E9CE63 /* moreshap.c */; };
+		F8DB1D322DCA72AB00E9CE63 /* string.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1D022DCA72AB00E9CE63 /* string.c */; };
+		F8DB1D332DCA72AB00E9CE63 /* aesinit.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CCC2DCA72AB00E9CE63 /* aesinit.c */; };
+		F8DB1D342DCA72AB00E9CE63 /* blit_col.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CCE2DCA72AB00E9CE63 /* blit_col.c */; };
+		F8DB1D352DCA72AB00E9CE63 /* master.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CE72DCA72AB00E9CE63 /* master.c */; };
+		F8DB1D362DCA72AB00E9CE63 /* slave.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1D002DCA72AB00E9CE63 /* slave.c */; };
+		F8DB1D372DCA72AB00E9CE63 /* rnd.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CF42DCA72AB00E9CE63 /* rnd.c */; };
 		F8E2F7591F80145B00DA1F40 /* MIDIMaze Hit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F8E2F7571F80142D00DA1F40 /* MIDIMaze Hit.mp3 */; };
 		F8E2F75A1F80145E00DA1F40 /* MIDIMaze Shot.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F8E2F7581F80142D00DA1F40 /* MIDIMaze Shot.mp3 */; };
 /* End PBXBuildFile section */
@@ -107,61 +107,61 @@
 		F8B547A61F7CC57B00705C64 /* AtariTOS.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AtariTOS.mm; sourceTree = "<group>"; };
 		F8BC269F1F7D118F00315B98 /* MIDIMAZE.D8A */ = {isa = PBXFileReference; lastKnownFileType = file; name = MIDIMAZE.D8A; path = MIDIMazeDisc/MIDIMAZE.D8A; sourceTree = SOURCE_ROOT; };
 		F8BC26A11F7D124900315B98 /* MIDIMAZE.MAZ */ = {isa = PBXFileReference; lastKnownFileType = text; name = MIDIMAZE.MAZ; path = MIDIMazeDisc/MIDIMAZE.MAZ; sourceTree = SOURCE_ROOT; };
-		F8C0063E2DCA452F00827D07 /* aesinit.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = aesinit.c; sourceTree = "<group>"; };
-		F8C0063F2DCA452F00827D07 /* blit_bw.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = blit_bw.c; sourceTree = "<group>"; };
-		F8C006402DCA452F00827D07 /* blit_col.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = blit_col.c; sourceTree = "<group>"; };
-		F8C006412DCA452F00827D07 /* calc_tab.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = calc_tab.h; sourceTree = "<group>"; };
-		F8C006422DCA452F00827D07 /* calc_tab.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = calc_tab.c; sourceTree = "<group>"; };
-		F8C006432DCA452F00827D07 /* conterm.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = conterm.c; sourceTree = "<group>"; };
-		F8C006442DCA452F00827D07 /* copyprot.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = copyprot.c; sourceTree = "<group>"; };
-		F8C006452DCA452F00827D07 /* decomp.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = decomp.c; sourceTree = "<group>"; };
-		F8C006462DCA452F00827D07 /* delay.s */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = delay.s; sourceTree = "<group>"; };
-		F8C006472DCA452F00827D07 /* dispatch.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = dispatch.c; sourceTree = "<group>"; };
-		F8C006482DCA452F00827D07 /* draw_bw.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = draw_bw.c; sourceTree = "<group>"; };
-		F8C006492DCA452F00827D07 /* draw_col.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = draw_col.c; sourceTree = "<group>"; };
-		F8C0064A2DCA452F00827D07 /* draw2d.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = draw2d.c; sourceTree = "<group>"; };
-		F8C0064B2DCA452F00827D07 /* draw3d.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = draw3d.c; sourceTree = "<group>"; };
-		F8C0064C2DCA452F00827D07 /* drawshap.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = drawshap.c; sourceTree = "<group>"; };
-		F8C0064D2DCA452F00827D07 /* drawwall.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = drawwall.c; sourceTree = "<group>"; };
-		F8C0064E2DCA452F00827D07 /* drone.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = drone.c; sourceTree = "<group>"; };
-		F8C0064F2DCA452F00827D07 /* endshape.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = endshape.c; sourceTree = "<group>"; };
-		F8C006502DCA452F00827D07 /* fastmath.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fastmath.c; sourceTree = "<group>"; };
-		F8C006512DCA452F00827D07 /* gamelogi.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gamelogi.c; sourceTree = "<group>"; };
-		F8C006522DCA452F00827D07 /* globals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = globals.h; sourceTree = "<group>"; };
-		F8C006532DCA452F00827D07 /* happyind.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = happyind.c; sourceTree = "<group>"; };
-		F8C006542DCA452F00827D07 /* loadmaze.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = loadmaze.c; sourceTree = "<group>"; };
-		F8C006552DCA452F00827D07 /* lowmem.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = lowmem.c; sourceTree = "<group>"; };
-		F8C006562DCA452F00827D07 /* maingame.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = maingame.c; sourceTree = "<group>"; };
-		F8C006572DCA452F00827D07 /* makedraw.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = makedraw.c; sourceTree = "<group>"; };
-		F8C006582DCA452F00827D07 /* makelist.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = makelist.c; sourceTree = "<group>"; };
-		F8C006592DCA452F00827D07 /* master.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = master.c; sourceTree = "<group>"; };
-		F8C0065A2DCA452F00827D07 /* maze_obj.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = maze_obj.c; sourceTree = "<group>"; };
-		F8C0065B2DCA452F00827D07 /* maze_set.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = maze_set.c; sourceTree = "<group>"; };
-		F8C0065C2DCA452F00827D07 /* midicam.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = midicam.c; sourceTree = "<group>"; };
-		F8C0065D2DCA452F00827D07 /* midicomm.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = midicomm.c; sourceTree = "<group>"; };
-		F8C0065E2DCA452F00827D07 /* miscout.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = miscout.c; sourceTree = "<group>"; };
-		F8C0065F2DCA452F00827D07 /* moreshap.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = moreshap.c; sourceTree = "<group>"; };
-		F8C006602DCA452F00827D07 /* mulsdivs.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = mulsdivs.c; sourceTree = "<group>"; };
-		F8C006612DCA452F00827D07 /* notebrd.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = notebrd.c; sourceTree = "<group>"; };
-		F8C006622DCA452F00827D07 /* popchart.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = popchart.c; sourceTree = "<group>"; };
-		F8C006632DCA452F00827D07 /* prefdlg.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = prefdlg.c; sourceTree = "<group>"; };
-		F8C006642DCA452F00827D07 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		F8C006652DCA452F00827D07 /* readmidi.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = readmidi.c; sourceTree = "<group>"; };
-		F8C006662DCA452F00827D07 /* rnd.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = rnd.c; sourceTree = "<group>"; };
-		F8C006672DCA452F00827D07 /* rscmisc.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = rscmisc.c; sourceTree = "<group>"; };
-		F8C006682DCA452F00827D07 /* rstest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rstest.h; sourceTree = "<group>"; };
-		F8C006692DCA452F00827D07 /* rstest.hrd */ = {isa = PBXFileReference; lastKnownFileType = file; path = rstest.hrd; sourceTree = "<group>"; };
-		F8C0066A2DCA452F00827D07 /* rstest.rsc */ = {isa = PBXFileReference; lastKnownFileType = file; path = rstest.rsc; sourceTree = "<group>"; };
-		F8C0066B2DCA452F00827D07 /* rstest.rsh */ = {isa = PBXFileReference; lastKnownFileType = text; path = rstest.rsh; sourceTree = "<group>"; };
-		F8C0066C2DCA452F00827D07 /* rstest.rsm */ = {isa = PBXFileReference; lastKnownFileType = text; path = rstest.rsm; sourceTree = "<group>"; };
-		F8C0066D2DCA452F00827D07 /* rstest.rso */ = {isa = PBXFileReference; lastKnownFileType = file; path = rstest.rso; sourceTree = "<group>"; };
-		F8C0066E2DCA452F00827D07 /* rungame.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = rungame.c; sourceTree = "<group>"; };
-		F8C0066F2DCA452F00827D07 /* savescr.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = savescr.c; sourceTree = "<group>"; };
-		F8C006702DCA452F00827D07 /* screen.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = screen.c; sourceTree = "<group>"; };
-		F8C006712DCA452F00827D07 /* setup.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = setup.c; sourceTree = "<group>"; };
-		F8C006722DCA452F00827D07 /* slave.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = slave.c; sourceTree = "<group>"; };
-		F8C006732DCA452F00827D07 /* sound.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = sound.c; sourceTree = "<group>"; };
-		F8C006742DCA452F00827D07 /* string.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = string.c; sourceTree = "<group>"; };
+		F8DB1CCC2DCA72AB00E9CE63 /* aesinit.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = aesinit.c; sourceTree = "<group>"; };
+		F8DB1CCD2DCA72AB00E9CE63 /* blit_bw.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = blit_bw.c; sourceTree = "<group>"; };
+		F8DB1CCE2DCA72AB00E9CE63 /* blit_col.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = blit_col.c; sourceTree = "<group>"; };
+		F8DB1CCF2DCA72AB00E9CE63 /* calc_tab.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = calc_tab.h; sourceTree = "<group>"; };
+		F8DB1CD02DCA72AB00E9CE63 /* calc_tab.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = calc_tab.c; sourceTree = "<group>"; };
+		F8DB1CD12DCA72AB00E9CE63 /* conterm.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = conterm.c; sourceTree = "<group>"; };
+		F8DB1CD22DCA72AB00E9CE63 /* copyprot.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = copyprot.c; sourceTree = "<group>"; };
+		F8DB1CD32DCA72AB00E9CE63 /* decomp.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = decomp.c; sourceTree = "<group>"; };
+		F8DB1CD42DCA72AB00E9CE63 /* delay.s */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = delay.s; sourceTree = "<group>"; };
+		F8DB1CD52DCA72AB00E9CE63 /* dispatch.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = dispatch.c; sourceTree = "<group>"; };
+		F8DB1CD62DCA72AB00E9CE63 /* draw_bw.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = draw_bw.c; sourceTree = "<group>"; };
+		F8DB1CD72DCA72AB00E9CE63 /* draw_col.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = draw_col.c; sourceTree = "<group>"; };
+		F8DB1CD82DCA72AB00E9CE63 /* draw2d.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = draw2d.c; sourceTree = "<group>"; };
+		F8DB1CD92DCA72AB00E9CE63 /* draw3d.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = draw3d.c; sourceTree = "<group>"; };
+		F8DB1CDA2DCA72AB00E9CE63 /* drawshap.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = drawshap.c; sourceTree = "<group>"; };
+		F8DB1CDB2DCA72AB00E9CE63 /* drawwall.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = drawwall.c; sourceTree = "<group>"; };
+		F8DB1CDC2DCA72AB00E9CE63 /* drone.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = drone.c; sourceTree = "<group>"; };
+		F8DB1CDD2DCA72AB00E9CE63 /* endshape.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = endshape.c; sourceTree = "<group>"; };
+		F8DB1CDE2DCA72AB00E9CE63 /* fastmath.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fastmath.c; sourceTree = "<group>"; };
+		F8DB1CDF2DCA72AB00E9CE63 /* gamelogi.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gamelogi.c; sourceTree = "<group>"; };
+		F8DB1CE02DCA72AB00E9CE63 /* globals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = globals.h; sourceTree = "<group>"; };
+		F8DB1CE12DCA72AB00E9CE63 /* happyind.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = happyind.c; sourceTree = "<group>"; };
+		F8DB1CE22DCA72AB00E9CE63 /* loadmaze.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = loadmaze.c; sourceTree = "<group>"; };
+		F8DB1CE32DCA72AB00E9CE63 /* lowmem.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = lowmem.c; sourceTree = "<group>"; };
+		F8DB1CE42DCA72AB00E9CE63 /* maingame.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = maingame.c; sourceTree = "<group>"; };
+		F8DB1CE52DCA72AB00E9CE63 /* makedraw.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = makedraw.c; sourceTree = "<group>"; };
+		F8DB1CE62DCA72AB00E9CE63 /* makelist.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = makelist.c; sourceTree = "<group>"; };
+		F8DB1CE72DCA72AB00E9CE63 /* master.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = master.c; sourceTree = "<group>"; };
+		F8DB1CE82DCA72AB00E9CE63 /* maze_obj.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = maze_obj.c; sourceTree = "<group>"; };
+		F8DB1CE92DCA72AB00E9CE63 /* maze_set.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = maze_set.c; sourceTree = "<group>"; };
+		F8DB1CEA2DCA72AB00E9CE63 /* midicam.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = midicam.c; sourceTree = "<group>"; };
+		F8DB1CEB2DCA72AB00E9CE63 /* midicomm.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = midicomm.c; sourceTree = "<group>"; };
+		F8DB1CEC2DCA72AB00E9CE63 /* miscout.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = miscout.c; sourceTree = "<group>"; };
+		F8DB1CED2DCA72AB00E9CE63 /* moreshap.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = moreshap.c; sourceTree = "<group>"; };
+		F8DB1CEE2DCA72AB00E9CE63 /* mulsdivs.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = mulsdivs.c; sourceTree = "<group>"; };
+		F8DB1CEF2DCA72AB00E9CE63 /* notebrd.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = notebrd.c; sourceTree = "<group>"; };
+		F8DB1CF02DCA72AB00E9CE63 /* popchart.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = popchart.c; sourceTree = "<group>"; };
+		F8DB1CF12DCA72AB00E9CE63 /* prefdlg.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = prefdlg.c; sourceTree = "<group>"; };
+		F8DB1CF22DCA72AB00E9CE63 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F8DB1CF32DCA72AB00E9CE63 /* readmidi.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = readmidi.c; sourceTree = "<group>"; };
+		F8DB1CF42DCA72AB00E9CE63 /* rnd.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = rnd.c; sourceTree = "<group>"; };
+		F8DB1CF52DCA72AB00E9CE63 /* rscmisc.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = rscmisc.c; sourceTree = "<group>"; };
+		F8DB1CF62DCA72AB00E9CE63 /* rstest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rstest.h; sourceTree = "<group>"; };
+		F8DB1CF72DCA72AB00E9CE63 /* rstest.hrd */ = {isa = PBXFileReference; lastKnownFileType = file; path = rstest.hrd; sourceTree = "<group>"; };
+		F8DB1CF82DCA72AB00E9CE63 /* rstest.rsc */ = {isa = PBXFileReference; lastKnownFileType = file; path = rstest.rsc; sourceTree = "<group>"; };
+		F8DB1CF92DCA72AB00E9CE63 /* rstest.rsh */ = {isa = PBXFileReference; lastKnownFileType = text; path = rstest.rsh; sourceTree = "<group>"; };
+		F8DB1CFA2DCA72AB00E9CE63 /* rstest.rsm */ = {isa = PBXFileReference; lastKnownFileType = text; path = rstest.rsm; sourceTree = "<group>"; };
+		F8DB1CFB2DCA72AB00E9CE63 /* rstest.rso */ = {isa = PBXFileReference; lastKnownFileType = file; path = rstest.rso; sourceTree = "<group>"; };
+		F8DB1CFC2DCA72AB00E9CE63 /* rungame.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = rungame.c; sourceTree = "<group>"; };
+		F8DB1CFD2DCA72AB00E9CE63 /* savescr.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = savescr.c; sourceTree = "<group>"; };
+		F8DB1CFE2DCA72AB00E9CE63 /* screen.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = screen.c; sourceTree = "<group>"; };
+		F8DB1CFF2DCA72AB00E9CE63 /* setup.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = setup.c; sourceTree = "<group>"; };
+		F8DB1D002DCA72AB00E9CE63 /* slave.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = slave.c; sourceTree = "<group>"; };
+		F8DB1D012DCA72AB00E9CE63 /* sound.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = sound.c; sourceTree = "<group>"; };
+		F8DB1D022DCA72AB00E9CE63 /* string.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = string.c; sourceTree = "<group>"; };
 		F8E2F7571F80142D00DA1F40 /* MIDIMaze Hit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "MIDIMaze Hit.mp3"; path = "MIDIMAZE2/MIDIMaze Hit.mp3"; sourceTree = SOURCE_ROOT; };
 		F8E2F7581F80142D00DA1F40 /* MIDIMaze Shot.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "MIDIMaze Shot.mp3"; path = "MIDIMAZE2/MIDIMaze Shot.mp3"; sourceTree = SOURCE_ROOT; };
 		F8F081081F82B18C0091699C /* MM2MazeIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = MM2MazeIcon.icns; sourceTree = "<group>"; };
@@ -254,6 +254,7 @@
 			children = (
 				F86C73231F9A164C003DCC15 /* README */,
 				F86C73261F9A164C003DCC15 /* README.md */,
+				F8DB1D032DCA72AB00E9CE63 /* src */,
 				F88877191F7E34840027D68B /* MIDIMazeDisc */,
 				F8A7D3231F7BF35300610920 /* MIDIMaze */,
 				F8A7D3221F7BF35300610920 /* Products */,
@@ -275,70 +276,69 @@
 				F8A7D3241F7BF35300610920 /* AppDelegate.h */,
 				F8A7D3251F7BF35300610920 /* AppDelegate.mm */,
 				F88877021F7D54280027D68B /* Helper Sources */,
-				F8C006752DCA452F00827D07 /* src */,
 				F88877181F7E33B80027D68B /* Resources */,
 			);
 			path = MIDIMaze;
 			sourceTree = "<group>";
 		};
-		F8C006752DCA452F00827D07 /* src */ = {
+		F8DB1D032DCA72AB00E9CE63 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				F8C0063E2DCA452F00827D07 /* aesinit.c */,
-				F8C0063F2DCA452F00827D07 /* blit_bw.c */,
-				F8C006402DCA452F00827D07 /* blit_col.c */,
-				F8C006412DCA452F00827D07 /* calc_tab.h */,
-				F8C006422DCA452F00827D07 /* calc_tab.c */,
-				F8C006432DCA452F00827D07 /* conterm.c */,
-				F8C006442DCA452F00827D07 /* copyprot.c */,
-				F8C006452DCA452F00827D07 /* decomp.c */,
-				F8C006462DCA452F00827D07 /* delay.s */,
-				F8C006472DCA452F00827D07 /* dispatch.c */,
-				F8C006482DCA452F00827D07 /* draw_bw.c */,
-				F8C006492DCA452F00827D07 /* draw_col.c */,
-				F8C0064A2DCA452F00827D07 /* draw2d.c */,
-				F8C0064B2DCA452F00827D07 /* draw3d.c */,
-				F8C0064C2DCA452F00827D07 /* drawshap.c */,
-				F8C0064D2DCA452F00827D07 /* drawwall.c */,
-				F8C0064E2DCA452F00827D07 /* drone.c */,
-				F8C0064F2DCA452F00827D07 /* endshape.c */,
-				F8C006502DCA452F00827D07 /* fastmath.c */,
-				F8C006512DCA452F00827D07 /* gamelogi.c */,
-				F8C006522DCA452F00827D07 /* globals.h */,
-				F8C006532DCA452F00827D07 /* happyind.c */,
-				F8C006542DCA452F00827D07 /* loadmaze.c */,
-				F8C006552DCA452F00827D07 /* lowmem.c */,
-				F8C006562DCA452F00827D07 /* maingame.c */,
-				F8C006572DCA452F00827D07 /* makedraw.c */,
-				F8C006582DCA452F00827D07 /* makelist.c */,
-				F8C006592DCA452F00827D07 /* master.c */,
-				F8C0065A2DCA452F00827D07 /* maze_obj.c */,
-				F8C0065B2DCA452F00827D07 /* maze_set.c */,
-				F8C0065C2DCA452F00827D07 /* midicam.c */,
-				F8C0065D2DCA452F00827D07 /* midicomm.c */,
-				F8C0065E2DCA452F00827D07 /* miscout.c */,
-				F8C0065F2DCA452F00827D07 /* moreshap.c */,
-				F8C006602DCA452F00827D07 /* mulsdivs.c */,
-				F8C006612DCA452F00827D07 /* notebrd.c */,
-				F8C006622DCA452F00827D07 /* popchart.c */,
-				F8C006632DCA452F00827D07 /* prefdlg.c */,
-				F8C006642DCA452F00827D07 /* README.md */,
-				F8C006652DCA452F00827D07 /* readmidi.c */,
-				F8C006662DCA452F00827D07 /* rnd.c */,
-				F8C006672DCA452F00827D07 /* rscmisc.c */,
-				F8C006682DCA452F00827D07 /* rstest.h */,
-				F8C006692DCA452F00827D07 /* rstest.hrd */,
-				F8C0066A2DCA452F00827D07 /* rstest.rsc */,
-				F8C0066B2DCA452F00827D07 /* rstest.rsh */,
-				F8C0066C2DCA452F00827D07 /* rstest.rsm */,
-				F8C0066D2DCA452F00827D07 /* rstest.rso */,
-				F8C0066E2DCA452F00827D07 /* rungame.c */,
-				F8C0066F2DCA452F00827D07 /* savescr.c */,
-				F8C006702DCA452F00827D07 /* screen.c */,
-				F8C006712DCA452F00827D07 /* setup.c */,
-				F8C006722DCA452F00827D07 /* slave.c */,
-				F8C006732DCA452F00827D07 /* sound.c */,
-				F8C006742DCA452F00827D07 /* string.c */,
+				F8DB1CCC2DCA72AB00E9CE63 /* aesinit.c */,
+				F8DB1CCD2DCA72AB00E9CE63 /* blit_bw.c */,
+				F8DB1CCE2DCA72AB00E9CE63 /* blit_col.c */,
+				F8DB1CCF2DCA72AB00E9CE63 /* calc_tab.h */,
+				F8DB1CD02DCA72AB00E9CE63 /* calc_tab.c */,
+				F8DB1CD12DCA72AB00E9CE63 /* conterm.c */,
+				F8DB1CD22DCA72AB00E9CE63 /* copyprot.c */,
+				F8DB1CD32DCA72AB00E9CE63 /* decomp.c */,
+				F8DB1CD42DCA72AB00E9CE63 /* delay.s */,
+				F8DB1CD52DCA72AB00E9CE63 /* dispatch.c */,
+				F8DB1CD62DCA72AB00E9CE63 /* draw_bw.c */,
+				F8DB1CD72DCA72AB00E9CE63 /* draw_col.c */,
+				F8DB1CD82DCA72AB00E9CE63 /* draw2d.c */,
+				F8DB1CD92DCA72AB00E9CE63 /* draw3d.c */,
+				F8DB1CDA2DCA72AB00E9CE63 /* drawshap.c */,
+				F8DB1CDB2DCA72AB00E9CE63 /* drawwall.c */,
+				F8DB1CDC2DCA72AB00E9CE63 /* drone.c */,
+				F8DB1CDD2DCA72AB00E9CE63 /* endshape.c */,
+				F8DB1CDE2DCA72AB00E9CE63 /* fastmath.c */,
+				F8DB1CDF2DCA72AB00E9CE63 /* gamelogi.c */,
+				F8DB1CE02DCA72AB00E9CE63 /* globals.h */,
+				F8DB1CE12DCA72AB00E9CE63 /* happyind.c */,
+				F8DB1CE22DCA72AB00E9CE63 /* loadmaze.c */,
+				F8DB1CE32DCA72AB00E9CE63 /* lowmem.c */,
+				F8DB1CE42DCA72AB00E9CE63 /* maingame.c */,
+				F8DB1CE52DCA72AB00E9CE63 /* makedraw.c */,
+				F8DB1CE62DCA72AB00E9CE63 /* makelist.c */,
+				F8DB1CE72DCA72AB00E9CE63 /* master.c */,
+				F8DB1CE82DCA72AB00E9CE63 /* maze_obj.c */,
+				F8DB1CE92DCA72AB00E9CE63 /* maze_set.c */,
+				F8DB1CEA2DCA72AB00E9CE63 /* midicam.c */,
+				F8DB1CEB2DCA72AB00E9CE63 /* midicomm.c */,
+				F8DB1CEC2DCA72AB00E9CE63 /* miscout.c */,
+				F8DB1CED2DCA72AB00E9CE63 /* moreshap.c */,
+				F8DB1CEE2DCA72AB00E9CE63 /* mulsdivs.c */,
+				F8DB1CEF2DCA72AB00E9CE63 /* notebrd.c */,
+				F8DB1CF02DCA72AB00E9CE63 /* popchart.c */,
+				F8DB1CF12DCA72AB00E9CE63 /* prefdlg.c */,
+				F8DB1CF22DCA72AB00E9CE63 /* README.md */,
+				F8DB1CF32DCA72AB00E9CE63 /* readmidi.c */,
+				F8DB1CF42DCA72AB00E9CE63 /* rnd.c */,
+				F8DB1CF52DCA72AB00E9CE63 /* rscmisc.c */,
+				F8DB1CF62DCA72AB00E9CE63 /* rstest.h */,
+				F8DB1CF72DCA72AB00E9CE63 /* rstest.hrd */,
+				F8DB1CF82DCA72AB00E9CE63 /* rstest.rsc */,
+				F8DB1CF92DCA72AB00E9CE63 /* rstest.rsh */,
+				F8DB1CFA2DCA72AB00E9CE63 /* rstest.rsm */,
+				F8DB1CFB2DCA72AB00E9CE63 /* rstest.rso */,
+				F8DB1CFC2DCA72AB00E9CE63 /* rungame.c */,
+				F8DB1CFD2DCA72AB00E9CE63 /* savescr.c */,
+				F8DB1CFE2DCA72AB00E9CE63 /* screen.c */,
+				F8DB1CFF2DCA72AB00E9CE63 /* setup.c */,
+				F8DB1D002DCA72AB00E9CE63 /* slave.c */,
+				F8DB1D012DCA72AB00E9CE63 /* sound.c */,
+				F8DB1D022DCA72AB00E9CE63 /* string.c */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -404,6 +404,7 @@
 			files = (
 				F803446F1F8B88DF00111DE5 /* FACEDMED.MAZ in Resources */,
 				F80344741F8B88DF00111DE5 /* MEDDUEL.MAZ in Resources */,
+				F8DB1D092DCA72AB00E9CE63 /* rstest.rsh in Resources */,
 				F803446C1F8B88DF00111DE5 /* BIGGER.MAZ in Resources */,
 				F80344731F8B88DF00111DE5 /* BIGSTART.MAZ in Resources */,
 				F8BC26A01F7D119200315B98 /* MIDIMAZE.D8A in Resources */,
@@ -417,7 +418,6 @@
 				F8E2F75A1F80145E00DA1F40 /* MIDIMaze Shot.mp3 in Resources */,
 				F80344711F8B88DF00111DE5 /* BIGWIERD.MAZ in Resources */,
 				F8A7D32B1F7BF35300610920 /* MainMenu.xib in Resources */,
-				F8C006AA2DCA488600827D07 /* rstest.rsh in Resources */,
 				F8E2F7591F80145B00DA1F40 /* MIDIMaze Hit.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,53 +429,53 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8C006762DCA452F00827D07 /* decomp.c in Sources */,
-				F8C006772DCA452F00827D07 /* rnd.c in Sources */,
-				F8C006782DCA452F00827D07 /* lowmem.c in Sources */,
-				F8C006792DCA452F00827D07 /* sound.c in Sources */,
-				F8C0067A2DCA452F00827D07 /* drone.c in Sources */,
-				F8C0067B2DCA452F00827D07 /* draw3d.c in Sources */,
-				F8C0067C2DCA452F00827D07 /* slave.c in Sources */,
-				F8C0067D2DCA452F00827D07 /* rscmisc.c in Sources */,
-				F8C0067E2DCA452F00827D07 /* loadmaze.c in Sources */,
-				F8C0067F2DCA452F00827D07 /* maze_obj.c in Sources */,
-				F8C006802DCA452F00827D07 /* draw_col.c in Sources */,
-				F8C006812DCA452F00827D07 /* copyprot.c in Sources */,
-				F8C006822DCA452F00827D07 /* conterm.c in Sources */,
-				F8C006842DCA452F00827D07 /* draw_bw.c in Sources */,
-				F8C006852DCA452F00827D07 /* makedraw.c in Sources */,
-				F8C006862DCA452F00827D07 /* moreshap.c in Sources */,
-				F8C006872DCA452F00827D07 /* prefdlg.c in Sources */,
-				F8C006882DCA452F00827D07 /* screen.c in Sources */,
-				F8C006892DCA452F00827D07 /* readmidi.c in Sources */,
-				F8C0068A2DCA452F00827D07 /* notebrd.c in Sources */,
-				F8C0068B2DCA452F00827D07 /* draw2d.c in Sources */,
-				F8C0068C2DCA452F00827D07 /* master.c in Sources */,
-				F8C0068D2DCA452F00827D07 /* setup.c in Sources */,
-				F8C0068E2DCA452F00827D07 /* gamelogi.c in Sources */,
-				F8C0068F2DCA452F00827D07 /* popchart.c in Sources */,
-				F8C006902DCA452F00827D07 /* endshape.c in Sources */,
-				F8C006912DCA452F00827D07 /* makelist.c in Sources */,
-				F8C006922DCA452F00827D07 /* maingame.c in Sources */,
-				F8C006932DCA452F00827D07 /* calc_tab.c in Sources */,
-				F8C006942DCA452F00827D07 /* drawwall.c in Sources */,
-				F8C006952DCA452F00827D07 /* midicam.c in Sources */,
-				F8C006962DCA452F00827D07 /* happyind.c in Sources */,
-				F8C006972DCA452F00827D07 /* miscout.c in Sources */,
-				F8C006982DCA452F00827D07 /* dispatch.c in Sources */,
-				F8C006992DCA452F00827D07 /* blit_col.c in Sources */,
-				F8C0069A2DCA452F00827D07 /* blit_bw.c in Sources */,
-				F8C0069B2DCA452F00827D07 /* maze_set.c in Sources */,
-				F8C0069C2DCA452F00827D07 /* drawshap.c in Sources */,
-				F8C0069D2DCA452F00827D07 /* string.c in Sources */,
-				F8C0069E2DCA452F00827D07 /* aesinit.c in Sources */,
-				F8C0069F2DCA452F00827D07 /* midicomm.c in Sources */,
-				F8C006A02DCA452F00827D07 /* savescr.c in Sources */,
-				F8C006A12DCA452F00827D07 /* mulsdivs.c in Sources */,
-				F8C006A22DCA452F00827D07 /* rungame.c in Sources */,
-				F8C006A32DCA452F00827D07 /* fastmath.c in Sources */,
 				F859F5501F7CD32400DF37A2 /* mac.c in Sources */,
 				F8B547A71F7CC57B00705C64 /* AtariTOS.mm in Sources */,
+				F8DB1D0A2DCA72AB00E9CE63 /* makedraw.c in Sources */,
+				F8DB1D0B2DCA72AB00E9CE63 /* prefdlg.c in Sources */,
+				F8DB1D0C2DCA72AB00E9CE63 /* loadmaze.c in Sources */,
+				F8DB1D0D2DCA72AB00E9CE63 /* fastmath.c in Sources */,
+				F8DB1D0E2DCA72AB00E9CE63 /* draw_col.c in Sources */,
+				F8DB1D0F2DCA72AB00E9CE63 /* calc_tab.c in Sources */,
+				F8DB1D102DCA72AB00E9CE63 /* blit_bw.c in Sources */,
+				F8DB1D112DCA72AB00E9CE63 /* rungame.c in Sources */,
+				F8DB1D122DCA72AB00E9CE63 /* maze_set.c in Sources */,
+				F8DB1D132DCA72AB00E9CE63 /* readmidi.c in Sources */,
+				F8DB1D142DCA72AB00E9CE63 /* midicomm.c in Sources */,
+				F8DB1D152DCA72AB00E9CE63 /* popchart.c in Sources */,
+				F8DB1D162DCA72AB00E9CE63 /* savescr.c in Sources */,
+				F8DB1D172DCA72AB00E9CE63 /* conterm.c in Sources */,
+				F8DB1D182DCA72AB00E9CE63 /* midicam.c in Sources */,
+				F8DB1D192DCA72AB00E9CE63 /* drone.c in Sources */,
+				F8DB1D1A2DCA72AB00E9CE63 /* dispatch.c in Sources */,
+				F8DB1D1B2DCA72AB00E9CE63 /* draw2d.c in Sources */,
+				F8DB1D1C2DCA72AB00E9CE63 /* sound.c in Sources */,
+				F8DB1D1D2DCA72AB00E9CE63 /* rscmisc.c in Sources */,
+				F8DB1D1E2DCA72AB00E9CE63 /* maze_obj.c in Sources */,
+				F8DB1D1F2DCA72AB00E9CE63 /* decomp.c in Sources */,
+				F8DB1D202DCA72AB00E9CE63 /* maingame.c in Sources */,
+				F8DB1D212DCA72AB00E9CE63 /* gamelogi.c in Sources */,
+				F8DB1D222DCA72AB00E9CE63 /* draw3d.c in Sources */,
+				F8DB1D232DCA72AB00E9CE63 /* happyind.c in Sources */,
+				F8DB1D242DCA72AB00E9CE63 /* drawwall.c in Sources */,
+				F8DB1D262DCA72AB00E9CE63 /* endshape.c in Sources */,
+				F8DB1D272DCA72AB00E9CE63 /* miscout.c in Sources */,
+				F8DB1D282DCA72AB00E9CE63 /* setup.c in Sources */,
+				F8DB1D292DCA72AB00E9CE63 /* mulsdivs.c in Sources */,
+				F8DB1D2A2DCA72AB00E9CE63 /* drawshap.c in Sources */,
+				F8DB1D2B2DCA72AB00E9CE63 /* notebrd.c in Sources */,
+				F8DB1D2C2DCA72AB00E9CE63 /* draw_bw.c in Sources */,
+				F8DB1D2D2DCA72AB00E9CE63 /* makelist.c in Sources */,
+				F8DB1D2E2DCA72AB00E9CE63 /* lowmem.c in Sources */,
+				F8DB1D2F2DCA72AB00E9CE63 /* screen.c in Sources */,
+				F8DB1D302DCA72AB00E9CE63 /* copyprot.c in Sources */,
+				F8DB1D312DCA72AB00E9CE63 /* moreshap.c in Sources */,
+				F8DB1D322DCA72AB00E9CE63 /* string.c in Sources */,
+				F8DB1D332DCA72AB00E9CE63 /* aesinit.c in Sources */,
+				F8DB1D342DCA72AB00E9CE63 /* blit_col.c in Sources */,
+				F8DB1D352DCA72AB00E9CE63 /* master.c in Sources */,
+				F8DB1D362DCA72AB00E9CE63 /* slave.c in Sources */,
+				F8DB1D372DCA72AB00E9CE63 /* rnd.c in Sources */,
 				F8A7D32E1F7BF35300610920 /* main.m in Sources */,
 				F8A7D3261F7BF35300610920 /* AppDelegate.mm in Sources */,
 			);

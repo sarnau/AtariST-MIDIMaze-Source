@@ -10,8 +10,7 @@ I've added extensive documentation and comments to the source code. If you like 
 
 Documentation about certain areas of MIDImaze:
 
-- [MIDImaze C Sources](./SOURCES/)
-- [MIDImaze 68000 Assembler Sources](./ASOURCES/)
+- [MIDImaze Sources](./SOURCES/)
 - [MIDImaze Engine Overview](./README/MIDImazeEngineOverview.md)
 - [MIDIMAZE.D8A File Format](./README/D8AFileFormat.md)
 - [MIDI Communication](./README/MIDICommunication.md)

@@ -1,0 +1,52 @@
+OBJS = \
+	$(STARTUP) \
+	lowmem.o \
+	readmidi.o \
+	main.o \
+	rungame.o \
+	makedraw.o \
+	screen.o \
+	sound.o \
+	dispatch.o \
+	endshape.o \
+	maingame.o \
+	midicam.o \
+	popchart.o \
+	moreshap.o \
+	notebrd.o \
+	savescr.o \
+	miscout.o \
+	draw2d.o \
+	drone.o \
+	aesinit.o \
+	master.o \
+	prefdlg.o \
+	string.o \
+	slave.o \
+	midicomm.o \
+	rscmisc.o \
+	conterm.o \
+	loadmaze.o \
+	maze_obj.o \
+	makelist.o \
+	rnd.o \
+	maze_set.o \
+	setup.o \
+	drawwall.o \
+	fastmath.o \
+	happyind.o \
+	draw3d.o \
+	drawshap.o \
+	gamelogi.o \
+	\
+	blit_bw.o \
+	mulsdivs.o \
+	calc_tab.o \
+	draw_bw.o \
+	\
+	blit_col.o \
+	draw_col.o \
+	decomp.o \
+	copyprot.o \
+	$(empty)
+

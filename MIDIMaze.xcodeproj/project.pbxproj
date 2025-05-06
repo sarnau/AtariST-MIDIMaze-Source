@@ -17,50 +17,7 @@
 		F80344721F8B88DF00111DE5 /* MEDDUEL2.MAZ in Resources */ = {isa = PBXBuildFile; fileRef = F80344681F8B88D900111DE5 /* MEDDUEL2.MAZ */; };
 		F80344731F8B88DF00111DE5 /* BIGSTART.MAZ in Resources */ = {isa = PBXBuildFile; fileRef = F80344691F8B88D900111DE5 /* BIGSTART.MAZ */; };
 		F80344741F8B88DF00111DE5 /* MEDDUEL.MAZ in Resources */ = {isa = PBXBuildFile; fileRef = F803446A1F8B88D900111DE5 /* MEDDUEL.MAZ */; };
-		F8182F992DC921B80071171C /* noteboard.c in Sources */ = {isa = PBXBuildFile; fileRef = F8182F8A2DC921B80071171C /* noteboard.c */; };
-		F8182F9A2DC921B80071171C /* prefdialog.c in Sources */ = {isa = PBXBuildFile; fileRef = F8182F8C2DC921B80071171C /* prefdialog.c */; };
-		F8182F9B2DC921B80071171C /* midicam.c in Sources */ = {isa = PBXBuildFile; fileRef = F8182F862DC921B80071171C /* midicam.c */; };
-		F8182F9D2DC921B80071171C /* midicomm.c in Sources */ = {isa = PBXBuildFile; fileRef = F8182F872DC921B80071171C /* midicomm.c */; };
-		F8182F9E2DC921B80071171C /* readmidi.c in Sources */ = {isa = PBXBuildFile; fileRef = F8182F8E2DC921B80071171C /* readmidi.c */; };
-		F8182F9F2DC921B80071171C /* slave.c in Sources */ = {isa = PBXBuildFile; fileRef = F8182F952DC921B80071171C /* slave.c */; };
-		F8182FA02DC921B80071171C /* moreshapes.c in Sources */ = {isa = PBXBuildFile; fileRef = F8182F892DC921B80071171C /* moreshapes.c */; };
-		F8182FA12DC921B80071171C /* rnd.c in Sources */ = {isa = PBXBuildFile; fileRef = F8182F8F2DC921B80071171C /* rnd.c */; };
-		F8182FA22DC921B80071171C /* string.c in Sources */ = {isa = PBXBuildFile; fileRef = F8182F972DC921B80071171C /* string.c */; };
-		F8182FA32DC921B80071171C /* happyindicator.c in Sources */ = {isa = PBXBuildFile; fileRef = F8182F7B2DC921B80071171C /* happyindicator.c */; };
-		F8182FA42DC921B80071171C /* drawwalls.c in Sources */ = {isa = PBXBuildFile; fileRef = F8182F752DC921B80071171C /* drawwalls.c */; };
-		F8182FA52DC921B80071171C /* load_maze.c in Sources */ = {isa = PBXBuildFile; fileRef = F8182F7D2DC921B80071171C /* load_maze.c */; };
-		F8182FA62DC921B80071171C /* make_renderlist.c in Sources */ = {isa = PBXBuildFile; fileRef = F8182F822DC921B80071171C /* make_renderlist.c */; };
-		F8182FA72DC921B80071171C /* fastmath.c in Sources */ = {isa = PBXBuildFile; fileRef = F8182F782DC921B80071171C /* fastmath.c */; };
-		F8182FA82DC921B80071171C /* gamelogic.c in Sources */ = {isa = PBXBuildFile; fileRef = F8182F792DC921B80071171C /* gamelogic.c */; };
-		F8182FA92DC921B80071171C /* master.c in Sources */ = {isa = PBXBuildFile; fileRef = F8182F832DC921B80071171C /* master.c */; };
-		F8182FAB2DC921B80071171C /* dispatch.c in Sources */ = {isa = PBXBuildFile; fileRef = F8182F712DC921B80071171C /* dispatch.c */; };
-		F8182FAC2DC921B80071171C /* make_drawlist.c in Sources */ = {isa = PBXBuildFile; fileRef = F8182F812DC921B80071171C /* make_drawlist.c */; };
-		F8182FAE2DC921B80071171C /* drawshape.c in Sources */ = {isa = PBXBuildFile; fileRef = F8182F742DC921B80071171C /* drawshape.c */; };
-		F8182FAF2DC921B80071171C /* endshapes.c in Sources */ = {isa = PBXBuildFile; fileRef = F8182F772DC921B80071171C /* endshapes.c */; };
-		F8182FB12DC921B80071171C /* popchart.c in Sources */ = {isa = PBXBuildFile; fileRef = F8182F8B2DC921B80071171C /* popchart.c */; };
-		F8182FB22DC921B80071171C /* setup_players.c in Sources */ = {isa = PBXBuildFile; fileRef = F8182F942DC921B80071171C /* setup_players.c */; };
-		F8182FB32DC921B80071171C /* sound.c in Sources */ = {isa = PBXBuildFile; fileRef = F8182F962DC921B80071171C /* sound.c */; };
-		F8182FB42DC921B80071171C /* aesinit.c in Sources */ = {isa = PBXBuildFile; fileRef = F8182F6F2DC921B80071171C /* aesinit.c */; };
-		F8182FB52DC921B80071171C /* draw3d.c in Sources */ = {isa = PBXBuildFile; fileRef = F8182F732DC921B80071171C /* draw3d.c */; };
-		F8182FB62DC921B80071171C /* maingame.c in Sources */ = {isa = PBXBuildFile; fileRef = F8182F802DC921B80071171C /* maingame.c */; };
-		F8182FB72DC921B80071171C /* rscmisc.c in Sources */ = {isa = PBXBuildFile; fileRef = F8182F902DC921B80071171C /* rscmisc.c */; };
-		F8182FB82DC921B80071171C /* maze_object.c in Sources */ = {isa = PBXBuildFile; fileRef = F8182F842DC921B80071171C /* maze_object.c */; };
-		F8182FB92DC921B80071171C /* maze_set_obj.c in Sources */ = {isa = PBXBuildFile; fileRef = F8182F852DC921B80071171C /* maze_set_obj.c */; };
-		F8182FBA2DC921B80071171C /* draw2d.c in Sources */ = {isa = PBXBuildFile; fileRef = F8182F722DC921B80071171C /* draw2d.c */; };
-		F8182FBB2DC921B80071171C /* screen.c in Sources */ = {isa = PBXBuildFile; fileRef = F8182F932DC921B80071171C /* screen.c */; };
-		F8182FBC2DC921B80071171C /* rungame.c in Sources */ = {isa = PBXBuildFile; fileRef = F8182F912DC921B80071171C /* rungame.c */; };
-		F8182FBD2DC921B80071171C /* drone.c in Sources */ = {isa = PBXBuildFile; fileRef = F8182F762DC921B80071171C /* drone.c */; };
-		F8182FBE2DC921B80071171C /* miscoutput.c in Sources */ = {isa = PBXBuildFile; fileRef = F8182F882DC921B80071171C /* miscoutput.c */; };
-		F8182FBF2DC921B80071171C /* savescreen.c in Sources */ = {isa = PBXBuildFile; fileRef = F8182F922DC921B80071171C /* savescreen.c */; };
-		F8182FD72DC922440071171C /* mac.c in Sources */ = {isa = PBXBuildFile; fileRef = F8182FD52DC922440071171C /* mac.c */; };
-		F8182FE52DC924040071171C /* muls_divs.c in Sources */ = {isa = PBXBuildFile; fileRef = F8182FE12DC924040071171C /* muls_divs.c */; };
-		F88BF4F62DC9244300AFC152 /* calc_tab.c in Sources */ = {isa = PBXBuildFile; fileRef = F88BF4F52DC9244300AFC152 /* calc_tab.c */; };
-		F88BF4F72DC9244300AFC152 /* blit_draw_shape_bw.c in Sources */ = {isa = PBXBuildFile; fileRef = F88BF4F32DC9244300AFC152 /* blit_draw_shape_bw.c */; };
-		F88BF4F82DC9244300AFC152 /* blit_draw_shape_col.c in Sources */ = {isa = PBXBuildFile; fileRef = F88BF4F42DC9244300AFC152 /* blit_draw_shape_col.c */; };
-		F88BF4FB2DC9246A00AFC152 /* check_copy_prot.c in Sources */ = {isa = PBXBuildFile; fileRef = F88BF4F92DC9246A00AFC152 /* check_copy_prot.c */; };
-		F88BF4FC2DC9246A00AFC152 /* decompresstitle.c in Sources */ = {isa = PBXBuildFile; fileRef = F88BF4FA2DC9246A00AFC152 /* decompresstitle.c */; };
-		F88BF5002DC9247A00AFC152 /* draw_col.c in Sources */ = {isa = PBXBuildFile; fileRef = F88BF4FE2DC9247A00AFC152 /* draw_col.c */; };
-		F88BF5012DC9247A00AFC152 /* draw_bw.c in Sources */ = {isa = PBXBuildFile; fileRef = F88BF4FD2DC9247A00AFC152 /* draw_bw.c */; };
+		F859F5501F7CD32400DF37A2 /* mac.c in Sources */ = {isa = PBXBuildFile; fileRef = F859F54F1F7CD32400DF37A2 /* mac.c */; };
 		F8A7D3261F7BF35300610920 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = F8A7D3251F7BF35300610920 /* AppDelegate.mm */; };
 		F8A7D3281F7BF35300610920 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8A7D3271F7BF35300610920 /* Assets.xcassets */; };
 		F8A7D32B1F7BF35300610920 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8A7D3291F7BF35300610920 /* MainMenu.xib */; };
@@ -68,6 +25,52 @@
 		F8B547A71F7CC57B00705C64 /* AtariTOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = F8B547A61F7CC57B00705C64 /* AtariTOS.mm */; };
 		F8BC26A01F7D119200315B98 /* MIDIMAZE.D8A in Resources */ = {isa = PBXBuildFile; fileRef = F8BC269F1F7D118F00315B98 /* MIDIMAZE.D8A */; };
 		F8BC26A21F7D12C600315B98 /* MIDIMAZE.MAZ in Resources */ = {isa = PBXBuildFile; fileRef = F8BC26A11F7D124900315B98 /* MIDIMAZE.MAZ */; };
+		F8C006762DCA452F00827D07 /* decomp.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006452DCA452F00827D07 /* decomp.c */; };
+		F8C006772DCA452F00827D07 /* rnd.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006662DCA452F00827D07 /* rnd.c */; };
+		F8C006782DCA452F00827D07 /* lowmem.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006552DCA452F00827D07 /* lowmem.c */; };
+		F8C006792DCA452F00827D07 /* sound.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006732DCA452F00827D07 /* sound.c */; };
+		F8C0067A2DCA452F00827D07 /* drone.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C0064E2DCA452F00827D07 /* drone.c */; };
+		F8C0067B2DCA452F00827D07 /* draw3d.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C0064B2DCA452F00827D07 /* draw3d.c */; };
+		F8C0067C2DCA452F00827D07 /* slave.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006722DCA452F00827D07 /* slave.c */; };
+		F8C0067D2DCA452F00827D07 /* rscmisc.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006672DCA452F00827D07 /* rscmisc.c */; };
+		F8C0067E2DCA452F00827D07 /* loadmaze.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006542DCA452F00827D07 /* loadmaze.c */; };
+		F8C0067F2DCA452F00827D07 /* maze_obj.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C0065A2DCA452F00827D07 /* maze_obj.c */; };
+		F8C006802DCA452F00827D07 /* draw_col.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006492DCA452F00827D07 /* draw_col.c */; };
+		F8C006812DCA452F00827D07 /* copyprot.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006442DCA452F00827D07 /* copyprot.c */; };
+		F8C006822DCA452F00827D07 /* conterm.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006432DCA452F00827D07 /* conterm.c */; };
+		F8C006842DCA452F00827D07 /* draw_bw.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006482DCA452F00827D07 /* draw_bw.c */; };
+		F8C006852DCA452F00827D07 /* makedraw.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006572DCA452F00827D07 /* makedraw.c */; };
+		F8C006862DCA452F00827D07 /* moreshap.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C0065F2DCA452F00827D07 /* moreshap.c */; };
+		F8C006872DCA452F00827D07 /* prefdlg.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006632DCA452F00827D07 /* prefdlg.c */; };
+		F8C006882DCA452F00827D07 /* screen.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006702DCA452F00827D07 /* screen.c */; };
+		F8C006892DCA452F00827D07 /* readmidi.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006652DCA452F00827D07 /* readmidi.c */; };
+		F8C0068A2DCA452F00827D07 /* notebrd.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006612DCA452F00827D07 /* notebrd.c */; };
+		F8C0068B2DCA452F00827D07 /* draw2d.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C0064A2DCA452F00827D07 /* draw2d.c */; };
+		F8C0068C2DCA452F00827D07 /* master.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006592DCA452F00827D07 /* master.c */; };
+		F8C0068D2DCA452F00827D07 /* setup.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006712DCA452F00827D07 /* setup.c */; };
+		F8C0068E2DCA452F00827D07 /* gamelogi.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006512DCA452F00827D07 /* gamelogi.c */; };
+		F8C0068F2DCA452F00827D07 /* popchart.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006622DCA452F00827D07 /* popchart.c */; };
+		F8C006902DCA452F00827D07 /* endshape.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C0064F2DCA452F00827D07 /* endshape.c */; };
+		F8C006912DCA452F00827D07 /* makelist.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006582DCA452F00827D07 /* makelist.c */; };
+		F8C006922DCA452F00827D07 /* maingame.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006562DCA452F00827D07 /* maingame.c */; };
+		F8C006932DCA452F00827D07 /* calc_tab.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006422DCA452F00827D07 /* calc_tab.c */; };
+		F8C006942DCA452F00827D07 /* drawwall.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C0064D2DCA452F00827D07 /* drawwall.c */; };
+		F8C006952DCA452F00827D07 /* midicam.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C0065C2DCA452F00827D07 /* midicam.c */; };
+		F8C006962DCA452F00827D07 /* happyind.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006532DCA452F00827D07 /* happyind.c */; };
+		F8C006972DCA452F00827D07 /* miscout.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C0065E2DCA452F00827D07 /* miscout.c */; };
+		F8C006982DCA452F00827D07 /* dispatch.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006472DCA452F00827D07 /* dispatch.c */; };
+		F8C006992DCA452F00827D07 /* blit_col.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006402DCA452F00827D07 /* blit_col.c */; };
+		F8C0069A2DCA452F00827D07 /* blit_bw.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C0063F2DCA452F00827D07 /* blit_bw.c */; };
+		F8C0069B2DCA452F00827D07 /* maze_set.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C0065B2DCA452F00827D07 /* maze_set.c */; };
+		F8C0069C2DCA452F00827D07 /* drawshap.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C0064C2DCA452F00827D07 /* drawshap.c */; };
+		F8C0069D2DCA452F00827D07 /* string.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006742DCA452F00827D07 /* string.c */; };
+		F8C0069E2DCA452F00827D07 /* aesinit.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C0063E2DCA452F00827D07 /* aesinit.c */; };
+		F8C0069F2DCA452F00827D07 /* midicomm.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C0065D2DCA452F00827D07 /* midicomm.c */; };
+		F8C006A02DCA452F00827D07 /* savescr.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C0066F2DCA452F00827D07 /* savescr.c */; };
+		F8C006A12DCA452F00827D07 /* mulsdivs.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006602DCA452F00827D07 /* mulsdivs.c */; };
+		F8C006A22DCA452F00827D07 /* rungame.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C0066E2DCA452F00827D07 /* rungame.c */; };
+		F8C006A32DCA452F00827D07 /* fastmath.c in Sources */ = {isa = PBXBuildFile; fileRef = F8C006502DCA452F00827D07 /* fastmath.c */; };
+		F8C006AA2DCA488600827D07 /* rstest.rsh in Resources */ = {isa = PBXBuildFile; fileRef = F8C0066B2DCA452F00827D07 /* rstest.rsh */; };
 		F8E2F7591F80145B00DA1F40 /* MIDIMaze Hit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F8E2F7571F80142D00DA1F40 /* MIDIMaze Hit.mp3 */; };
 		F8E2F75A1F80145E00DA1F40 /* MIDIMaze Shot.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F8E2F7581F80142D00DA1F40 /* MIDIMaze Shot.mp3 */; };
 /* End PBXBuildFile section */
@@ -83,69 +86,15 @@
 		F80344681F8B88D900111DE5 /* MEDDUEL2.MAZ */ = {isa = PBXFileReference; lastKnownFileType = text; path = MEDDUEL2.MAZ; sourceTree = "<group>"; };
 		F80344691F8B88D900111DE5 /* BIGSTART.MAZ */ = {isa = PBXFileReference; lastKnownFileType = text; path = BIGSTART.MAZ; sourceTree = "<group>"; };
 		F803446A1F8B88D900111DE5 /* MEDDUEL.MAZ */ = {isa = PBXFileReference; lastKnownFileType = text; path = MEDDUEL.MAZ; sourceTree = "<group>"; };
-		F8182F6F2DC921B80071171C /* aesinit.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = aesinit.c; sourceTree = "<group>"; };
-		F8182F702DC921B80071171C /* conterm.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = conterm.c; sourceTree = "<group>"; };
-		F8182F712DC921B80071171C /* dispatch.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = dispatch.c; sourceTree = "<group>"; };
-		F8182F722DC921B80071171C /* draw2d.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = draw2d.c; sourceTree = "<group>"; };
-		F8182F732DC921B80071171C /* draw3d.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = draw3d.c; sourceTree = "<group>"; };
-		F8182F742DC921B80071171C /* drawshape.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = drawshape.c; sourceTree = "<group>"; };
-		F8182F752DC921B80071171C /* drawwalls.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = drawwalls.c; sourceTree = "<group>"; };
-		F8182F762DC921B80071171C /* drone.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = drone.c; sourceTree = "<group>"; };
-		F8182F772DC921B80071171C /* endshapes.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = endshapes.c; sourceTree = "<group>"; };
-		F8182F782DC921B80071171C /* fastmath.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fastmath.c; sourceTree = "<group>"; };
-		F8182F792DC921B80071171C /* gamelogic.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gamelogic.c; sourceTree = "<group>"; };
-		F8182F7A2DC921B80071171C /* globals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = globals.h; sourceTree = "<group>"; };
-		F8182F7B2DC921B80071171C /* happyindicator.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = happyindicator.c; sourceTree = "<group>"; };
-		F8182F7C2DC921B80071171C /* joystickmouse.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = joystickmouse.c; sourceTree = "<group>"; };
-		F8182F7D2DC921B80071171C /* load_maze.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = load_maze.c; sourceTree = "<group>"; };
-		F8182F7E2DC921B80071171C /* lowmem.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = lowmem.c; sourceTree = "<group>"; };
-		F8182F7F2DC921B80071171C /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
-		F8182F802DC921B80071171C /* maingame.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = maingame.c; sourceTree = "<group>"; };
-		F8182F812DC921B80071171C /* make_drawlist.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = make_drawlist.c; sourceTree = "<group>"; };
-		F8182F822DC921B80071171C /* make_renderlist.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = make_renderlist.c; sourceTree = "<group>"; };
-		F8182F832DC921B80071171C /* master.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = master.c; sourceTree = "<group>"; };
-		F8182F842DC921B80071171C /* maze_object.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = maze_object.c; sourceTree = "<group>"; };
-		F8182F852DC921B80071171C /* maze_set_obj.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = maze_set_obj.c; sourceTree = "<group>"; };
-		F8182F862DC921B80071171C /* midicam.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = midicam.c; sourceTree = "<group>"; };
-		F8182F872DC921B80071171C /* midicomm.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = midicomm.c; sourceTree = "<group>"; };
-		F8182F882DC921B80071171C /* miscoutput.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = miscoutput.c; sourceTree = "<group>"; };
-		F8182F892DC921B80071171C /* moreshapes.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = moreshapes.c; sourceTree = "<group>"; };
-		F8182F8A2DC921B80071171C /* noteboard.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = noteboard.c; sourceTree = "<group>"; };
-		F8182F8B2DC921B80071171C /* popchart.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = popchart.c; sourceTree = "<group>"; };
-		F8182F8C2DC921B80071171C /* prefdialog.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = prefdialog.c; sourceTree = "<group>"; };
-		F8182F8D2DC921B80071171C /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
-		F8182F8E2DC921B80071171C /* readmidi.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = readmidi.c; sourceTree = "<group>"; };
-		F8182F8F2DC921B80071171C /* rnd.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = rnd.c; sourceTree = "<group>"; };
-		F8182F902DC921B80071171C /* rscmisc.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = rscmisc.c; sourceTree = "<group>"; };
-		F8182F912DC921B80071171C /* rungame.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = rungame.c; sourceTree = "<group>"; };
-		F8182F922DC921B80071171C /* savescreen.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = savescreen.c; sourceTree = "<group>"; };
-		F8182F932DC921B80071171C /* screen.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = screen.c; sourceTree = "<group>"; };
-		F8182F942DC921B80071171C /* setup_players.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = setup_players.c; sourceTree = "<group>"; };
-		F8182F952DC921B80071171C /* slave.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = slave.c; sourceTree = "<group>"; };
-		F8182F962DC921B80071171C /* sound.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = sound.c; sourceTree = "<group>"; };
-		F8182F972DC921B80071171C /* string.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = string.c; sourceTree = "<group>"; };
-		F8182FD42DC922440071171C /* bitmacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bitmacro.h; sourceTree = "<group>"; };
-		F8182FD52DC922440071171C /* mac.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = mac.c; sourceTree = "<group>"; };
-		F8182FD62DC922440071171C /* portab.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = portab.h; sourceTree = "<group>"; };
-		F8182FDA2DC924040071171C /* calc_tab.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = calc_tab.h; sourceTree = "<group>"; };
-		F8182FDE2DC924040071171C /* delay.s */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = delay.s; sourceTree = "<group>"; };
-		F8182FE12DC924040071171C /* muls_divs.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = muls_divs.c; sourceTree = "<group>"; };
-		F8182FE22DC924040071171C /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		F846C0EC1F9D3BA400D69024 /* D8AFileFormat.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = D8AFileFormat.md; sourceTree = "<group>"; };
 		F846C0ED1F9D3BA500D69024 /* MIDImazeEngineOverview.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = MIDImazeEngineOverview.md; sourceTree = "<group>"; };
 		F846C0EE1F9D3BA500D69024 /* AtariScreenBitmap.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = AtariScreenBitmap.md; sourceTree = "<group>"; };
+		F859F54F1F7CD32400DF37A2 /* mac.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mac.c; sourceTree = "<group>"; };
 		F85AB60C1F9D441800FA4167 /* MIDICommunication.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = MIDICommunication.md; sourceTree = "<group>"; };
 		F86C73261F9A164C003DCC15 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F879F4B11F9FDD67003CF63F /* CompressedTitle.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CompressedTitle.md; sourceTree = "<group>"; };
 		F888771C1F7E34E90027D68B /* MIDIMAZE.PRG */ = {isa = PBXFileReference; lastKnownFileType = file; path = MIDIMAZE.PRG; sourceTree = "<group>"; };
 		F888771D1F7E34E90027D68B /* MIDIMAZE.TXT */ = {isa = PBXFileReference; lastKnownFileType = text; path = MIDIMAZE.TXT; sourceTree = "<group>"; };
-		F88BF4F32DC9244300AFC152 /* blit_draw_shape_bw.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = blit_draw_shape_bw.c; sourceTree = "<group>"; };
-		F88BF4F42DC9244300AFC152 /* blit_draw_shape_col.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = blit_draw_shape_col.c; sourceTree = "<group>"; };
-		F88BF4F52DC9244300AFC152 /* calc_tab.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = calc_tab.c; sourceTree = "<group>"; };
-		F88BF4F92DC9246A00AFC152 /* check_copy_prot.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = check_copy_prot.c; sourceTree = "<group>"; };
-		F88BF4FA2DC9246A00AFC152 /* decompresstitle.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = decompresstitle.c; sourceTree = "<group>"; };
-		F88BF4FD2DC9247A00AFC152 /* draw_bw.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = draw_bw.c; sourceTree = "<group>"; };
-		F88BF4FE2DC9247A00AFC152 /* draw_col.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = draw_col.c; sourceTree = "<group>"; };
 		F8A7D3211F7BF35300610920 /* MIDIMaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MIDIMaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8A7D3241F7BF35300610920 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F8A7D3251F7BF35300610920 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
@@ -154,14 +103,71 @@
 		F8A7D32C1F7BF35300610920 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8A7D32D1F7BF35300610920 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F8A7D32F1F7BF35300610920 /* MIDIMaze.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MIDIMaze.entitlements; sourceTree = "<group>"; };
+		F8A7D3961F7BF3D600610920 /* portab.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = portab.h; path = gui/common/portab.h; sourceTree = SOURCE_ROOT; };
 		F8B547A61F7CC57B00705C64 /* AtariTOS.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AtariTOS.mm; sourceTree = "<group>"; };
 		F8BC269F1F7D118F00315B98 /* MIDIMAZE.D8A */ = {isa = PBXFileReference; lastKnownFileType = file; name = MIDIMAZE.D8A; path = MIDIMazeDisc/MIDIMAZE.D8A; sourceTree = SOURCE_ROOT; };
 		F8BC26A11F7D124900315B98 /* MIDIMAZE.MAZ */ = {isa = PBXFileReference; lastKnownFileType = text; name = MIDIMAZE.MAZ; path = MIDIMazeDisc/MIDIMAZE.MAZ; sourceTree = SOURCE_ROOT; };
+		F8C0063E2DCA452F00827D07 /* aesinit.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = aesinit.c; sourceTree = "<group>"; };
+		F8C0063F2DCA452F00827D07 /* blit_bw.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = blit_bw.c; sourceTree = "<group>"; };
+		F8C006402DCA452F00827D07 /* blit_col.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = blit_col.c; sourceTree = "<group>"; };
+		F8C006412DCA452F00827D07 /* calc_tab.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = calc_tab.h; sourceTree = "<group>"; };
+		F8C006422DCA452F00827D07 /* calc_tab.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = calc_tab.c; sourceTree = "<group>"; };
+		F8C006432DCA452F00827D07 /* conterm.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = conterm.c; sourceTree = "<group>"; };
+		F8C006442DCA452F00827D07 /* copyprot.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = copyprot.c; sourceTree = "<group>"; };
+		F8C006452DCA452F00827D07 /* decomp.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = decomp.c; sourceTree = "<group>"; };
+		F8C006462DCA452F00827D07 /* delay.s */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = delay.s; sourceTree = "<group>"; };
+		F8C006472DCA452F00827D07 /* dispatch.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = dispatch.c; sourceTree = "<group>"; };
+		F8C006482DCA452F00827D07 /* draw_bw.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = draw_bw.c; sourceTree = "<group>"; };
+		F8C006492DCA452F00827D07 /* draw_col.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = draw_col.c; sourceTree = "<group>"; };
+		F8C0064A2DCA452F00827D07 /* draw2d.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = draw2d.c; sourceTree = "<group>"; };
+		F8C0064B2DCA452F00827D07 /* draw3d.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = draw3d.c; sourceTree = "<group>"; };
+		F8C0064C2DCA452F00827D07 /* drawshap.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = drawshap.c; sourceTree = "<group>"; };
+		F8C0064D2DCA452F00827D07 /* drawwall.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = drawwall.c; sourceTree = "<group>"; };
+		F8C0064E2DCA452F00827D07 /* drone.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = drone.c; sourceTree = "<group>"; };
+		F8C0064F2DCA452F00827D07 /* endshape.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = endshape.c; sourceTree = "<group>"; };
+		F8C006502DCA452F00827D07 /* fastmath.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fastmath.c; sourceTree = "<group>"; };
+		F8C006512DCA452F00827D07 /* gamelogi.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gamelogi.c; sourceTree = "<group>"; };
+		F8C006522DCA452F00827D07 /* globals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = globals.h; sourceTree = "<group>"; };
+		F8C006532DCA452F00827D07 /* happyind.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = happyind.c; sourceTree = "<group>"; };
+		F8C006542DCA452F00827D07 /* loadmaze.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = loadmaze.c; sourceTree = "<group>"; };
+		F8C006552DCA452F00827D07 /* lowmem.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = lowmem.c; sourceTree = "<group>"; };
+		F8C006562DCA452F00827D07 /* maingame.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = maingame.c; sourceTree = "<group>"; };
+		F8C006572DCA452F00827D07 /* makedraw.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = makedraw.c; sourceTree = "<group>"; };
+		F8C006582DCA452F00827D07 /* makelist.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = makelist.c; sourceTree = "<group>"; };
+		F8C006592DCA452F00827D07 /* master.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = master.c; sourceTree = "<group>"; };
+		F8C0065A2DCA452F00827D07 /* maze_obj.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = maze_obj.c; sourceTree = "<group>"; };
+		F8C0065B2DCA452F00827D07 /* maze_set.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = maze_set.c; sourceTree = "<group>"; };
+		F8C0065C2DCA452F00827D07 /* midicam.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = midicam.c; sourceTree = "<group>"; };
+		F8C0065D2DCA452F00827D07 /* midicomm.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = midicomm.c; sourceTree = "<group>"; };
+		F8C0065E2DCA452F00827D07 /* miscout.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = miscout.c; sourceTree = "<group>"; };
+		F8C0065F2DCA452F00827D07 /* moreshap.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = moreshap.c; sourceTree = "<group>"; };
+		F8C006602DCA452F00827D07 /* mulsdivs.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = mulsdivs.c; sourceTree = "<group>"; };
+		F8C006612DCA452F00827D07 /* notebrd.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = notebrd.c; sourceTree = "<group>"; };
+		F8C006622DCA452F00827D07 /* popchart.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = popchart.c; sourceTree = "<group>"; };
+		F8C006632DCA452F00827D07 /* prefdlg.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = prefdlg.c; sourceTree = "<group>"; };
+		F8C006642DCA452F00827D07 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F8C006652DCA452F00827D07 /* readmidi.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = readmidi.c; sourceTree = "<group>"; };
+		F8C006662DCA452F00827D07 /* rnd.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = rnd.c; sourceTree = "<group>"; };
+		F8C006672DCA452F00827D07 /* rscmisc.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = rscmisc.c; sourceTree = "<group>"; };
+		F8C006682DCA452F00827D07 /* rstest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rstest.h; sourceTree = "<group>"; };
+		F8C006692DCA452F00827D07 /* rstest.hrd */ = {isa = PBXFileReference; lastKnownFileType = file; path = rstest.hrd; sourceTree = "<group>"; };
+		F8C0066A2DCA452F00827D07 /* rstest.rsc */ = {isa = PBXFileReference; lastKnownFileType = file; path = rstest.rsc; sourceTree = "<group>"; };
+		F8C0066B2DCA452F00827D07 /* rstest.rsh */ = {isa = PBXFileReference; lastKnownFileType = text; path = rstest.rsh; sourceTree = "<group>"; };
+		F8C0066C2DCA452F00827D07 /* rstest.rsm */ = {isa = PBXFileReference; lastKnownFileType = text; path = rstest.rsm; sourceTree = "<group>"; };
+		F8C0066D2DCA452F00827D07 /* rstest.rso */ = {isa = PBXFileReference; lastKnownFileType = file; path = rstest.rso; sourceTree = "<group>"; };
+		F8C0066E2DCA452F00827D07 /* rungame.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = rungame.c; sourceTree = "<group>"; };
+		F8C0066F2DCA452F00827D07 /* savescr.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = savescr.c; sourceTree = "<group>"; };
+		F8C006702DCA452F00827D07 /* screen.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = screen.c; sourceTree = "<group>"; };
+		F8C006712DCA452F00827D07 /* setup.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = setup.c; sourceTree = "<group>"; };
+		F8C006722DCA452F00827D07 /* slave.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = slave.c; sourceTree = "<group>"; };
+		F8C006732DCA452F00827D07 /* sound.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = sound.c; sourceTree = "<group>"; };
+		F8C006742DCA452F00827D07 /* string.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = string.c; sourceTree = "<group>"; };
 		F8E2F7571F80142D00DA1F40 /* MIDIMaze Hit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "MIDIMaze Hit.mp3"; path = "MIDIMAZE2/MIDIMaze Hit.mp3"; sourceTree = SOURCE_ROOT; };
 		F8E2F7581F80142D00DA1F40 /* MIDIMaze Shot.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "MIDIMaze Shot.mp3"; path = "MIDIMAZE2/MIDIMaze Shot.mp3"; sourceTree = SOURCE_ROOT; };
 		F8F081081F82B18C0091699C /* MM2MazeIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = MM2MazeIcon.icns; sourceTree = "<group>"; };
 		F8F395371F837F98004EB25C /* AtariST8x8.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = AtariST8x8.c; sourceTree = "<group>"; };
 		F8F395381F837F98004EB25C /* AtariST8x16.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = AtariST8x16.c; sourceTree = "<group>"; };
+		F8F3953B1F83DEB6004EB25C /* bitmacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = bitmacro.h; path = gui/common/bitmacro.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,33 +213,15 @@
 		F88877021F7D54280027D68B /* Helper Sources */ = {
 			isa = PBXGroup;
 			children = (
-				F8182FD42DC922440071171C /* bitmacro.h */,
-				F8182FD52DC922440071171C /* mac.c */,
-				F8182FD62DC922440071171C /* portab.h */,
+				F8A7D3961F7BF3D600610920 /* portab.h */,
+				F8F3953B1F83DEB6004EB25C /* bitmacro.h */,
+				F859F54F1F7CD32400DF37A2 /* mac.c */,
 				F8B547A61F7CC57B00705C64 /* AtariTOS.mm */,
 				F8F395371F837F98004EB25C /* AtariST8x8.c */,
 				F8F395381F837F98004EB25C /* AtariST8x16.c */,
 			);
 			path = "Helper Sources";
 			sourceTree = "<group>";
-		};
-		F88877061F7E30000027D68B /* ASOURCES */ = {
-			isa = PBXGroup;
-			children = (
-				F8182FE22DC924040071171C /* readme.md */,
-				F88BF4F32DC9244300AFC152 /* blit_draw_shape_bw.c */,
-				F88BF4F42DC9244300AFC152 /* blit_draw_shape_col.c */,
-				F88BF4F52DC9244300AFC152 /* calc_tab.c */,
-				F8182FDA2DC924040071171C /* calc_tab.h */,
-				F88BF4F92DC9246A00AFC152 /* check_copy_prot.c */,
-				F88BF4FA2DC9246A00AFC152 /* decompresstitle.c */,
-				F8182FDE2DC924040071171C /* delay.s */,
-				F88BF4FD2DC9247A00AFC152 /* draw_bw.c */,
-				F88BF4FE2DC9247A00AFC152 /* draw_col.c */,
-				F8182FE12DC924040071171C /* muls_divs.c */,
-			);
-			path = ASOURCES;
-			sourceTree = SOURCE_ROOT;
 		};
 		F88877181F7E33B80027D68B /* Resources */ = {
 			isa = PBXGroup;
@@ -287,60 +275,73 @@
 				F8A7D3241F7BF35300610920 /* AppDelegate.h */,
 				F8A7D3251F7BF35300610920 /* AppDelegate.mm */,
 				F88877021F7D54280027D68B /* Helper Sources */,
-				F88877061F7E30000027D68B /* ASOURCES */,
-				F8A7D3521F7BF3A800610920 /* SOURCES */,
+				F8C006752DCA452F00827D07 /* src */,
 				F88877181F7E33B80027D68B /* Resources */,
 			);
 			path = MIDIMaze;
 			sourceTree = "<group>";
 		};
-		F8A7D3521F7BF3A800610920 /* SOURCES */ = {
+		F8C006752DCA452F00827D07 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				F8182F8D2DC921B80071171C /* readme.md */,
-				F8182F6F2DC921B80071171C /* aesinit.c */,
-				F8182F702DC921B80071171C /* conterm.c */,
-				F8182F712DC921B80071171C /* dispatch.c */,
-				F8182F722DC921B80071171C /* draw2d.c */,
-				F8182F732DC921B80071171C /* draw3d.c */,
-				F8182F742DC921B80071171C /* drawshape.c */,
-				F8182F752DC921B80071171C /* drawwalls.c */,
-				F8182F762DC921B80071171C /* drone.c */,
-				F8182F772DC921B80071171C /* endshapes.c */,
-				F8182F782DC921B80071171C /* fastmath.c */,
-				F8182F792DC921B80071171C /* gamelogic.c */,
-				F8182F7A2DC921B80071171C /* globals.h */,
-				F8182F7B2DC921B80071171C /* happyindicator.c */,
-				F8182F7C2DC921B80071171C /* joystickmouse.c */,
-				F8182F7D2DC921B80071171C /* load_maze.c */,
-				F8182F7E2DC921B80071171C /* lowmem.c */,
-				F8182F7F2DC921B80071171C /* main.c */,
-				F8182F802DC921B80071171C /* maingame.c */,
-				F8182F812DC921B80071171C /* make_drawlist.c */,
-				F8182F822DC921B80071171C /* make_renderlist.c */,
-				F8182F832DC921B80071171C /* master.c */,
-				F8182F842DC921B80071171C /* maze_object.c */,
-				F8182F852DC921B80071171C /* maze_set_obj.c */,
-				F8182F862DC921B80071171C /* midicam.c */,
-				F8182F872DC921B80071171C /* midicomm.c */,
-				F8182F882DC921B80071171C /* miscoutput.c */,
-				F8182F892DC921B80071171C /* moreshapes.c */,
-				F8182F8A2DC921B80071171C /* noteboard.c */,
-				F8182F8B2DC921B80071171C /* popchart.c */,
-				F8182F8C2DC921B80071171C /* prefdialog.c */,
-				F8182F8E2DC921B80071171C /* readmidi.c */,
-				F8182F8F2DC921B80071171C /* rnd.c */,
-				F8182F902DC921B80071171C /* rscmisc.c */,
-				F8182F912DC921B80071171C /* rungame.c */,
-				F8182F922DC921B80071171C /* savescreen.c */,
-				F8182F932DC921B80071171C /* screen.c */,
-				F8182F942DC921B80071171C /* setup_players.c */,
-				F8182F952DC921B80071171C /* slave.c */,
-				F8182F962DC921B80071171C /* sound.c */,
-				F8182F972DC921B80071171C /* string.c */,
+				F8C0063E2DCA452F00827D07 /* aesinit.c */,
+				F8C0063F2DCA452F00827D07 /* blit_bw.c */,
+				F8C006402DCA452F00827D07 /* blit_col.c */,
+				F8C006412DCA452F00827D07 /* calc_tab.h */,
+				F8C006422DCA452F00827D07 /* calc_tab.c */,
+				F8C006432DCA452F00827D07 /* conterm.c */,
+				F8C006442DCA452F00827D07 /* copyprot.c */,
+				F8C006452DCA452F00827D07 /* decomp.c */,
+				F8C006462DCA452F00827D07 /* delay.s */,
+				F8C006472DCA452F00827D07 /* dispatch.c */,
+				F8C006482DCA452F00827D07 /* draw_bw.c */,
+				F8C006492DCA452F00827D07 /* draw_col.c */,
+				F8C0064A2DCA452F00827D07 /* draw2d.c */,
+				F8C0064B2DCA452F00827D07 /* draw3d.c */,
+				F8C0064C2DCA452F00827D07 /* drawshap.c */,
+				F8C0064D2DCA452F00827D07 /* drawwall.c */,
+				F8C0064E2DCA452F00827D07 /* drone.c */,
+				F8C0064F2DCA452F00827D07 /* endshape.c */,
+				F8C006502DCA452F00827D07 /* fastmath.c */,
+				F8C006512DCA452F00827D07 /* gamelogi.c */,
+				F8C006522DCA452F00827D07 /* globals.h */,
+				F8C006532DCA452F00827D07 /* happyind.c */,
+				F8C006542DCA452F00827D07 /* loadmaze.c */,
+				F8C006552DCA452F00827D07 /* lowmem.c */,
+				F8C006562DCA452F00827D07 /* maingame.c */,
+				F8C006572DCA452F00827D07 /* makedraw.c */,
+				F8C006582DCA452F00827D07 /* makelist.c */,
+				F8C006592DCA452F00827D07 /* master.c */,
+				F8C0065A2DCA452F00827D07 /* maze_obj.c */,
+				F8C0065B2DCA452F00827D07 /* maze_set.c */,
+				F8C0065C2DCA452F00827D07 /* midicam.c */,
+				F8C0065D2DCA452F00827D07 /* midicomm.c */,
+				F8C0065E2DCA452F00827D07 /* miscout.c */,
+				F8C0065F2DCA452F00827D07 /* moreshap.c */,
+				F8C006602DCA452F00827D07 /* mulsdivs.c */,
+				F8C006612DCA452F00827D07 /* notebrd.c */,
+				F8C006622DCA452F00827D07 /* popchart.c */,
+				F8C006632DCA452F00827D07 /* prefdlg.c */,
+				F8C006642DCA452F00827D07 /* README.md */,
+				F8C006652DCA452F00827D07 /* readmidi.c */,
+				F8C006662DCA452F00827D07 /* rnd.c */,
+				F8C006672DCA452F00827D07 /* rscmisc.c */,
+				F8C006682DCA452F00827D07 /* rstest.h */,
+				F8C006692DCA452F00827D07 /* rstest.hrd */,
+				F8C0066A2DCA452F00827D07 /* rstest.rsc */,
+				F8C0066B2DCA452F00827D07 /* rstest.rsh */,
+				F8C0066C2DCA452F00827D07 /* rstest.rsm */,
+				F8C0066D2DCA452F00827D07 /* rstest.rso */,
+				F8C0066E2DCA452F00827D07 /* rungame.c */,
+				F8C0066F2DCA452F00827D07 /* savescr.c */,
+				F8C006702DCA452F00827D07 /* screen.c */,
+				F8C006712DCA452F00827D07 /* setup.c */,
+				F8C006722DCA452F00827D07 /* slave.c */,
+				F8C006732DCA452F00827D07 /* sound.c */,
+				F8C006742DCA452F00827D07 /* string.c */,
 			);
-			path = SOURCES;
-			sourceTree = SOURCE_ROOT;
+			path = src;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -416,6 +417,7 @@
 				F8E2F75A1F80145E00DA1F40 /* MIDIMaze Shot.mp3 in Resources */,
 				F80344711F8B88DF00111DE5 /* BIGWIERD.MAZ in Resources */,
 				F8A7D32B1F7BF35300610920 /* MainMenu.xib in Resources */,
+				F8C006AA2DCA488600827D07 /* rstest.rsh in Resources */,
 				F8E2F7591F80145B00DA1F40 /* MIDIMaze Hit.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,51 +429,53 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8182F992DC921B80071171C /* noteboard.c in Sources */,
-				F8182F9A2DC921B80071171C /* prefdialog.c in Sources */,
-				F8182F9B2DC921B80071171C /* midicam.c in Sources */,
-				F8182F9D2DC921B80071171C /* midicomm.c in Sources */,
-				F8182F9E2DC921B80071171C /* readmidi.c in Sources */,
-				F8182F9F2DC921B80071171C /* slave.c in Sources */,
-				F8182FA02DC921B80071171C /* moreshapes.c in Sources */,
-				F8182FA12DC921B80071171C /* rnd.c in Sources */,
-				F8182FA22DC921B80071171C /* string.c in Sources */,
-				F8182FA32DC921B80071171C /* happyindicator.c in Sources */,
-				F8182FA42DC921B80071171C /* drawwalls.c in Sources */,
-				F8182FA52DC921B80071171C /* load_maze.c in Sources */,
-				F8182FA62DC921B80071171C /* make_renderlist.c in Sources */,
-				F8182FA72DC921B80071171C /* fastmath.c in Sources */,
-				F8182FA82DC921B80071171C /* gamelogic.c in Sources */,
-				F88BF5002DC9247A00AFC152 /* draw_col.c in Sources */,
-				F88BF5012DC9247A00AFC152 /* draw_bw.c in Sources */,
-				F8182FA92DC921B80071171C /* master.c in Sources */,
-				F8182FD72DC922440071171C /* mac.c in Sources */,
-				F8182FAB2DC921B80071171C /* dispatch.c in Sources */,
-				F8182FAC2DC921B80071171C /* make_drawlist.c in Sources */,
-				F8182FAE2DC921B80071171C /* drawshape.c in Sources */,
-				F8182FE52DC924040071171C /* muls_divs.c in Sources */,
-				F8182FAF2DC921B80071171C /* endshapes.c in Sources */,
-				F8182FB12DC921B80071171C /* popchart.c in Sources */,
-				F8182FB22DC921B80071171C /* setup_players.c in Sources */,
-				F8182FB32DC921B80071171C /* sound.c in Sources */,
-				F8182FB42DC921B80071171C /* aesinit.c in Sources */,
-				F8182FB52DC921B80071171C /* draw3d.c in Sources */,
-				F8182FB62DC921B80071171C /* maingame.c in Sources */,
-				F8182FB72DC921B80071171C /* rscmisc.c in Sources */,
-				F88BF4FB2DC9246A00AFC152 /* check_copy_prot.c in Sources */,
-				F88BF4FC2DC9246A00AFC152 /* decompresstitle.c in Sources */,
-				F8182FB82DC921B80071171C /* maze_object.c in Sources */,
-				F8182FB92DC921B80071171C /* maze_set_obj.c in Sources */,
-				F8182FBA2DC921B80071171C /* draw2d.c in Sources */,
-				F8182FBB2DC921B80071171C /* screen.c in Sources */,
-				F8182FBC2DC921B80071171C /* rungame.c in Sources */,
-				F8182FBD2DC921B80071171C /* drone.c in Sources */,
-				F8182FBE2DC921B80071171C /* miscoutput.c in Sources */,
-				F8182FBF2DC921B80071171C /* savescreen.c in Sources */,
+				F8C006762DCA452F00827D07 /* decomp.c in Sources */,
+				F8C006772DCA452F00827D07 /* rnd.c in Sources */,
+				F8C006782DCA452F00827D07 /* lowmem.c in Sources */,
+				F8C006792DCA452F00827D07 /* sound.c in Sources */,
+				F8C0067A2DCA452F00827D07 /* drone.c in Sources */,
+				F8C0067B2DCA452F00827D07 /* draw3d.c in Sources */,
+				F8C0067C2DCA452F00827D07 /* slave.c in Sources */,
+				F8C0067D2DCA452F00827D07 /* rscmisc.c in Sources */,
+				F8C0067E2DCA452F00827D07 /* loadmaze.c in Sources */,
+				F8C0067F2DCA452F00827D07 /* maze_obj.c in Sources */,
+				F8C006802DCA452F00827D07 /* draw_col.c in Sources */,
+				F8C006812DCA452F00827D07 /* copyprot.c in Sources */,
+				F8C006822DCA452F00827D07 /* conterm.c in Sources */,
+				F8C006842DCA452F00827D07 /* draw_bw.c in Sources */,
+				F8C006852DCA452F00827D07 /* makedraw.c in Sources */,
+				F8C006862DCA452F00827D07 /* moreshap.c in Sources */,
+				F8C006872DCA452F00827D07 /* prefdlg.c in Sources */,
+				F8C006882DCA452F00827D07 /* screen.c in Sources */,
+				F8C006892DCA452F00827D07 /* readmidi.c in Sources */,
+				F8C0068A2DCA452F00827D07 /* notebrd.c in Sources */,
+				F8C0068B2DCA452F00827D07 /* draw2d.c in Sources */,
+				F8C0068C2DCA452F00827D07 /* master.c in Sources */,
+				F8C0068D2DCA452F00827D07 /* setup.c in Sources */,
+				F8C0068E2DCA452F00827D07 /* gamelogi.c in Sources */,
+				F8C0068F2DCA452F00827D07 /* popchart.c in Sources */,
+				F8C006902DCA452F00827D07 /* endshape.c in Sources */,
+				F8C006912DCA452F00827D07 /* makelist.c in Sources */,
+				F8C006922DCA452F00827D07 /* maingame.c in Sources */,
+				F8C006932DCA452F00827D07 /* calc_tab.c in Sources */,
+				F8C006942DCA452F00827D07 /* drawwall.c in Sources */,
+				F8C006952DCA452F00827D07 /* midicam.c in Sources */,
+				F8C006962DCA452F00827D07 /* happyind.c in Sources */,
+				F8C006972DCA452F00827D07 /* miscout.c in Sources */,
+				F8C006982DCA452F00827D07 /* dispatch.c in Sources */,
+				F8C006992DCA452F00827D07 /* blit_col.c in Sources */,
+				F8C0069A2DCA452F00827D07 /* blit_bw.c in Sources */,
+				F8C0069B2DCA452F00827D07 /* maze_set.c in Sources */,
+				F8C0069C2DCA452F00827D07 /* drawshap.c in Sources */,
+				F8C0069D2DCA452F00827D07 /* string.c in Sources */,
+				F8C0069E2DCA452F00827D07 /* aesinit.c in Sources */,
+				F8C0069F2DCA452F00827D07 /* midicomm.c in Sources */,
+				F8C006A02DCA452F00827D07 /* savescr.c in Sources */,
+				F8C006A12DCA452F00827D07 /* mulsdivs.c in Sources */,
+				F8C006A22DCA452F00827D07 /* rungame.c in Sources */,
+				F8C006A32DCA452F00827D07 /* fastmath.c in Sources */,
+				F859F5501F7CD32400DF37A2 /* mac.c in Sources */,
 				F8B547A71F7CC57B00705C64 /* AtariTOS.mm in Sources */,
-				F88BF4F62DC9244300AFC152 /* calc_tab.c in Sources */,
-				F88BF4F72DC9244300AFC152 /* blit_draw_shape_bw.c in Sources */,
-				F88BF4F82DC9244300AFC152 /* blit_draw_shape_col.c in Sources */,
 				F8A7D32E1F7BF35300610920 /* main.m in Sources */,
 				F8A7D3261F7BF35300610920 /* AppDelegate.mm in Sources */,
 			);
@@ -603,16 +607,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
+				HEADER_SEARCH_PATHS = gui/common;
 				INFOPLIST_FILE = MIDIMaze/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				OTHER_CFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sarnau.MIDIMaze;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WARNING_CFLAGS = "-Wno-deprecated-register";
 			};
 			name = Debug;
 		};
@@ -624,16 +627,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
+				HEADER_SEARCH_PATHS = gui/common;
 				INFOPLIST_FILE = MIDIMaze/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				OTHER_CFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sarnau.MIDIMaze;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WARNING_CFLAGS = "-Wno-deprecated-register";
 			};
 			name = Release;
 		};

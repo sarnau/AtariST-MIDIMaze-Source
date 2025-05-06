@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 extern "C" {
-    #import "globals.h"
+#import "globals.h"
 }
 
 int gBIOSKeyCode = 0;

@@ -1,0 +1,143 @@
+lowmem.o: $(srcdir)/lowmem.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+readmidi.o: $(srcdir)/readmidi.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+rungame.o: $(srcdir)/rungame.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+makedraw.o: $(srcdir)/makedraw.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+screen.o: $(srcdir)/screen.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+sound.o: $(srcdir)/sound.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+dispatch.o: $(srcdir)/dispatch.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+endshape.o: $(srcdir)/endshape.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+maingame.o: $(srcdir)/maingame.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+midicam.o: $(srcdir)/midicam.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+popchart.o: $(srcdir)/popchart.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+moreshap.o: $(srcdir)/moreshap.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+notebrd.o: $(srcdir)/notebrd.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+savescr.o: $(srcdir)/savescr.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+miscout.o: $(srcdir)/miscout.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+draw2d.o: $(srcdir)/draw2d.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+drone.o: $(srcdir)/drone.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+aesinit.o: $(srcdir)/aesinit.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+master.o: $(srcdir)/master.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+prefdlg.o: $(srcdir)/prefdlg.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+string.o: $(srcdir)/string.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+slave.o: $(srcdir)/slave.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+midicomm.o: $(srcdir)/midicomm.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+rscmisc.o: $(srcdir)/rscmisc.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+conterm.o: $(srcdir)/conterm.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+loadmaze.o: $(srcdir)/loadmaze.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+maze_obj.o: $(srcdir)/maze_obj.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+makelist.o: $(srcdir)/makelist.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+rnd.o: $(srcdir)/rnd.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+maze_set.o: $(srcdir)/maze_set.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+setup.o: $(srcdir)/setup.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+drawwall.o: $(srcdir)/drawwall.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+fastmath.o: $(srcdir)/fastmath.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+happyind.o: $(srcdir)/happyind.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+draw3d.o: $(srcdir)/draw3d.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+drawshap.o: $(srcdir)/drawshap.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+gamelogi.o: $(srcdir)/gamelogi.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+blit_bw.o: $(srcdir)/blit_bw.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+mulsdivs.o: $(srcdir)/mulsdivs.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+calc_tab.o: $(srcdir)/calc_tab.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+draw_bw.o: $(srcdir)/draw_bw.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+blit_col.o: $(srcdir)/blit_col.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+draw_col.o: $(srcdir)/draw_col.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+decomp.o: $(srcdir)/decomp.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+copyprot.o: $(srcdir)/copyprot.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+joystick.o: joystick.c
+	$(AM_V_CC)$(CC) $(CFLAGS) $(OUT)$@ $<
+
+
+
+$(OBJS): $(srcdir)/globals.h ../common/portab.h ../common/gemdefs.h ../common/osif.h $(MAKEFILE_LIST)
+aesinit.o: $(srcdir)/rstest.rsh
+master.o slave.o aesinit.o prefdlg.o midicomm.o maingame.o: $(srcdir)/rstest.h

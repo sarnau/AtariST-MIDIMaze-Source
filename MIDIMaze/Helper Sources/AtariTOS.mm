@@ -8,13 +8,14 @@
 
 #import "AppDelegate.h"
 extern "C" {
-    #import "globals.h"
+#include "globals.h"
+#include "rstest.h"
 }
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <strings.h>
+#include <string.h>
 
 // convert an Atari bitmap into our image
 static void        plainConvert(const unsigned short *atariScreenBufP, unsigned char *rgbScreenBuf);
@@ -273,7 +274,7 @@ int Fclose(int handle)
 }
 
 // only used to build a path for maze files, which is ignored by macOS
-int Dgetdrv()
+int Dgetdrv(void)
 {
     return 0; // drive A
 }
@@ -417,19 +418,19 @@ void *Physbase()
 #pragma mark AES
 
 // Only implement what is necessary for MIDImaze
-int evnt_multi(int flags,int bclk,int bmsk,int bst,int m1flags,int m1x,int m1y,int m1w,int m1h,int m2flags,int m2x,int m2y,int m2w,int m2h,int *mepbuff,int tlc,int thc,int *pmx,int *pmy,int *pmb,int *pks,int *pkr,int *pbr)
+short evnt_multi(short flags,short bclk,short bmsk,short bst,short m1flags,short m1x,short m1y,short m1w,short m1h,short m2flags,short m2x,short m2y,short m2w,short m2h,short *mepbuff,short tlc,short thc,short *pmx,short *pmy,short *pmb,short *pks,short *pkr,short *pbr)
 {
 //    printf("evnt_multi()\n");
     if(gSelectedMenuItem != MMSelectedMenuItemNone) {
         mepbuff[0] = MN_SELECTED;
         switch(gSelectedMenuItem) {
         case MMSelectedMenuItemNone: break;
-        case MMSelectedMenuItemAbout: mepbuff[3] = 3; mepbuff[4] =  7; break;
-        case MMSelectedMenuItemLoad:  mepbuff[3] = 4; mepbuff[4] = 16; break;
-        case MMSelectedMenuItemReset: mepbuff[3] = 4; mepbuff[4] = 17; break;
-        case MMSelectedMenuItemPlay:  mepbuff[3] = 4; mepbuff[4] = 19; break;
-        case MMSelectedMenuItemQuit:  mepbuff[3] = 4; mepbuff[4] = 20; break;
-        case MMSelectedMenuItemNames: mepbuff[3] = 4; mepbuff[4] = 22; break;
+        case MMSelectedMenuItemAbout: mepbuff[3] = TITLE_ABOUT; mepbuff[4] = ABOUT; break;
+        case MMSelectedMenuItemLoad:  mepbuff[3] = TITLE_MAZE; mepbuff[4] = MAZE_LOAD; break;
+        case MMSelectedMenuItemReset: mepbuff[3] = TITLE_MAZE; mepbuff[4] = MAZE_RESET_SCORE; break;
+        case MMSelectedMenuItemPlay:  mepbuff[3] = TITLE_MAZE; mepbuff[4] = MAZE_PLAY; break;
+        case MMSelectedMenuItemQuit:  mepbuff[3] = TITLE_MAZE; mepbuff[4] = MAZE_QUIT; break;
+        case MMSelectedMenuItemNames: mepbuff[3] = TITLE_MAZE; mepbuff[4] = MAZE_SET_NAMES; break;
         }
         gSelectedMenuItem = MMSelectedMenuItemNone;
         return MU_MESAG;
@@ -447,7 +448,7 @@ int evnt_multi(int flags,int bclk,int bmsk,int bst,int m1flags,int m1x,int m1y,i
     return 0;  // nothing to do
 }
 
-int form_dial(int flag,int littlx,int littly,int littlw,int littlh,int bigx,int bigy,int bigw,int bigh)
+short form_dial(short flag,short littlx,short littly,short littlw,short littlh,short bigx,short bigy,short bigw,short bigh)
 {
     return 0;
 }
@@ -478,10 +479,10 @@ __kindof NSView *viewForTag(NSWindow *window, NSInteger tag)
 // It requires some hacking to connect the RSC indices with the tags
 // and update the controls both ways. But this is not designed to be
 // pretty, but to just get it to work.
-int form_do(OBJECT *form,int start)
+short form_do(OBJECT *form,short start)
 {
     int treeIndex = -1;
-    for(int i=0; i<sizeof(rsrc_object_array)/sizeof(rsrc_object_array[0]); ++i) {
+    for(int i=0; i<NUM_TREE; ++i) {
         if(form == rsrc_object_array[i]) {
             treeIndex = i;
             break;
@@ -492,11 +493,11 @@ int form_do(OBJECT *form,int start)
     case RSCTREE_PLAY_DIALOG: {
             __block NSModalResponse ret;
             dispatch_sync(dispatch_get_main_queue(), ^{
-                NSArray<NSArray <NSNumber *> *> *selectedRsc = @[@[@29,@30],@[@33,@34],@[@38,@39],@[@42,@43,@44],@[@53,@54]];
+                NSArray<NSArray <NSNumber *> *> *selectedRsc = @[@[@RELOAD_FAST,@RELOAD_SLOW],@[@REGEN_SLOW,@REGEN_FAST],@[@REVIVE_SLOW,@REVIVE_FAST],@[@PREF_1LIFE,@PREF_2LIVES,@PREF_3LIVES],@[@PREF_SINGLES,@PREF_TEAMS]];
                 do {
-                    NSTextField *tf = viewForTag(gAppDelegate.playDialog,45);
+                    NSTextField *tf = viewForTag(gAppDelegate.playDialog,PREF_TITLE);
                     // machines online
-                    tf.stringValue = @((char*)form[45].ob_spec);
+                    tf.stringValue = @((char*)form[PREF_TITLE].ob_spec);
                     for(NSArray <NSNumber *> *radioList in selectedRsc) {
                         for(NSNumber *rsrcID in radioList) {
                             NSButton *button = viewForTag(gAppDelegate.playDialog,rsrcID.integerValue);
@@ -504,7 +505,7 @@ int form_do(OBJECT *form,int start)
                         }
                     }
                     // Numbers of drones
-                    for(NSNumber *rsrcID in @[@14,@19,@24]) {
+                    for(NSNumber *rsrcID in @[@DUMB_VAL,@PLAIN_VAL,@NINJA_VAL]) {
                         NSButton *button = viewForTag(gAppDelegate.playDialog,rsrcID.integerValue);
                         button.title = @((char*)form[rsrcID.integerValue].ob_spec);
                     }
@@ -519,7 +520,7 @@ int form_do(OBJECT *form,int start)
                             }
                         }
                     }
-                    if(ret == 54) break; // Team
+                    if(ret == PREF_TEAMS) break; // Team
                     Boolean foundIt = false;
                     for(NSArray <NSNumber *> *radioList in selectedRsc) {
                         if([radioList containsObject:@(ret)]) {
@@ -530,7 +531,7 @@ int form_do(OBJECT *form,int start)
                     if(!foundIt)
                         break;
                 } while(1);
-                if(ret == 48 || ret == 49)
+                if(ret == PREF_NAH || ret == PREF_OK)
                     [gAppDelegate.playDialog orderOut:gAppDelegate];
             });
             return (int)ret;
@@ -548,12 +549,12 @@ int form_do(OBJECT *form,int start)
                             button.state = (form[kk].ob_state & SELECTED) == SELECTED;
                         }
                     }
-                    NSButton *button = viewForTag(gAppDelegate.teamDialog,102);
-                    button.state = (form[102].ob_state & SELECTED) == SELECTED;
+                    NSButton *button = viewForTag(gAppDelegate.teamDialog,FRIENDLY_FIRE);
+                    button.state = (form[FRIENDLY_FIRE].ob_state & SELECTED) == SELECTED;
                     ret = [NSApp runModalForWindow:gAppDelegate.teamDialog];
-                    form[102].ob_state &= ~SELECTED;
+                    form[FRIENDLY_FIRE].ob_state &= ~SELECTED;
                     if(button.state)
-                        form[102].ob_state |= SELECTED;
+                        form[FRIENDLY_FIRE].ob_state |= SELECTED;
                     for(int i=0;i<PLAYER_MAX_COUNT;++i) {
                         for(int j=0; j<PLAYER_MAX_TEAMS; ++j) {
                             int kk = team_group_rscindices[i][j];
@@ -572,7 +573,7 @@ int form_do(OBJECT *form,int start)
                             }
                         }
                     }
-                } while(ret != 101);
+                } while(ret != TEAM_OK);
                 [gAppDelegate.teamDialog orderOut:gAppDelegate];
             });
             break;
@@ -593,20 +594,20 @@ int form_do(OBJECT *form,int start)
             dispatch_sync(dispatch_get_main_queue(), ^{
                 [NSApp runModalForWindow:gAppDelegate.aboutDialog];
             });
-            return 5;
+            return ABOUT_WOW;
     }
     default: break;
     }
     return 0;
 }
 
-int menu_tnormal(OBJECT *tree,int titlenumm,int normalit)
+short menu_tnormal(OBJECT *tree,short titlenumm,short normalit)
 {
     return 0;
 }
 
 // Convert Atari ST alerts into a macOS alert. Again: just enough to get them to work!
-int form_alert(int defbut,const char *astring)
+short form_alert(short defbut,const char *astring)
 {
 //    printf("form_alert(%d, \"%s\")\n", defbut, astring);
     NSString *alertStr = @(astring);
@@ -636,10 +637,10 @@ int form_alert(int defbut,const char *astring)
     return (int)ret;
 }
 
-int form_center(OBJECT *tree,int *pcx,int *pcy,int *pcw,int *pch)
+short form_center(OBJECT *tree,short *pcx,short *pcy,short *pcw,short *pch)
 {
     int treeIndex = -1;
-    for(int i=0; i<sizeof(rsrc_object_array)/sizeof(rsrc_object_array[0]); ++i) {
+    for(int i=0; i<NUM_TREE; ++i) {
         if(tree == rsrc_object_array[i]) {
             treeIndex = i;
             break;
@@ -651,7 +652,7 @@ int form_center(OBJECT *tree,int *pcx,int *pcy,int *pcw,int *pch)
 
 // File selector, this also _loads_ the maze, because the Atari ST code can't deal with
 // longer pathnames, etc. And to avoid crashes we just load it directly and bypass the Atari code.
-int fsel_input(char *pipath,char *pisel,int *pbutton)
+short fsel_input(char *pipath,char *pisel,short *pbutton)
 {
 //    printf("fsel_input(\"%s\", \"%s\")\n", pipath, pisel);
     __block NSInteger ret;
@@ -673,7 +674,7 @@ int fsel_input(char *pipath,char *pisel,int *pbutton)
     return TRUE;
 }
 
-int graf_mouse(int m_number,MFORM *m_addr)
+short graf_mouse(short m_number,const MFORM *m_addr)
 {
     switch(m_number) {
 // never hide it, it is not necessary in macOS and blocks the menu bar usage
@@ -686,17 +687,17 @@ int graf_mouse(int m_number,MFORM *m_addr)
     return 0;
 }
 
-int menu_bar(OBJECT *tree,int showit)
+short menu_bar(OBJECT *tree,short showit)
 {
     return 0;
 }
 
 // Redraw certain objects in a RSC tree. This is used for dialogs without buttons,
 // which are the types used for slaves and MIDIcams.
-int objc_draw(OBJECT *tree,int drawob,int depth,int xc,int yc,int wc,int hc)
+short objc_draw(OBJECT *tree,short drawob,short depth,short xc,short yc,short wc,short hc)
 {
     int treeIndex = -1;
-    for(int i=0; i<sizeof(rsrc_object_array)/sizeof(rsrc_object_array[0]); ++i) {
+    for(int i=0; i<NUM_TREE; ++i) {
         if(tree == rsrc_object_array[i]) {
             treeIndex = i;
             break;
@@ -745,37 +746,37 @@ int objc_draw(OBJECT *tree,int drawob,int depth,int xc,int yc,int wc,int hc)
     return 0;
 }
 
-int rsrc_obfix(OBJECT *tree,int obj)
+short rsrc_obfix(OBJECT *tree,short obj)
 {
     return 0;
 }
 
-int wind_create(int kind,int wx,int wy,int ww,int wh)
+short wind_create(short kind,short wx,short wy,short ww,short wh)
 {
 //    printf("wind_create(%d,%d,%d,%d,%d)\n", kind, wx,wy,ww,wh);
     return 0;
 }
 
-int wind_open(int handle,int wx,int wy,int ww,int wh)
+short wind_open(short handle,short wx,short wy,short ww,short wh)
 {
 //    printf("wind_open(%d,%d,%d,%d,%d)\n", handle, wx,wy,ww,wh);
     return 0;
 }
 
-int wind_close(int handle)
+short wind_close(short handle)
 {
 //    printf("wind_close(%d)\n", handle);
     return 0;
 }
 
-int wind_delete(int handle)
+short wind_delete(short handle)
 {
 //    printf("wind_delete(%d)\n", handle);
     return 0;
 }
 
 // To avoid an endless loop, always return 0 to tell the Atari: nothing needs to be redrawn.
-int wind_get(int w_handle,int w_field,int *pw_x,int *pw_y,int *pw_w,int *pw_h)
+short wind_get(short w_handle,short w_field,short *pw_x,short *pw_y,short *pw_w,short *pw_h)
 {
     if(w_field == WF_FIRSTXYWH || w_field == WF_NEXTXYWH) {
         *pw_w = 0;
@@ -784,7 +785,7 @@ int wind_get(int w_handle,int w_field,int *pw_x,int *pw_y,int *pw_w,int *pw_h)
     return 0;
 }
 
-int wind_update(int beg_update)
+short wind_update(short beg_update)
 {
 //    printf("wind_update(%d)\n", beg_update);
     dispatch_sync(dispatch_get_main_queue(), ^{
@@ -796,7 +797,7 @@ int wind_update(int beg_update)
 #pragma mark -
 #pragma mark VDI
 
-void vro_cpyfm(int handle,int wr_mode,int *pxyarray,MFDB *psrcMFDB,MFDB *pdesMFDB)
+void vro_cpyfm(short handle,short wr_mode,short *pxyarray,MFDB *psrcMFDB,MFDB *pdesMFDB)
 {
     // never called, because wind_get() never returns anything
 }

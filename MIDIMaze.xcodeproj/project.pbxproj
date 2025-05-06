@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C6890732DC9F704005C82BA /* conterm.c in Sources */ = {isa = PBXBuildFile; fileRef = F8A7D3601F7BF3A800610920 /* conterm.c */; };
+		8C6890742DC9F72A005C82BA /* lowmem.c in Sources */ = {isa = PBXBuildFile; fileRef = F8A7D35B1F7BF3A800610920 /* lowmem.c */; };
 		F803446B1F8B88DF00111DE5 /* BIG.MAZ in Resources */ = {isa = PBXBuildFile; fileRef = F80344611F8B88D900111DE5 /* BIG.MAZ */; };
 		F803446C1F8B88DF00111DE5 /* BIGGER.MAZ in Resources */ = {isa = PBXBuildFile; fileRef = F80344621F8B88D900111DE5 /* BIGGER.MAZ */; };
 		F803446D1F8B88DF00111DE5 /* BIGWEIRD.MAZ in Resources */ = {isa = PBXBuildFile; fileRef = F80344631F8B88D900111DE5 /* BIGWEIRD.MAZ */; };
@@ -422,6 +424,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C6890742DC9F72A005C82BA /* lowmem.c in Sources */,
+				8C6890732DC9F704005C82BA /* conterm.c in Sources */,
 				F8A7D3931F7BF3B100610920 /* fastmath.c in Sources */,
 				F8A7D3831F7BF3B100610920 /* moreshap.c in Sources */,
 				F80FBB741F8512A200F62514 /* blit_bw.c in Sources */,

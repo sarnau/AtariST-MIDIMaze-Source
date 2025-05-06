@@ -295,17 +295,20 @@ const unsigned short *bw_fillpattern_table[16+3] = { fm_bw_muster0,fm_bw_muster1
 static void sw_fill_line(int x1, int x2, int y, int col, unsigned short *scr)
 {
     unsigned short patternMask = bw_fillpattern_table[col][1 + (y & 3)];
+	unsigned short *scrPtr;
+	int countWordCount;
+	unsigned short pixelMask;
+
     if(x1 > x2)
     {
         int temp = x1; x1 = x2; x2 = temp;
     }
-    // offset to the first word
-    unsigned short *scrPtr = (unsigned short*)((unsigned char*)scr + ((x1 >> 4) << 1) + mult80table[y]);
+    /* offset to the first word */
+    scrPtr = (unsigned short*)((unsigned char*)scr + ((x1 >> 4) << 1) + mult80table[y]);
 
-    // number of full words to be copied
-    int countWordCount = (x2 >> 4) - (x1 >> 4) - 1;
+    /* number of full words to be copied */
+    countWordCount = (x2 >> 4) - (x1 >> 4) - 1;
 
-    unsigned short pixelMask;
     if(countWordCount < 0)
     {
         pixelMask = bmask_allDown[x1 & 0x0F] & bmask_allUp[x2 & 0x0F];
@@ -341,17 +344,20 @@ static void sw_fill_line_double(int x1, int x2, int y, int col, unsigned short *
 {
     unsigned short patternMask1 = bw_fillpattern_table[col][0 + (y & 3)];
     unsigned short patternMask2 = bw_fillpattern_table[col][1 + (y & 3)];
+	unsigned short *scrPtr;
+	int countWordCount;
+	unsigned short pixelMask;
+
     if(x1 > x2)
     {
         int temp = x1; x1 = x2; x2 = temp;
     }
-    // offset to the first word
-    unsigned short *scrPtr = (unsigned short*)((unsigned char*)scr + ((x1 >> 4) << 1) + mult160table[y]);
+    /* offset to the first word */
+    scrPtr = (unsigned short*)((unsigned char*)scr + ((x1 >> 4) << 1) + mult160table[y]);
 
-    // number of full words to be copied
-    int countWordCount = (x2 >> 4) - (x1 >> 4) - 1;
+    /* number of full words to be copied */
+    countWordCount = (x2 >> 4) - (x1 >> 4) - 1;
 
-    unsigned short pixelMask;
     if(countWordCount < 0)
     {
         pixelMask = bmask_allDown[x1 & 0x0F] & bmask_allUp[x2 & 0x0F];
@@ -372,15 +378,19 @@ static void sw_fill_line_double(int x1, int x2, int y, int col, unsigned short *
 
 static void sw_fill_vline(int y1, int y2, int x, int col, unsigned short *scr)
 {
+	unsigned short *scrWordPtr;
+	int orMask;
+	int andMask;
+
     if(y1 > y2)
     {
         int temp = y1; y1 = y2; y2 = temp;
     }
     y2 -= y1;
 
-    unsigned short *scrWordPtr = (unsigned short*)((unsigned char*)scr + (((x >> 3) & 0xFFFE) + mult80table[y1]));
-    int orMask = INTELSWAP16(bmask_singlebit[x & 0x0F]);
-    int andMask = ~orMask;
+    scrWordPtr = (unsigned short*)((unsigned char*)scr + (((x >> 3) & 0xFFFE) + mult80table[y1]));
+    orMask = INTELSWAP16(bmask_singlebit[x & 0x0F]);
+    andMask = ~orMask;
     do {
         if(col & 1)
             *scrWordPtr |= orMask;
@@ -419,28 +429,31 @@ void blit_fill_box_bw_double(int x1, int y1, int x2, int y2, int col)
     } while(++y1 <= y2);
 }
 
-void blit_clear_window_bw()
+void blit_clear_window_bw(void)
 {
     const int width = screen_rez != 0 ? SCREEN_BW_WIDTH : SCREEN_COL_WIDTH;
-    unsigned int colorBits = 0xFFFFFFFF; // The sky color is a plain white
-    unsigned int *scrPtr = (unsigned int *)screen_offs_adr;
-    for(int lines=0; lines<viewscreen_sky_height; ++lines)    // 100 lines
-    {
-        for(int i=0; i<(viewscreen_hcenter+viewscreen_halfwidth)/32; ++i)  // 320 pixels of white
-            *scrPtr++ = colorBits;
-        scrPtr += (width-(viewscreen_hcenter+viewscreen_halfwidth))/32;  // skip 320 pixels
-    }
-    // The floor is a 010101 grey pattern
-    for(int lines=0; lines<=viewscreen_floor_height/2; ++lines)    // 51 double-lines
-    {
-        for(int i=0; i<(viewscreen_hcenter+viewscreen_halfwidth)/32; ++i)  // 320 pixels of grey
-            *scrPtr++ = colorBits;
-        scrPtr += (width-(viewscreen_hcenter+viewscreen_halfwidth))/32;  // skip 320 pixels
-        colorBits ^= 0xAAAAAAAA;
+    uint32_t colorBits = 0xFFFFFFFFL; /* The sky color is a plain white */
+    uint32_t *scrPtr = (uint32_t *)screen_offs_adr;
+    int lines;
+    int i;
 
-        for(int i=0; i<(viewscreen_hcenter+viewscreen_halfwidth)/32; ++i)  // 320 pixels of shifted grey
+    for(lines=0; lines<viewscreen_sky_height; ++lines)    /* 100 lines */
+    {
+        for(i=0; i<(viewscreen_hcenter+viewscreen_halfwidth)/32; ++i)  /* 320 pixels of white */
             *scrPtr++ = colorBits;
-        scrPtr += (width-(viewscreen_hcenter+viewscreen_halfwidth))/32;  // skip 320 pixels
-        colorBits ^= 0xAAAAAAAA;
+        scrPtr += (width-(viewscreen_hcenter+viewscreen_halfwidth))/32;  /* skip 320 pixels */
+    }
+    /* The floor is a 010101 grey pattern */
+    for(lines=0; lines<=viewscreen_floor_height/2; ++lines)    /* 51 double-lines */
+    {
+        for(i=0; i<(viewscreen_hcenter+viewscreen_halfwidth)/32; ++i)  /* 320 pixels of grey */
+            *scrPtr++ = colorBits;
+        scrPtr += (width-(viewscreen_hcenter+viewscreen_halfwidth))/32;  /* skip 320 pixels */
+        colorBits ^= 0xAAAAAAAAL;
+
+        for(int i=0; i<(viewscreen_hcenter+viewscreen_halfwidth)/32; ++i)  /* 320 pixels of shifted grey */
+            *scrPtr++ = colorBits;
+        scrPtr += (width-(viewscreen_hcenter+viewscreen_halfwidth))/32;  /* skip 320 pixels */
+        colorBits ^= 0xAAAAAAAAL;
     }
 }

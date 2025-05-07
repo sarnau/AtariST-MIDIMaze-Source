@@ -88,7 +88,7 @@ def print_body_shapes(data,FACE_COUNT):
 	shapeOffset = 0
 	for shapeIndex in range(BODY_SHAPE_COUNT):
 		for faceIndex in range(FACE_COUNT):
-			# scaling factor for the share (32..1) with the shapeIndex 0..23
+			# scaling factor for the shape (32..1) with the shapeIndex 0..23
 			shapeScale = BODY_SHAPE_COUNT-shapeIndex
 			if shapeScale > 16:
 				shapeScale = ((shapeScale-16)<<1)+16

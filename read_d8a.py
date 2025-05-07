@@ -112,7 +112,7 @@ def print_body_shapes(data,FACE_COUNT):
 			
 			shapeOffset += draw_shape_bodyHeight * shapeWidthInWords * 2
 
-data = bytearray(open('./MIDIMazeDisc/MIDIMAZE.D8A','rb').read())
+data = bytearray(open('./MIDIMAZE.PD/MIDIMAZE.D8A','rb').read())
 color_screen = data[0x00000:0x05076]
 convert_title(color_screen, 4, './images/TITLE_COL.PNG')
 bw_screen = data[0x05076:0x05076+0x5A62]

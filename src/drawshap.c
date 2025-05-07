@@ -40,7 +40,7 @@ int shapeIndex;
     /* BODY_SHAPE_COUNT number of body shapes */
     for(shapeIndex = 0; shapeIndex < BODY_SHAPE_COUNT; shapeIndex++) {
 
-        /* scaling factor for the share (32..1) with the shapeIndex 0..23 */
+        /* scaling factor for the shape (32..1) with the shapeIndex 0..23 */
         if((shapeScale = BODY_SHAPE_COUNT-shapeIndex) > 16)
             shapeScale = ((shapeScale-16)<<1)+16;
 

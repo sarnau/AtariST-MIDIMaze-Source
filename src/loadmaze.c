@@ -41,15 +41,22 @@ static char const alert_mazefile_header_booboo[] = "[3][ |Maze file|header boo-b
     Fread(fhandle, 1, &tmp);
     if(tmp < '0' || tmp > '9') {
         form_alert(1, alert_mazefile_header_booboo);
+        Fclose(fhandle);
         return -3;
     }
     maze_size = (tmp-'0')*10;
     Fread(fhandle, 1, &tmp);
     if(tmp < '0' || tmp > '9') {
         form_alert(1, alert_mazefile_header_booboo);
+        Fclose(fhandle);
         return -3;
     }
     maze_size += tmp-'0';
+    if(maze_size > MAZE_MAX_SIZE) {
+        form_alert(1, "[3][ |Size of maze|is too large][OK]");
+        Fclose(fhandle);
+        return -3;
+    }
 
     /* read over the CR/LF (because a MAZ-File is an Atari ST text file) */
     Fread(fhandle, 1, &tmp);
@@ -61,6 +68,7 @@ static char const alert_mazefile_header_booboo[] = "[3][ |Maze file|header boo-b
         if(fieldY <= maze_size){
             if (Fread(fhandle, maze_size+2, lineBuf) != maze_size+2) {
                 form_alert(1, "[3][ |Error reading|maze file][OK]");
+                Fclose(fhandle);
                 return -2;
             }
             if (lineBuf[maze_size + 1] == '\r')

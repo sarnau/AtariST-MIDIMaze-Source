@@ -2,7 +2,6 @@ OBJS = \
 	$(STARTUP) \
 	lowmem.o \
 	readmidi.o \
-	main.o \
 	rungame.o \
 	makedraw.o \
 	screen.o \

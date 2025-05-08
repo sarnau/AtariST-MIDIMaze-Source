@@ -29,7 +29,10 @@ void setup_game(void) {
 int i;
 
     screen_rez = Getrez(); /* tested troughout as != 0 for b/w */
-    if(screen_rez == 1) { /* 640x200 is not a supported resolution */
+    /* Only 640x400 and 320x200 are supported resolutions */
+    if(screen_rez != 0 && screen_rez != 2) {
+        /* this was turned off in main() */
+        graf_mouse(M_ON, NULL);
         form_alert(1, "[3][ |Please run in|LOW resolution|or HIGH res.][OK]");
         return;
     }

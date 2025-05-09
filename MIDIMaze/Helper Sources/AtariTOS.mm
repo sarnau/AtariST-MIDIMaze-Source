@@ -632,6 +632,22 @@ short form_alert(short defbut,const char *astring)
             [alert addButtonWithTitle:buttonStr];
         }
         ret = [alert runModal];
+        switch (ret) {
+        case NSModalResponseOK:
+        case NSAlertFirstButtonReturn:
+            ret = 1;
+            break;
+        case NSModalResponseCancel:
+        case NSAlertSecondButtonReturn:
+            ret = 2;
+            break;
+        case NSAlertThirdButtonReturn:
+            ret = 3;
+            break;
+        default:
+            ret = 0;
+            break;
+        }
     });
     gAltKeyCode = 0;
     return (int)ret;

@@ -10,7 +10,11 @@
 #include "gemdefs.h"
 #include "osif.h"
 
+#ifdef __atarist__
+#define NON_ATARI_HACK 0
+#else
 #define NON_ATARI_HACK 1 // Because we don't support MIDI, we disable the master/slave recognition at launch
+#endif
 
 /* Several defines to enable individual bugfixes for the original MIDImaze */
 #define BUGFIX_MIDI_TIMEOUT     1 /* fix weird MIDI loop timeouts during play */

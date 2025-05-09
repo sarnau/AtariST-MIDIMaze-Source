@@ -13,7 +13,9 @@ OPT = -O2 -fomit-frame-pointer
 WARN = -Wall -Wundef -Wstrict-prototypes -Wmissing-prototypes -Werror
 INCLUDES = -I$(srcdir) -I../common
 CFLAGS = $(CPU_CFLAGS) $(OPT) $(WARN) $(INCLUDES)
-LDFLAGS += -s
+# The program must not be loaded to TT-RAM,
+# because the screen_buf is part of it
+LDFLAGS += -Wl,--mprg-flags,5 -s
 
 GEMLIB_OBJS = \
 	gemlib/crysif.o \

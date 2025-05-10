@@ -63,6 +63,7 @@ short wi_gfield;
 int init_aes_window(void) {
 int index;
 int obj;
+OBJECT *tree;
 
     rs_object[6].ob_x--; /* fix the position of the Atari menu title box */
     index = 0;
@@ -81,7 +82,11 @@ int obj;
         rsrc_object_array[obj] = rs_trindex[obj]+rs_object;
 
     /* The background of the play dialog is transparent  */
-    rsrc_object_array[RSCTREE_PLAY_DIALOG]->ob_type = G_IBOX;
+    tree = rsrc_object_array[RSCTREE_PLAY_DIALOG];
+    tree[0].ob_type = G_IBOX;
+    ((char *)tree[DUMB_VAL].ob_spec)[1] = '0';
+    ((char *)tree[PLAIN_VAL].ob_spec)[1] = '0';
+    ((char *)tree[NINJA_VAL].ob_spec)[1] = '0';
     /* setup the TEDINFO for the set name dialog */
     rsrc_object_array[RSCTREE_SET_NAME][1].ob_spec = (intptr_t)&rs_tedinfo[0];
     rs_tedinfo[0].te_ptext = rs_strings[(intptr_t)rs_tedinfo[0].te_ptext];

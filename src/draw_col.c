@@ -248,10 +248,17 @@ static void fill_cline(int x1, int x2, int y, int col, unsigned short *scr)
         uint32_t plane12 = INTELSWAP32(bmask_d[col & 0x03]);
         uint32_t plane34 = INTELSWAP32(bmask_d[col >> 2]);
         do {
+#ifdef __m68k__
+            *scrPtr++ = plane12 >> 16;
+            *scrPtr++ = plane12;
+            *scrPtr++ = plane34 >> 16;
+            *scrPtr++ = plane34;
+#else
             *scrPtr++ = plane12;
             *scrPtr++ = plane12 >> 16;
             *scrPtr++ = plane34;
             *scrPtr++ = plane34 >> 16;
+#endif
         } while(countWordCount-- > 0);
     }
     orMask = INTELSWAP16(bmask_allUp[x2 & 0x0F]);

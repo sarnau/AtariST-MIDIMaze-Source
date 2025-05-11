@@ -134,6 +134,28 @@ __extension__								\
 	__retvalue;							\
 })
 
+#define trap_13_wwl(n, a, b)						\
+__extension__								\
+({									\
+	register long __retvalue __asm__("d0");				\
+	short _a = (short)(a);						\
+	long  _b = (long) (b);						\
+	    								\
+	__asm__ volatile						\
+	(								\
+		"movl	%3,%%sp@-\n\t"					\
+		"movw	%2,%%sp@-\n\t"					\
+		"movw	%1,%%sp@-\n\t"					\
+		"trap	#13\n\t"					\
+		"addql	#8,%%sp"						\
+	: "=r"(__retvalue)			/* outputs */		\
+	: "g"(n), "r"(_a), "r"(_b)		/* inputs  */		\
+	: __CLOBBER_RETURN("d0") "d1", "d2", "a0", "a1", "a2", "cc"    /* clobbered regs */	\
+	  AND_MEMORY							\
+	);								\
+	__retvalue;							\
+})
+
 #define trap_14_w(n)							\
 __extension__								\
 ({									\
@@ -273,6 +295,7 @@ __extension__								\
 #define trap_1_wwll gemdos
 #define trap_13_ww bios
 #define trap_13_www bios
+#define trap_13_wwl bios
 #define trap_14_w xbios
 #define trap_14_ww xbios
 #define trap_14_wllw xbios
@@ -322,6 +345,7 @@ int Dgetpath(char *path, int driveno);
 #define	Bconstat(dev) trap_13_ww(1, (short)(dev))
 #define	Bconin(dev)	trap_13_ww(2, (short)(dev))
 #define	Bconout(dev, ch) trap_13_www(3, (short)(dev), (short)(ch))
+#define	Setexc(vnum,vptr) (void *)trap_13_wwl(5, (short)(vnum), (long)(vptr))
 #else
 int Bconstat(int dev);
 long Bconin(int dev);
@@ -343,6 +367,16 @@ typedef struct			/* used by Kbdvbase */
 		void *kb_kbdsys;
 } KBDVBASE;
 
+/* Structure returned by Iorec() */
+typedef struct {
+    char    *ibuf;
+    short   ibufsiz;
+    volatile short ibufhd;
+    volatile short ibuftl;
+    short   ibuflow;
+    short   ibufhi;
+} IOREC;
+
 #ifdef __m68k__
 #define Initmouse(type, par, mousevec) (void)trap_14_wwll(0, (short)(type), (const void *)(par), (void *)(mousevec))
 #define	Physbase()	((void *)trap_14_w(2))
@@ -351,6 +385,7 @@ typedef struct			/* used by Kbdvbase */
 #define	Setscreen(lscrn, pscrn, rez) (void)trap_14_wllw(5, (void *)(lscrn), (void *)(pscrn), (short)(rez))
 #define Setpalette(palptr)	(void)trap_14_wl(6, (void *)(palptr))
 #define Setcolor(num, color)	(short)trap_14_www(7, (short)(num), (short)(color))
+#define	Iorec(dev) (IOREC *)trap_14_ww(14, (short)(dev))
 #define Vsync()		(void)trap_14_w(0x25)
 #define	Giaccess(data, reg)	(short)trap_14_www(28, (short)(data), (short)(reg))
 #define	Dosound(ptr)	trap_14_wl(32, (void *)(ptr))

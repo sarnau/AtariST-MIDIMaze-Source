@@ -151,10 +151,11 @@
 #define T10OBJ 204
 #define T11OBJ 207
 #define T12OBJ 210
-#define T13OBJ 216
+#define T13OBJ 217
+#define T14OBJ 220
 #define FREEBB 0
 #define FREEIMG 0
-#define FREESTR 92
+#define FREESTR 95
 
 BYTE *rs_strings[] = {
 	(BYTE *)" \016\017 ",
@@ -167,13 +168,13 @@ BYTE *rs_strings[] = {
 	(BYTE *)"  4",
 	(BYTE *)"  5",
 	(BYTE *)"  6",
-	(BYTE *)"  Load...",
-	(BYTE *)"  Reset score",
-	(BYTE *)"--------------",
-	(BYTE *)"  Play..!",
-	(BYTE *)"  Quit",
-	(BYTE *)"--------------",
-	(BYTE *)"  Names...",
+	(BYTE *)"  Load...      ^O",
+	(BYTE *)"  Reset score  ^R",
+	(BYTE *)"------------------",
+	(BYTE *)"  Play..!      ^P",
+	(BYTE *)"  Names...     ^N",
+	(BYTE *)"------------------",
+	(BYTE *)"  Quit         ^Q",
 	(BYTE *)"This is a",
 	(BYTE *)"SLAVE",
 	(BYTE *)"machine.",
@@ -240,15 +241,18 @@ BYTE *rs_strings[] = {
 	(BYTE *)"suspended.",
 	(BYTE *)"Player #xx",
 	(BYTE *)"Name: __________",
-	(BYTE *)"nnnnnnnnnn",
+	(BYTE *)"n",
 	(BYTE *)"OK",
 	(BYTE *)"MIDIMAZE 1.0",
 	(BYTE *)"Copyright (c) 1987",
 	(BYTE *)"XANTH F/X",
 	(BYTE *)"All rights reserved.",
 	(BYTE *)"Wow!",
+	(BYTE *)"Compiled by Alcyon",
 	(BYTE *)"This is a",
-	(BYTE *)"MIDICAM"
+	(BYTE *)"MIDICAM",
+	(BYTE *)"Keyboard control",
+	(BYTE *)"selected."
 };
 
 LONG rs_frstr[] = {
@@ -287,14 +291,14 @@ OBJECT rs_object[] = {
 	{ 13, -1, -1, G_STRING, OF_NONE, OS_NORMAL, C_UNION(0x7L), 0x0000,0x0005, 0x0015,0x0001 },
 	{ 14, -1, -1, G_STRING, OF_NONE, OS_NORMAL, C_UNION(0x8L), 0x0000,0x0006, 0x0015,0x0001 },
 	{ 6, -1, -1, G_STRING, OF_NONE, OS_NORMAL, C_UNION(0x9L), 0x0000,0x0007, 0x0015,0x0001 },
-	{ 5, 16, 22, G_BOX, OF_NONE, OS_NORMAL, C_UNION(0xFF1100L), 0x0006,0x0000, 0x000e,0x0007 },
-	{ 17, -1, -1, G_STRING, OF_NONE, OS_NORMAL, C_UNION(0xAL), 0x0000,0x0000, 0x000e,0x0001 },
-	{ 18, -1, -1, G_STRING, OF_NONE, OS_NORMAL, C_UNION(0xBL), 0x0000,0x0001, 0x000e,0x0001 },
-	{ 19, -1, -1, G_STRING, OF_NONE, OS_DISABLED, C_UNION(0xCL), 0x0000,0x0002, 0x000e,0x0001 },
-	{ 20, -1, -1, G_STRING, OF_NONE, OS_NORMAL, C_UNION(0xDL), 0x0000,0x0003, 0x000e,0x0001 },
-	{ 21, -1, -1, G_STRING, OF_NONE, OS_NORMAL, C_UNION(0xEL), 0x0000,0x0004, 0x000e,0x0001 },
-	{ 22, -1, -1, G_STRING, OF_NONE, OS_DISABLED, C_UNION(0xFL), 0x0000,0x0005, 0x000e,0x0001 },
-	{ 15, -1, -1, G_STRING, OF_LASTOB, OS_NORMAL, C_UNION(0x10L), 0x0000,0x0006, 0x000e,0x0001 },
+	{ 5, 16, 22, G_BOX, OF_NONE, OS_NORMAL, C_UNION(0xFF1100L), 0x0006,0x0000, 0x0012,0x0007 },
+	{ 17, -1, -1, G_STRING, OF_NONE, OS_NORMAL, C_UNION(0xAL), 0x0000,0x0000, 0x0012,0x0001 },
+	{ 18, -1, -1, G_STRING, OF_NONE, OS_NORMAL, C_UNION(0xBL), 0x0000,0x0001, 0x0012,0x0001 },
+	{ 19, -1, -1, G_STRING, OF_NONE, OS_DISABLED, C_UNION(0xCL), 0x0000,0x0002, 0x0012,0x0001 },
+	{ 20, -1, -1, G_STRING, OF_NONE, OS_NORMAL, C_UNION(0xDL), 0x0000,0x0003, 0x0012,0x0001 },
+	{ 21, -1, -1, G_STRING, OF_NONE, OS_NORMAL, C_UNION(0xEL), 0x0000,0x0004, 0x0012,0x0001 },
+	{ 22, -1, -1, G_STRING, OF_NONE, OS_DISABLED, C_UNION(0xFL), 0x0000,0x0005, 0x0012,0x0001 },
+	{ 15, -1, -1, G_STRING, OF_LASTOB, OS_NORMAL, C_UNION(0x10L), 0x0000,0x0006, 0x0012,0x0001 },
 	{ -1, 1, 3, G_BOX, OF_NONE, OS_OUTLINED, C_UNION(0x21100L), 0x0000,0x0000, 0x000c,0x0005 },
 	{ 2, -1, -1, G_STRING, OF_NONE, OS_NORMAL, C_UNION(0x11L), 0x0001,0x0001, 0x0009,0x0001 },
 	{ 3, -1, -1, G_STRING, OF_NONE, OS_NORMAL, C_UNION(0x12L), 0x0003,0x0002, 0x0005,0x0001 },
@@ -482,15 +486,19 @@ OBJECT rs_object[] = {
 	{ -1, 1, 2, G_BOX, OF_NONE, OS_OUTLINED, C_UNION(0x21100L), 0x0000,0x0000, 0x0015,0x0005 },
 	{ 2, -1, -1, G_FBOXTEXT, OF_EDITABLE, OS_NORMAL, C_UNION(0x0L), 0x0002,0x0001, 0x0011,0x0001 },
 	{ 0, -1, -1, G_BUTTON, 0x27, OS_NORMAL, C_UNION(0x54L), 0x0010,0x0003, 0x0003,0x0001 },
-	{ -1, 1, 5, G_BOX, OF_NONE, OS_OUTLINED, C_UNION(0x21100L), 0x0000,0x0000, 0x001b,0x0008 },
+	{ -1, 1, 6, G_BOX, OF_NONE, OS_OUTLINED, C_UNION(0x21100L), 0x0000,0x0000, 0x001b,0x0009 },
 	{ 2, -1, -1, G_STRING, OF_NONE, OS_NORMAL, C_UNION(0x55L), 0x0007,0x0001, 0x000c,0x0001 },
 	{ 3, -1, -1, G_STRING, OF_NONE, OS_NORMAL, C_UNION(0x56L), 0x0004,0x0002, 0x0012,0x0001 },
 	{ 4, -1, -1, G_STRING, OF_NONE, OS_NORMAL, C_UNION(0x57L), 0x0009,0x0003, 0x0009,0x0001 },
 	{ 5, -1, -1, G_STRING, OF_NONE, OS_NORMAL, C_UNION(0x58L), 0x0003,0x0004, 0x0014,0x0001 },
-	{ 0, -1, -1, G_BUTTON, 0x27, OS_NORMAL, C_UNION(0x59L), 0x000b,0x0006, 0x0005,0x0001 },
+	{ 6, -1, -1, G_BUTTON, 0x7, OS_NORMAL, C_UNION(0x59L), 0x000b,0x0007, 0x0005,0x0001 },
+	{ 0, -1, -1, G_STRING, OF_LASTOB, OS_NORMAL, C_UNION(0x5AL), 0x0003,0x0005, 0x0012,0x0001 },
 	{ -1, 1, 2, G_BOX, OF_NONE, OS_OUTLINED, C_UNION(0x21100L), 0x0000,0x0000, 0x000d,0x0004 },
-	{ 2, -1, -1, G_STRING, OF_NONE, OS_NORMAL, C_UNION(0x5AL), 0x0002,0x0001, 0x0009,0x0001 },
-	{ 0, -1, -1, G_STRING, OF_LASTOB, OS_NORMAL, C_UNION(0x5BL), 0x0003,0x0002, 0x0007,0x0001 }
+	{ 2, -1, -1, G_STRING, OF_NONE, OS_NORMAL, C_UNION(0x5BL), 0x0002,0x0001, 0x0009,0x0001 },
+	{ 0, -1, -1, G_STRING, OF_LASTOB, OS_NORMAL, C_UNION(0x5CL), 0x0003,0x0002, 0x0007,0x0001 },
+	{ -1, 1, 2, G_BOX, OF_NONE, OS_OUTLINED, C_UNION(0x21100L), 0x0000,0x0000, 0x0012,0x0004 },
+	{ 2, -1, -1, G_STRING, OF_NONE, OS_NORMAL, C_UNION(0x5DL), 0x0001,0x0001, 0x0410,0x0001 },
+	{ 0, -1, -1, G_STRING, OF_LASTOB, OS_NORMAL, C_UNION(0x5EL), 0x0005,0x0002, 0x0009,0x0001 }
 };
 
 _LONG_PTR rs_trindex[] = {
@@ -507,7 +515,8 @@ _LONG_PTR rs_trindex[] = {
 	204L,
 	207L,
 	210L,
-	216L
+	217L,
+	220L
 };
 
 #ifndef __foobar_defined
@@ -523,7 +532,7 @@ struct foobar rs_imdope[] = {
 
 
 
-#define NUM_STRINGS 92
+#define NUM_STRINGS 95
 #define NUM_FRSTR 0
 #define NUM_UD 0
 #define NUM_IMAGES 0
@@ -532,7 +541,7 @@ struct foobar rs_imdope[] = {
 #define NUM_IB 0
 #define NUM_CIB 0
 #define NUM_TI 1
-#define NUM_OBS 219
-#define NUM_TREE 14
+#define NUM_OBS 223
+#define NUM_TREE 15
 
 BYTE pname[] = "RSTEST.RSC";

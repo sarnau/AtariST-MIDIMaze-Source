@@ -18,7 +18,6 @@ int returnCode = DISPATCH_QUIT;
 short which_events;
 short keyboard_state;
 short key_code;
-short joystickActive;
 short midiByte = 0;
 short prefReturnCode;
 short buffer[8];
@@ -28,9 +27,6 @@ short menuTitleId;
 short dontExitLoop;
 int j;
 int i;
-
-    /* joystick is the default, mouse the the optional choice */
-    joystickActive = YES;
 
     /* remove all pending key presses */
     while(Bconstat(CON))
@@ -88,11 +84,14 @@ int i;
             if((key_code&0xff) == 13) goto PLAY_GAME;
             key_code = (key_code>>8)|(keyboard_state<<8);
             if(key_code == 0x832 /* ALT-M */) {
-                joystickActive = NO;
+                input_device = INPUT_MOUSE;
                 form_alert(1, "[1][ |Mouse control| selected.][OK]");
             } else if(key_code == 0x824 /* ALT-J */) {
-                joystickActive = YES;
+                input_device = INPUT_JOYSTICK;
                 form_alert(1, "[1][ |Joystick control|  selected.][OK]");
+            } else if(key_code == 0x825 /* ALT-K */) {
+                input_device = INPUT_KEYBOARD;
+                form_alert(1, "[1][ |Keyboard control|  selected.][OK]");
             } else if(key_code == 0x813 /* ALT-R */) {
                 returnCode = DISPATCH_AUTOMATIC;
                 dontExitLoop = NO;
@@ -271,7 +270,7 @@ int i;
                         }
 
                         /* play the game! */
-                        midiByte = game_loop(isSolo, joystickActive);
+                        midiByte = game_loop(isSolo);
 
                         /* Reset text colors (not sure why, because it seems to be set in every use case anyway) */
 						BCON_SETFCOLOR(screen_rez ? COLOR_SILVER_INDEX : COLOR_WHITE_INDEX);
@@ -282,10 +281,7 @@ int i;
                             Bconin(CON);
 
                         copy_screen();
-                        if(joystickActive)
-                            exit_joystick();
-                        else
-                            exit_mouse();
+                        exit_input();
                         graf_mouse(M_ON, NULL);
                         if(midiByte < 0) {
                             if(midiByte == -1)

@@ -23,6 +23,21 @@ void exit_mouse(void)
 
 int ask_mouse(void)
 {
-    int button = 0;
-    return ask_joystick(0, &button) | ((button != 0) << 4);
+    return ask_joystick();
+}
+
+/* If keyboard is selected, it will behave the same as joystick */
+void init_keyboard(void)
+{
+    init_joystick();
+}
+
+void exit_keyboard(void)
+{
+    exit_joystick();
+}
+
+int ask_keyboard(void)
+{
+    return ask_joystick();
 }

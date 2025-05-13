@@ -138,6 +138,6 @@ joystick.o: joystick.c
 
 
 
-$(OBJS): $(srcdir)/globals.h ../common/portab.h ../common/gemdefs.h ../common/osif.h $(MAKEFILE_LIST)
+$(OBJS) $(PLATFORM_OBJS): $(srcdir)/globals.h ../common/portab.h ../common/gemdefs.h ../common/osif.h $(MAKEFILE_LIST)
 aesinit.o: $(srcdir)/rstest.rsh
 master.o slave.o aesinit.o prefdlg.o midicomm.o maingame.o: $(srcdir)/rstest.h

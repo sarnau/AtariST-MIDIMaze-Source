@@ -13,7 +13,6 @@ int slave_midicam_loop(int isMidicamFlag) {
 int returnCode = DISPATCH_QUIT;
 int key_code;
 int dontExitLoop;
-int joystickActive;
 int midiByte = 0;
 int i;
 
@@ -26,7 +25,6 @@ int i;
     /* make sure we get the shift status */
     _conterm_update_shift_status(1);
 
-    joystickActive = YES;
     dontExitLoop = YES;
     while(1) {
         /* remove all pending MIDI bytes */
@@ -50,13 +48,17 @@ int i;
             if(Bconstat(CON)) {
                 key_code = (Bconin(CON)>>16) & 0x7fff; /* conterm is set to contain the modifier status in the top bits */
                 if(key_code == 0x832 /* ALT-M */) {
-                    joystickActive = NO;
+                    input_device = INPUT_MOUSE;
                     redraw_window_background(wind_handle);
                     rsc_draw_buttonless_dialog(RSCTREE_MOUSE_CTRL);
                 } else if(key_code == 0x824 /* ALT-J */) {
-                    joystickActive = YES;
+                    input_device = INPUT_JOYSTICK;
                     redraw_window_background(wind_handle);
                     rsc_draw_buttonless_dialog(RSCTREE_JOYSTICK_CTRL);
+                } else if(key_code == 0x825 /* ALT-M */) {
+                    input_device = INPUT_KEYBOARD;
+                    redraw_window_background(wind_handle);
+                    rsc_draw_buttonless_dialog(RSCTREE_KEYBOARD_CTRL);
                 } else if(key_code == 0x810 /* ALT-Q */) {
                     returnCode = DISPATCH_QUIT;
                     dontExitLoop = NO;
@@ -122,7 +124,7 @@ int i;
             if(receive_datas() < 0) continue;
 
             /* main loop for the whole game (shared with the master) */
-            midiByte = game_loop(FALSE, joystickActive);
+            midiByte = game_loop(FALSE);
 
             /* reset VT52 colors */
             BCON_SETFCOLOR(screen_rez ? COLOR_SILVER_INDEX : COLOR_WHITE_INDEX);
@@ -131,10 +133,7 @@ int i;
             (void)Setcolor(0, 0); /* reset background color to black */
             copy_screen();
 
-            if(joystickActive)
-                exit_joystick();
-            else
-                exit_mouse();
+            exit_input();
 
             if(midiByte < 0) {
                 if(midiByte == -1)

@@ -3,8 +3,8 @@
  ************************************************************/
 #include "globals.h"
 
-#define HQUOT_WIDTH 20 /* width in words */
-#define HQUOT_HEIGHT 2 /* height in lines */
+#define HQUOT_WIDTH 2 /* width in words */
+#define HQUOT_HEIGHT 20 /* height in lines */
 
 static unsigned short hquot_shape_img[5*HQUOT_WIDTH*HQUOT_HEIGHT*2] = { /* 5 images, 40 words per image, *2 (memory space for potential b/w conversion) */
             /* 3 lives: smiley face (Happy) */

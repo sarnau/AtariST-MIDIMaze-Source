@@ -25,7 +25,7 @@ endif
 
 # The program must not be loaded to TT-RAM,
 # because the screen_buf is part of it
-LDFLAGS += -Wl,--mprg-flags,5
+LDFLAGS += -Wl,--mprg-flags,5 -s
 
 GEMLIB_OBJS = \
 	gemlib/ctrlcnts.o \

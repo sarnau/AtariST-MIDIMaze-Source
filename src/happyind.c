@@ -3,10 +3,10 @@
  ************************************************************/
 #include "globals.h"
 
-#define HQUOT_WIDTH 2 /* width in words */
-#define HQUOT_HEIGHT 20 /* height in lines */
+#define HQUOT_WIDTH 2 /* width in lines */
+#define HQUOT_HEIGHT 20 /* height in words */
 
-static unsigned short hquot_shape_img[5*HQUOT_WIDTH*HQUOT_HEIGHT*2] = { /* 5 images, 40 words per image, *2 (memory space for potential b/w conversion) */
+static unsigned short hquot_shape_img[5*HQUOT_HEIGHT*HQUOT_WIDTH*2] = { /* 5 images, 40 words per image, *2 (memory space for potential b/w conversion) */
             /* 3 lives: smiley face (Happy) */
             /* ____ ____ XXXX XXXX ____ ____ ____ ____ */
             /* ____ __XX ____ ____ XX__ ____ ____ ____ */
@@ -144,7 +144,7 @@ static unsigned short *hquot_shape_ptr;
 void init_happiness_quotient_shape(void) {
     hquot_shape_ptr = hquot_shape_img;
     if(screen_rez)
-        image_double_width(hquot_shape_ptr, 5*HQUOT_WIDTH*HQUOT_HEIGHT);
+        image_double_width(hquot_shape_ptr, 5*HQUOT_HEIGHT*HQUOT_WIDTH);
 }
 
 /************************************************************
@@ -157,7 +157,7 @@ int i;
 
     happiness_quotient = player_data[own_number].ply_lives;
     set_screen_offs(happiness_quotient_wind_offset);
-    shapeOffset = 4*HQUOT_WIDTH*HQUOT_HEIGHT-happiness_quotient*HQUOT_WIDTH*HQUOT_HEIGHT; /* shape depending on the live status (0..3 is valid) */
+    shapeOffset = 4*HQUOT_HEIGHT*HQUOT_WIDTH-happiness_quotient*HQUOT_HEIGHT*HQUOT_WIDTH; /* shape depending on the live status (0..3 is valid) */
     if(screen_rez) shapeOffset <<= 1;
 
     /* draw into both screen buffers */
@@ -165,18 +165,18 @@ int i;
         /* 12 = size of the shape (0..23 are possible; 12 => 20 lines high). If this get's change the width and height (2/4, 20) needs to change as well */
         /* ...and the red tongue will also no longer match. */
         if(screen_rez) {
-            blit_draw_shape_bw(4, 38, draw_shape_bodyImageOffset[12]+shape_ball_ptr, 2*HQUOT_HEIGHT, HQUOT_WIDTH, bw_fillpattern_table[color_cnv_back[own_number]]);
-            blit_draw_shape_bw(4, 38, shapeOffset+hquot_shape_ptr, 2*HQUOT_HEIGHT, HQUOT_WIDTH, bw_fillpattern_table[COLOR_BLACK_INDEX]);
+            blit_draw_shape_bw(4, 38, draw_shape_bodyImageOffset[12]+shape_ball_ptr, 2*HQUOT_WIDTH, HQUOT_HEIGHT, bw_fillpattern_table[color_cnv_back[own_number]]);
+            blit_draw_shape_bw(4, 38, shapeOffset+hquot_shape_ptr, 2*HQUOT_WIDTH, HQUOT_HEIGHT, bw_fillpattern_table[COLOR_BLACK_INDEX]);
         } else {
-            blit_draw_shape_color(2, 19, draw_shape_bodyImageOffset[12]+shape_ball_ptr, HQUOT_HEIGHT, HQUOT_WIDTH, col_setcolor_jumptable[color_cnv_back[own_number]]);
-            blit_draw_shape_color(2, 19, shapeOffset+hquot_shape_ptr, HQUOT_HEIGHT, HQUOT_WIDTH, col_setcolor_jumptable[color_cnv_frame[own_number]]);
+            blit_draw_shape_color(2, 19, draw_shape_bodyImageOffset[12]+shape_ball_ptr, HQUOT_WIDTH, HQUOT_HEIGHT, col_setcolor_jumptable[color_cnv_back[own_number]]);
+            blit_draw_shape_color(2, 19, shapeOffset+hquot_shape_ptr, HQUOT_WIDTH, HQUOT_HEIGHT, col_setcolor_jumptable[color_cnv_frame[own_number]]);
         }
         if(happiness_quotient == 0) {
             /* draw the red tongue hanging out, if the player is dead */
             if(screen_rez)
-                blit_draw_shape_bw(4, 38, hquot_shape_ptr+5*HQUOT_WIDTH*HQUOT_HEIGHT*2, 2*HQUOT_HEIGHT, HQUOT_WIDTH, bw_fillpattern_table[COLOR_MAGNESIUM_INDEX]);
+                blit_draw_shape_bw(4, 38, hquot_shape_ptr+5*HQUOT_HEIGHT*HQUOT_WIDTH*2, 2*HQUOT_WIDTH, HQUOT_HEIGHT, bw_fillpattern_table[COLOR_MAGNESIUM_INDEX]);
             else
-                blit_draw_shape_color(2, 19, hquot_shape_ptr+5*HQUOT_WIDTH*HQUOT_HEIGHT, HQUOT_HEIGHT, HQUOT_WIDTH, col_setcolor_jumptable[COLOR_RED_INDEX]);
+                blit_draw_shape_color(2, 19, hquot_shape_ptr+5*HQUOT_HEIGHT*HQUOT_WIDTH, HQUOT_WIDTH, HQUOT_HEIGHT, col_setcolor_jumptable[COLOR_RED_INDEX]);
         }
         switch_logbase();
     }

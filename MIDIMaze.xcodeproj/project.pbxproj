@@ -7,24 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F803446B1F8B88DF00111DE5 /* BIG.MAZ in Resources */ = {isa = PBXBuildFile; fileRef = F80344611F8B88D900111DE5 /* BIG.MAZ */; };
-		F803446C1F8B88DF00111DE5 /* BIGGER.MAZ in Resources */ = {isa = PBXBuildFile; fileRef = F80344621F8B88D900111DE5 /* BIGGER.MAZ */; };
-		F803446D1F8B88DF00111DE5 /* BIGWEIRD.MAZ in Resources */ = {isa = PBXBuildFile; fileRef = F80344631F8B88D900111DE5 /* BIGWEIRD.MAZ */; };
-		F803446E1F8B88DF00111DE5 /* BATTLE24.MAZ in Resources */ = {isa = PBXBuildFile; fileRef = F80344641F8B88D900111DE5 /* BATTLE24.MAZ */; };
-		F803446F1F8B88DF00111DE5 /* FACEDMED.MAZ in Resources */ = {isa = PBXBuildFile; fileRef = F80344651F8B88D900111DE5 /* FACEDMED.MAZ */; };
-		F80344701F8B88DF00111DE5 /* HUDSON.MAZ in Resources */ = {isa = PBXBuildFile; fileRef = F80344661F8B88D900111DE5 /* HUDSON.MAZ */; };
-		F80344711F8B88DF00111DE5 /* BIGWIERD.MAZ in Resources */ = {isa = PBXBuildFile; fileRef = F80344671F8B88D900111DE5 /* BIGWIERD.MAZ */; };
-		F80344721F8B88DF00111DE5 /* MEDDUEL2.MAZ in Resources */ = {isa = PBXBuildFile; fileRef = F80344681F8B88D900111DE5 /* MEDDUEL2.MAZ */; };
-		F80344731F8B88DF00111DE5 /* BIGSTART.MAZ in Resources */ = {isa = PBXBuildFile; fileRef = F80344691F8B88D900111DE5 /* BIGSTART.MAZ */; };
-		F80344741F8B88DF00111DE5 /* MEDDUEL.MAZ in Resources */ = {isa = PBXBuildFile; fileRef = F803446A1F8B88D900111DE5 /* MEDDUEL.MAZ */; };
 		F859F5501F7CD32400DF37A2 /* mac.c in Sources */ = {isa = PBXBuildFile; fileRef = F859F54F1F7CD32400DF37A2 /* mac.c */; };
+		F89E292D2DD3863400423555 /* BIGSTART.MAZ in Resources */ = {isa = PBXBuildFile; fileRef = F89E291B2DD3863400423555 /* BIGSTART.MAZ */; };
+		F89E292F2DD3863400423555 /* BIG.MAZ in Resources */ = {isa = PBXBuildFile; fileRef = F89E29192DD3863400423555 /* BIG.MAZ */; };
+		F89E29332DD3863400423555 /* FACEDMED.MAZ in Resources */ = {isa = PBXBuildFile; fileRef = F89E291E2DD3863400423555 /* FACEDMED.MAZ */; };
+		F89E29342DD3863400423555 /* BIGWIERD.MAZ in Resources */ = {isa = PBXBuildFile; fileRef = F89E291D2DD3863400423555 /* BIGWIERD.MAZ */; };
+		F89E29362DD3863400423555 /* MIDIMAZE.MAZ in Resources */ = {isa = PBXBuildFile; fileRef = F89E29282DD3863400423555 /* MIDIMAZE.MAZ */; };
+		F89E29372DD3863400423555 /* BIGWEIRD.MAZ in Resources */ = {isa = PBXBuildFile; fileRef = F89E291C2DD3863400423555 /* BIGWEIRD.MAZ */; };
+		F89E29382DD3863400423555 /* BIGGER.MAZ in Resources */ = {isa = PBXBuildFile; fileRef = F89E291A2DD3863400423555 /* BIGGER.MAZ */; };
+		F89E29392DD3863400423555 /* BATTLE24.MAZ in Resources */ = {isa = PBXBuildFile; fileRef = F89E29182DD3863400423555 /* BATTLE24.MAZ */; };
+		F89E293A2DD3863400423555 /* MEDDUEL2.MAZ in Resources */ = {isa = PBXBuildFile; fileRef = F89E29212DD3863400423555 /* MEDDUEL2.MAZ */; };
+		F89E293B2DD3863400423555 /* MIDIMAZE.D8A in Resources */ = {isa = PBXBuildFile; fileRef = F89E29272DD3863400423555 /* MIDIMAZE.D8A */; };
+		F89E293C2DD3863400423555 /* HUDSON.MAZ in Resources */ = {isa = PBXBuildFile; fileRef = F89E291F2DD3863400423555 /* HUDSON.MAZ */; };
+		F89E293E2DD3863400423555 /* MEDDUEL.MAZ in Resources */ = {isa = PBXBuildFile; fileRef = F89E29202DD3863400423555 /* MEDDUEL.MAZ */; };
 		F8A7D3261F7BF35300610920 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = F8A7D3251F7BF35300610920 /* AppDelegate.mm */; };
 		F8A7D3281F7BF35300610920 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8A7D3271F7BF35300610920 /* Assets.xcassets */; };
 		F8A7D32B1F7BF35300610920 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8A7D3291F7BF35300610920 /* MainMenu.xib */; };
 		F8A7D32E1F7BF35300610920 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F8A7D32D1F7BF35300610920 /* main.m */; };
 		F8B547A71F7CC57B00705C64 /* AtariTOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = F8B547A61F7CC57B00705C64 /* AtariTOS.mm */; };
-		F8BC26A01F7D119200315B98 /* MIDIMAZE.D8A in Resources */ = {isa = PBXBuildFile; fileRef = F8BC269F1F7D118F00315B98 /* MIDIMAZE.D8A */; };
-		F8BC26A21F7D12C600315B98 /* MIDIMAZE.MAZ in Resources */ = {isa = PBXBuildFile; fileRef = F8BC26A11F7D124900315B98 /* MIDIMAZE.MAZ */; };
 		F8DB1D092DCA72AB00E9CE63 /* rstest.rsh in Resources */ = {isa = PBXBuildFile; fileRef = F8DB1CF92DCA72AB00E9CE63 /* rstest.rsh */; };
 		F8DB1D0A2DCA72AB00E9CE63 /* makedraw.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CE52DCA72AB00E9CE63 /* makedraw.c */; };
 		F8DB1D0B2DCA72AB00E9CE63 /* prefdlg.c in Sources */ = {isa = PBXBuildFile; fileRef = F8DB1CF12DCA72AB00E9CE63 /* prefdlg.c */; };
@@ -76,16 +76,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F80344611F8B88D900111DE5 /* BIG.MAZ */ = {isa = PBXFileReference; lastKnownFileType = text; path = BIG.MAZ; sourceTree = "<group>"; };
-		F80344621F8B88D900111DE5 /* BIGGER.MAZ */ = {isa = PBXFileReference; lastKnownFileType = text; path = BIGGER.MAZ; sourceTree = "<group>"; };
-		F80344631F8B88D900111DE5 /* BIGWEIRD.MAZ */ = {isa = PBXFileReference; lastKnownFileType = text; path = BIGWEIRD.MAZ; sourceTree = "<group>"; };
-		F80344641F8B88D900111DE5 /* BATTLE24.MAZ */ = {isa = PBXFileReference; lastKnownFileType = text; path = BATTLE24.MAZ; sourceTree = "<group>"; };
-		F80344651F8B88D900111DE5 /* FACEDMED.MAZ */ = {isa = PBXFileReference; lastKnownFileType = text; path = FACEDMED.MAZ; sourceTree = "<group>"; };
-		F80344661F8B88D900111DE5 /* HUDSON.MAZ */ = {isa = PBXFileReference; lastKnownFileType = text; path = HUDSON.MAZ; sourceTree = "<group>"; };
-		F80344671F8B88D900111DE5 /* BIGWIERD.MAZ */ = {isa = PBXFileReference; lastKnownFileType = text; path = BIGWIERD.MAZ; sourceTree = "<group>"; };
-		F80344681F8B88D900111DE5 /* MEDDUEL2.MAZ */ = {isa = PBXFileReference; lastKnownFileType = text; path = MEDDUEL2.MAZ; sourceTree = "<group>"; };
-		F80344691F8B88D900111DE5 /* BIGSTART.MAZ */ = {isa = PBXFileReference; lastKnownFileType = text; path = BIGSTART.MAZ; sourceTree = "<group>"; };
-		F803446A1F8B88D900111DE5 /* MEDDUEL.MAZ */ = {isa = PBXFileReference; lastKnownFileType = text; path = MEDDUEL.MAZ; sourceTree = "<group>"; };
 		F846C0EC1F9D3BA400D69024 /* D8AFileFormat.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = D8AFileFormat.md; sourceTree = "<group>"; };
 		F846C0ED1F9D3BA500D69024 /* MIDImazeEngineOverview.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = MIDImazeEngineOverview.md; sourceTree = "<group>"; };
 		F846C0EE1F9D3BA500D69024 /* AtariScreenBitmap.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = AtariScreenBitmap.md; sourceTree = "<group>"; };
@@ -93,8 +83,25 @@
 		F85AB60C1F9D441800FA4167 /* MIDICommunication.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = MIDICommunication.md; sourceTree = "<group>"; };
 		F86C73261F9A164C003DCC15 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F879F4B11F9FDD67003CF63F /* CompressedTitle.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CompressedTitle.md; sourceTree = "<group>"; };
-		F888771C1F7E34E90027D68B /* MIDIMAZE.PRG */ = {isa = PBXFileReference; lastKnownFileType = file; path = MIDIMAZE.PRG; sourceTree = "<group>"; };
-		F888771D1F7E34E90027D68B /* MIDIMAZE.TXT */ = {isa = PBXFileReference; lastKnownFileType = text; path = MIDIMAZE.TXT; sourceTree = "<group>"; };
+		F89E29182DD3863400423555 /* BATTLE24.MAZ */ = {isa = PBXFileReference; lastKnownFileType = text; path = BATTLE24.MAZ; sourceTree = "<group>"; };
+		F89E29192DD3863400423555 /* BIG.MAZ */ = {isa = PBXFileReference; lastKnownFileType = text; path = BIG.MAZ; sourceTree = "<group>"; };
+		F89E291A2DD3863400423555 /* BIGGER.MAZ */ = {isa = PBXFileReference; lastKnownFileType = text; path = BIGGER.MAZ; sourceTree = "<group>"; };
+		F89E291B2DD3863400423555 /* BIGSTART.MAZ */ = {isa = PBXFileReference; lastKnownFileType = text; path = BIGSTART.MAZ; sourceTree = "<group>"; };
+		F89E291C2DD3863400423555 /* BIGWEIRD.MAZ */ = {isa = PBXFileReference; lastKnownFileType = text; path = BIGWEIRD.MAZ; sourceTree = "<group>"; };
+		F89E291D2DD3863400423555 /* BIGWIERD.MAZ */ = {isa = PBXFileReference; lastKnownFileType = text; path = BIGWIERD.MAZ; sourceTree = "<group>"; };
+		F89E291E2DD3863400423555 /* FACEDMED.MAZ */ = {isa = PBXFileReference; lastKnownFileType = text; path = FACEDMED.MAZ; sourceTree = "<group>"; };
+		F89E291F2DD3863400423555 /* HUDSON.MAZ */ = {isa = PBXFileReference; lastKnownFileType = text; path = HUDSON.MAZ; sourceTree = "<group>"; };
+		F89E29202DD3863400423555 /* MEDDUEL.MAZ */ = {isa = PBXFileReference; lastKnownFileType = text; path = MEDDUEL.MAZ; sourceTree = "<group>"; };
+		F89E29212DD3863400423555 /* MEDDUEL2.MAZ */ = {isa = PBXFileReference; lastKnownFileType = text; path = MEDDUEL2.MAZ; sourceTree = "<group>"; };
+		F89E29232DD3863400423555 /* atari_st_ad_midi_maze.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = atari_st_ad_midi_maze.jpg; sourceTree = "<group>"; };
+		F89E29242DD3863400423555 /* midi_maze_hybrid_arts,_inc._d7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "midi_maze_hybrid_arts,_inc._d7.jpg"; sourceTree = "<group>"; };
+		F89E29252DD3863400423555 /* midi_maze_hybrid_arts,_inc._d7_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "midi_maze_hybrid_arts,_inc._d7_2.jpg"; sourceTree = "<group>"; };
+		F89E29262DD3863400423555 /* Midi-Maze_-_1987_-_Hybrid_Arts.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Midi-Maze_-_1987_-_Hybrid_Arts.pdf"; sourceTree = "<group>"; };
+		F89E29272DD3863400423555 /* MIDIMAZE.D8A */ = {isa = PBXFileReference; lastKnownFileType = file; path = MIDIMAZE.D8A; sourceTree = "<group>"; };
+		F89E29282DD3863400423555 /* MIDIMAZE.MAZ */ = {isa = PBXFileReference; lastKnownFileType = text; path = MIDIMAZE.MAZ; sourceTree = "<group>"; };
+		F89E29292DD3863400423555 /* MIDIMAZE.PRG */ = {isa = PBXFileReference; lastKnownFileType = file; path = MIDIMAZE.PRG; sourceTree = "<group>"; };
+		F89E292A2DD3863400423555 /* MIDIMAZE.TXT */ = {isa = PBXFileReference; lastKnownFileType = text; path = MIDIMAZE.TXT; sourceTree = "<group>"; };
+		F89E292B2DD3863400423555 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F8A7D3211F7BF35300610920 /* MIDIMaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MIDIMaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8A7D3241F7BF35300610920 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F8A7D3251F7BF35300610920 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
@@ -105,8 +112,6 @@
 		F8A7D32F1F7BF35300610920 /* MIDIMaze.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MIDIMaze.entitlements; sourceTree = "<group>"; };
 		F8A7D3961F7BF3D600610920 /* portab.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = portab.h; path = gui/common/portab.h; sourceTree = SOURCE_ROOT; };
 		F8B547A61F7CC57B00705C64 /* AtariTOS.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AtariTOS.mm; sourceTree = "<group>"; };
-		F8BC269F1F7D118F00315B98 /* MIDIMAZE.D8A */ = {isa = PBXFileReference; lastKnownFileType = file; name = MIDIMAZE.D8A; path = MIDIMazeDisc/MIDIMAZE.D8A; sourceTree = SOURCE_ROOT; };
-		F8BC26A11F7D124900315B98 /* MIDIMAZE.MAZ */ = {isa = PBXFileReference; lastKnownFileType = text; name = MIDIMAZE.MAZ; path = MIDIMazeDisc/MIDIMAZE.MAZ; sourceTree = SOURCE_ROOT; };
 		F8DB1CCC2DCA72AB00E9CE63 /* aesinit.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = aesinit.c; sourceTree = "<group>"; };
 		F8DB1CCD2DCA72AB00E9CE63 /* blit_bw.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = blit_bw.c; sourceTree = "<group>"; };
 		F8DB1CCE2DCA72AB00E9CE63 /* blit_col.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = blit_col.c; sourceTree = "<group>"; };
@@ -181,23 +186,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F80344601F8B88D900111DE5 /* MAZES */ = {
-			isa = PBXGroup;
-			children = (
-				F80344611F8B88D900111DE5 /* BIG.MAZ */,
-				F80344621F8B88D900111DE5 /* BIGGER.MAZ */,
-				F80344631F8B88D900111DE5 /* BIGWEIRD.MAZ */,
-				F80344641F8B88D900111DE5 /* BATTLE24.MAZ */,
-				F80344651F8B88D900111DE5 /* FACEDMED.MAZ */,
-				F80344661F8B88D900111DE5 /* HUDSON.MAZ */,
-				F80344671F8B88D900111DE5 /* BIGWIERD.MAZ */,
-				F80344681F8B88D900111DE5 /* MEDDUEL2.MAZ */,
-				F80344691F8B88D900111DE5 /* BIGSTART.MAZ */,
-				F803446A1F8B88D900111DE5 /* MEDDUEL.MAZ */,
-			);
-			path = MAZES;
-			sourceTree = "<group>";
-		};
 		F86C73231F9A164C003DCC15 /* README */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,16 +225,38 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		F88877191F7E34840027D68B /* MIDIMazeDisc */ = {
+		F89E29222DD3863400423555 /* MAZES */ = {
 			isa = PBXGroup;
 			children = (
-				F80344601F8B88D900111DE5 /* MAZES */,
-				F8BC269F1F7D118F00315B98 /* MIDIMAZE.D8A */,
-				F8BC26A11F7D124900315B98 /* MIDIMAZE.MAZ */,
-				F888771C1F7E34E90027D68B /* MIDIMAZE.PRG */,
-				F888771D1F7E34E90027D68B /* MIDIMAZE.TXT */,
+				F89E29182DD3863400423555 /* BATTLE24.MAZ */,
+				F89E29192DD3863400423555 /* BIG.MAZ */,
+				F89E291A2DD3863400423555 /* BIGGER.MAZ */,
+				F89E291B2DD3863400423555 /* BIGSTART.MAZ */,
+				F89E291C2DD3863400423555 /* BIGWEIRD.MAZ */,
+				F89E291D2DD3863400423555 /* BIGWIERD.MAZ */,
+				F89E291E2DD3863400423555 /* FACEDMED.MAZ */,
+				F89E291F2DD3863400423555 /* HUDSON.MAZ */,
+				F89E29202DD3863400423555 /* MEDDUEL.MAZ */,
+				F89E29212DD3863400423555 /* MEDDUEL2.MAZ */,
 			);
-			path = MIDIMazeDisc;
+			path = MAZES;
+			sourceTree = "<group>";
+		};
+		F89E292C2DD3863400423555 /* MIDIMAZE.PD */ = {
+			isa = PBXGroup;
+			children = (
+				F89E29222DD3863400423555 /* MAZES */,
+				F89E29232DD3863400423555 /* atari_st_ad_midi_maze.jpg */,
+				F89E29242DD3863400423555 /* midi_maze_hybrid_arts,_inc._d7.jpg */,
+				F89E29252DD3863400423555 /* midi_maze_hybrid_arts,_inc._d7_2.jpg */,
+				F89E29262DD3863400423555 /* Midi-Maze_-_1987_-_Hybrid_Arts.pdf */,
+				F89E29272DD3863400423555 /* MIDIMAZE.D8A */,
+				F89E29282DD3863400423555 /* MIDIMAZE.MAZ */,
+				F89E29292DD3863400423555 /* MIDIMAZE.PRG */,
+				F89E292A2DD3863400423555 /* MIDIMAZE.TXT */,
+				F89E292B2DD3863400423555 /* README.md */,
+			);
+			path = MIDIMAZE.PD;
 			sourceTree = "<group>";
 		};
 		F8A7D3181F7BF35300610920 = {
@@ -254,8 +264,8 @@
 			children = (
 				F86C73231F9A164C003DCC15 /* README */,
 				F86C73261F9A164C003DCC15 /* README.md */,
+				F89E292C2DD3863400423555 /* MIDIMAZE.PD */,
 				F8DB1D032DCA72AB00E9CE63 /* src */,
-				F88877191F7E34840027D68B /* MIDIMazeDisc */,
 				F8A7D3231F7BF35300610920 /* MIDIMaze */,
 				F8A7D3221F7BF35300610920 /* Products */,
 			);
@@ -402,21 +412,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F803446F1F8B88DF00111DE5 /* FACEDMED.MAZ in Resources */,
-				F80344741F8B88DF00111DE5 /* MEDDUEL.MAZ in Resources */,
 				F8DB1D092DCA72AB00E9CE63 /* rstest.rsh in Resources */,
-				F803446C1F8B88DF00111DE5 /* BIGGER.MAZ in Resources */,
-				F80344731F8B88DF00111DE5 /* BIGSTART.MAZ in Resources */,
-				F8BC26A01F7D119200315B98 /* MIDIMAZE.D8A in Resources */,
-				F803446B1F8B88DF00111DE5 /* BIG.MAZ in Resources */,
+				F89E292D2DD3863400423555 /* BIGSTART.MAZ in Resources */,
+				F89E292F2DD3863400423555 /* BIG.MAZ in Resources */,
+				F89E29332DD3863400423555 /* FACEDMED.MAZ in Resources */,
+				F89E29342DD3863400423555 /* BIGWIERD.MAZ in Resources */,
+				F89E29362DD3863400423555 /* MIDIMAZE.MAZ in Resources */,
+				F89E29372DD3863400423555 /* BIGWEIRD.MAZ in Resources */,
+				F89E29382DD3863400423555 /* BIGGER.MAZ in Resources */,
+				F89E29392DD3863400423555 /* BATTLE24.MAZ in Resources */,
+				F89E293A2DD3863400423555 /* MEDDUEL2.MAZ in Resources */,
+				F89E293B2DD3863400423555 /* MIDIMAZE.D8A in Resources */,
+				F89E293C2DD3863400423555 /* HUDSON.MAZ in Resources */,
+				F89E293E2DD3863400423555 /* MEDDUEL.MAZ in Resources */,
 				F8A7D3281F7BF35300610920 /* Assets.xcassets in Resources */,
-				F80344701F8B88DF00111DE5 /* HUDSON.MAZ in Resources */,
-				F8BC26A21F7D12C600315B98 /* MIDIMAZE.MAZ in Resources */,
-				F803446D1F8B88DF00111DE5 /* BIGWEIRD.MAZ in Resources */,
-				F80344721F8B88DF00111DE5 /* MEDDUEL2.MAZ in Resources */,
-				F803446E1F8B88DF00111DE5 /* BATTLE24.MAZ in Resources */,
 				F8E2F75A1F80145E00DA1F40 /* MIDIMaze Shot.mp3 in Resources */,
-				F80344711F8B88DF00111DE5 /* BIGWIERD.MAZ in Resources */,
 				F8A7D32B1F7BF35300610920 /* MainMenu.xib in Resources */,
 				F8E2F7591F80145B00DA1F40 /* MIDIMaze Hit.mp3 in Resources */,
 			);

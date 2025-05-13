@@ -34,11 +34,12 @@ int active_drones_by_type[DRONE_TYPES];
 short playerAndDroneCount;
 short machines_online;
 short own_number;
+short input_device = INPUT_JOYSTICK;
 
 /************************************************************
- *** int game_loop(int isSolo,int isJoystick)
+ *** int game_loop(int isSolo)
  ************************************************************/
-int game_loop(int isSolo,int isJoystick) {
+int game_loop(int isSolo) {
 int bwColorFlag;
 int lastJoystickButton;
 int joystickButton = 0;
@@ -217,10 +218,7 @@ int currentScore;
     for(i = 0; (screen_rez ? 350 : 300) > i; i++)
         Vsync();
 
-    if(isJoystick)
-        init_joystick();
-    else
-        init_mouse();
+    init_input();
 
     /* remove all pending key presses */
     while(Bconstat(CON))
@@ -353,14 +351,8 @@ int currentScore;
         midicam_player_number = own_number;
 
         /* get joystick/mouse input */
-        if(isJoystick) {
-            joystickDirection = ask_joystick(1, &joystickButton);
-            if(!user_is_midicam)
-                player_joy_table[i = own_number] = (joystickButton<<4)|joystickDirection;
-        } else {
-            if(!user_is_midicam)
-                player_joy_table[i = own_number] = ask_mouse();
-        }
+        joystickDirection = ask_input();
+        joystickButton = joystickDirection & JOYSTICK_BUTTON;
 
         if(user_is_midicam) {
             /* with the mouse-button toggle between 2D and 3D map */
@@ -443,15 +435,9 @@ int currentScore;
             (void)Setcolor(0, 0); /* reset background color */
             if(!user_is_midicam && !own_number) { /* the master/solo player wants to quit the game */
                 switch_logbase();
-                if(isJoystick)
-                    exit_joystick();
-                else
-                    exit_mouse();
+                exit_input();
                 i = form_alert(1, "[1][ |Game suspended.| Continue?][Yeah|Nah]");
-                if(isJoystick)
-                    init_joystick();
-                else
-                    init_mouse();
+                init_input();
                 switch_logbase();
                 if(isSolo) {
                     if(i != 1) /* "Nah" */
@@ -611,4 +597,53 @@ int currentScore;
         Bconin(CON);
 
     return SUCCESS;
+}
+
+
+void init_input(void)
+{
+    switch (input_device)
+    {
+    case INPUT_JOYSTICK:
+        init_joystick();
+        break;
+    case INPUT_MOUSE:
+        init_mouse();
+        break;
+    case INPUT_KEYBOARD:
+        init_keyboard();
+        break;
+    }
+}
+
+
+void exit_input(void)
+{
+    switch (input_device)
+    {
+    case INPUT_JOYSTICK:
+        exit_joystick();
+        break;
+    case INPUT_MOUSE:
+        exit_mouse();
+        break;
+    case INPUT_KEYBOARD:
+        exit_keyboard();
+        break;
+    }
+}
+
+
+int ask_input(void)
+{
+    switch (input_device)
+    {
+    case INPUT_JOYSTICK:
+        return ask_joystick();
+    case INPUT_MOUSE:
+        return ask_mouse();
+    case INPUT_KEYBOARD:
+        return ask_keyboard();
+    }
+    return 0;
 }

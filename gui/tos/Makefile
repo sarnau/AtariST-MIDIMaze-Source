@@ -2,20 +2,33 @@ include ../silent.mk
 
 srcdir = ../../src
 
+DEBUG = 0
+
 CC = m68k-atari-mint-gcc
-STARTUP = crt0.o gemlib/ctrlcnts.o
-LDFLAGS = -nostartfiles -nostdlib
 LIBS = -lgcc
 
 LD = $(CC)
 CPU_CFLAGS =
-OPT = -O2 -fomit-frame-pointer
 WARN = -Wall -Wundef -Wstrict-prototypes -Wmissing-prototypes -Werror
 INCLUDES = -I$(srcdir) -I../common
 CFLAGS = $(CPU_CFLAGS) $(OPT) $(WARN) $(INCLUDES)
-LDFLAGS += -s
+
+ifeq ($(DEBUG),1)
+OPT = -O0 -g
+DEBUG_OBJS = nf_debug.o nf_ops.o
+CFLAGS += -DDEBUG
+else
+OPT = -O2 -fomit-frame-pointer
+LDFLAGS = -nostartfiles -nostdlib -s
+STARTUP = crt0.o
+endif
+
+# The program must not be loaded to TT-RAM,
+# because the screen_buf is part of it
+LDFLAGS += -Wl,--mprg-flags,5
 
 GEMLIB_OBJS = \
+	gemlib/ctrlcnts.o \
 	gemlib/crysif.o \
 	gemlib/ap_init.o \
 	gemlib/crystal.o \
@@ -48,20 +61,23 @@ GEMLIB_OBJS = \
 all:: midimaze.prg
 
 OUT = -c -o 
-include ../SRCFILES
-include ../RULES
-
-OBJS += \
+PLATFORM_OBJS = \
 	main.o \
 	joystick.o \
+	ikbd.o \
+	sound.o \
 	$(GEMLIB_OBJS) \
+	$(DEBUG_OBJS) \
 	$(empty)
+
+include ../SRCFILES
+include ../RULES
 
 .c.o:
 	$(AM_V_CC)$(CC) $(CFLAGS) -c -o $@ $<
 
 midimaze.prg: $(OBJS)
-	$(AM_V_LD)$(LD) -o $@ $(LDFLAGS) $(OBJS) $(LIBS)
+	$(AM_V_LD)$(LD) -o $@ $(CFLAGS) $(LDFLAGS) $(OBJS) $(LIBS)
 
 $(GEMLIB_OBJS): gemlib/crysbind.h gemlib/vdilib.h
 
@@ -70,6 +86,9 @@ main.o: main.c
 
 crt0.o: crt0.S
 	$(AM_V_CC)$(CC) -c -o $@ $<
+
+ikbd.o: ikbd.S
+	$(AM_V_CC)$(CC) -c -o $@ -Wa,--register-prefix-optional $<
 
 clean::
 	$(RM) *.o gemlib/*.o $(srcdir)/*.o *.prg

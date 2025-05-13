@@ -1,11 +1,11 @@
 OBJS = \
 	$(STARTUP) \
+	$(PLATFORM_OBJS) \
 	lowmem.o \
 	readmidi.o \
 	rungame.o \
 	makedraw.o \
 	screen.o \
-	sound.o \
 	dispatch.o \
 	endshape.o \
 	maingame.o \

@@ -26,10 +26,9 @@ void exit_joystick(void)
     gJoystickMask = 0;
 }
 
-int ask_joystick(int index,int *buttonPressed)
+int ask_joystick(void)
 {
-    *buttonPressed = (gJoystickMask & JOYSTICK_BUTTON) == JOYSTICK_BUTTON;
-    return (gJoystickMask & 0x0f);
+    return gJoystickMask;
 }
 
 

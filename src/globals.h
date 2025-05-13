@@ -284,6 +284,10 @@ extern short viewposition_direction;
 extern short viewposition_y;
 extern short viewposition_x;
 extern short objekt_anz;
+#define INPUT_JOYSTICK 0
+#define INPUT_MOUSE    1
+#define INPUT_KEYBOARD 2
+extern short input_device;
 
 #if BUGFIX_MIDI_TIMEOUT
 extern long read_vbclock(void);
@@ -304,7 +308,7 @@ extern void init_sound(void);
 extern void exit_sound(void);
 extern void dispatch(void);
 extern void init_end_shape(void);
-extern int game_loop(int isSolo,int isJoystick);
+extern int game_loop(int isSolo);
 extern void midicam_keyboard_shortcuts(void);
 extern void position_midicam_users(void);
 extern void add_one_smily(int score,int shotPlayer);
@@ -314,7 +318,6 @@ extern void draw_all_notes_score(int playerCount);
 extern void update_notes_score(int playerCount);
 extern void copy_screen(void);
 extern void save_part_of_screen_for_dialog(int saveFlag);
-extern int ask_mouse(void);
 extern void bconout_dec_number(int num);
 extern void bconout_string(const char *str);
 extern void midicam_print_current_player(void);
@@ -348,9 +351,16 @@ extern int init_all_player(int playerCount,int isDrone);
 extern int hunt_ply_pos(int player);
 extern void init_joystick(void);
 extern void exit_joystick(void);
-extern int ask_joystick(int index,int *buttonPressed);
+extern int ask_joystick(void);
 extern void init_mouse(void);
 extern void exit_mouse(void);
+extern int ask_mouse(void);
+void init_keyboard(void);
+void exit_keyboard(void);
+int ask_keyboard(void);
+void init_input(void);
+void exit_input(void);
+int ask_input(void);
 extern void draw_maze_calc_viewmatrix(int microY,int microX,int minYOffset,int minXOffset,int maxYOffset,int maxXOffset,int isFlipped,int dir);
 extern int draw_mazes_set_wall(int y1p,int x1p,int y2p,int x2p,int color,int leftRightFlag);
 extern void objecttable_clear(void);

@@ -5,7 +5,7 @@
  */
 
 /*
- * Number of Strings:        92
+ * Number of Strings:        95
  * Number of Bitblks:        0
  * Number of Iconblks:       0
  * Number of Color Iconblks: 0
@@ -13,11 +13,11 @@
  * Number of Tedinfos:       1
  * Number of Free Strings:   0
  * Number of Free Images:    0
- * Number of Objects:        219
- * Number of Trees:          14
+ * Number of Objects:        223
+ * Number of Trees:          15
  * Number of Userblks:       0
  * Number of Images:         0
- * Total file size:          6298
+ * Total file size:          6482
  */
 
 #ifdef RSC_NAME
@@ -39,7 +39,7 @@
 # define RSC_STATIC_FILE 0
 #endif
 #if !RSC_STATIC_FILE
-#define NUM_STRINGS 92
+#define NUM_STRINGS 95
 #define NUM_FRSTR 0
 #define NUM_UD 0
 #define NUM_IMAGES 0
@@ -48,8 +48,8 @@
 #define NUM_IB 0
 #define NUM_CIB 0
 #define NUM_TI 1
-#define NUM_OBS 219
-#define NUM_TREE 14
+#define NUM_OBS 223
+#define NUM_TREE 15
 #endif
 
 
@@ -61,8 +61,8 @@
 #define MAZE_LOAD                         16 /* STRING in tree RSCTREE_MENU */
 #define MAZE_RESET_SCORE                  17 /* STRING in tree RSCTREE_MENU */
 #define MAZE_PLAY                         19 /* STRING in tree RSCTREE_MENU */
-#define MAZE_QUIT                         20 /* STRING in tree RSCTREE_MENU */
-#define MAZE_SET_NAMES                    22 /* STRING in tree RSCTREE_MENU */
+#define MAZE_SET_NAMES                    20 /* STRING in tree RSCTREE_MENU */
+#define MAZE_QUIT                         22 /* STRING in tree RSCTREE_MENU */
 
 #define RSCTREE_SLAVE                      1 /* free form */
 
@@ -193,11 +193,16 @@
 #define RSCTREE_SUSPENDED                 10 /* free form */
 
 #define RSCTREE_SET_NAME                  11 /* form/dialog */
+#define SET_NAME_PLAYER                    1 /* FBOXTEXT in tree RSCTREE_SET_NAME */
+#define SET_NAME_OK                        2 /* BUTTON in tree RSCTREE_SET_NAME */
 
 #define RSCTREE_ABOUT                     12 /* form/dialog */
 #define ABOUT_WOW                          5 /* BUTTON in tree RSCTREE_ABOUT */
+#define ABOUT_COMPILER                     6 /* STRING in tree RSCTREE_ABOUT */
 
 #define RSCTREE_MIDICAM                   13 /* free form */
+
+#define RSCTREE_KEYBOARD_CTRL             14 /* free form */
 
 
 

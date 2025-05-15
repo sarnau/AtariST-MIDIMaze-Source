@@ -74,6 +74,8 @@ def decode_dos_date_time(dos_date_time):
 		return
 
 def loadMaze(filename):
+	print(filename)
+	print('=' * len(filename))
 	global randomBase
 	mazeData = bytearray(open(filename,'rb').read())
 	
@@ -103,9 +105,9 @@ def loadMaze(filename):
 		offset += segmentLength
 	
 		if segmentType == 0:
-			print("Maze name = %s" % segmentData.decode('latin-1'))
+			print("Maze name = %s" % segmentData.decode('cp437').replace('₧','ß'))
 		elif segmentType == 1:
-			print("Maze author = %s" % segmentData.decode('latin-1'))
+			print("Maze author = %s" % segmentData.decode('cp437').replace('₧','ß'))
 		elif segmentType == 2: # Maze date (64x64 byte nibbles = 2kb)
 			print("Maze data:")
 			for y in range(mazeSize):
@@ -133,7 +135,7 @@ def loadMaze(filename):
 			print(segmentType)
 			dump_memory_block(segmentData)
 
-if False:
+if True:
 	for dirpath, dirnames, filenames in os.walk('./MIDIMAZE2/'):
 		for filename in filenames:
 			if filename.lower().endswith('mze'):

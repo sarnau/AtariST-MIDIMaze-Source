@@ -292,6 +292,7 @@ extern short objekt_anz;
 #define INPUT_MOUSE    1
 #define INPUT_KEYBOARD 2
 extern short input_device;
+extern short vdi_handle;
 
 #if BUGFIX_MIDI_TIMEOUT
 extern long read_vbclock(void);

@@ -31,6 +31,7 @@ static MFDB src_MFDB;
 static MFDB dest_MFDB;
 OBJECT *rsrc_object_array[NUM_TREE]; /* adresses of all used resource trees found at rs_trindex[] */
 short wind_handle;
+short vdi_handle;
 
 /************************************************************
  *** Copy the window background from logbase as a redraw
@@ -51,7 +52,7 @@ short wi_gfield;
         pxy[1] = pxy[5] = wi_gw_y;
         pxy[2] = pxy[6] = wi_gw_x+wi_gw_w-1;
         pxy[3] = pxy[7] = wi_gw_y+wi_gw_h-1;
-        vro_cpyfm(wi_ghandle, S_ONLY, pxy, &src_MFDB, &dest_MFDB);
+        vro_cpyfm(vdi_handle, S_ONLY, pxy, &src_MFDB, &dest_MFDB);
         wi_gfield = WF_NEXTXYWH;
     } while(1);
     wind_update(END_UPDATE);

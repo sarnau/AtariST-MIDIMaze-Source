@@ -15,7 +15,6 @@ void __main(void)
  *** This code only does some AES/VDI/XBIOS init and then calls setup_game()
  ************************************************************/
 int main(void) {
-static short vdi_handle;
 int i;
 short savedColors[16];
 short intout[57];
